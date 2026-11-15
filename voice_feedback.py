@@ -1,6 +1,7 @@
 """Spanish voice feedback with sentence-sized queues and visible playback controls."""
 import json
 import hashlib
+import base64
 from pathlib import Path
 
 import streamlit as st
@@ -17,8 +18,7 @@ def voice_markup(text):
     payload = json.dumps(str(text), ensure_ascii=True).replace("<", "\\u003c").replace(">", "\\u003e")
     return r"""<!doctype html><html lang="es"><meta charset="utf-8">
     <style>body{margin:0;font:14px 'Segoe UI',sans-serif;color:#624471}button{cursor:pointer;border:1px solid #d9c5e8;background:#fff6fc;color:#624471;border-radius:12px;padding:10px 14px;font:inherit;font-weight:600;margin:0 6px 5px 0}button:focus-visible{outline:3px solid #7c3aed}#status{font-size:12px;margin:2px 0}</style>
-    <button id="play" type="button">🔊 Escuchar explicación</button><button id="stop" type="button">⏹ Detener</button>
-    <p id="status" role="status" aria-live="polite">Preparando la explicación hablada…</p>
+    <p id="status" hidden>Preparando la explicación hablada…</p>
     <script>
     const text = PAYLOAD;
     const status = document.getElementById('status');
@@ -46,11 +46,27 @@ def voice_markup(text):
         }
         next();
     }
-    document.getElementById('play').addEventListener('click',play);
-    document.getElementById('stop').addEventListener('click',()=>{stop();status.textContent='Voz detenida.';});
     window.addEventListener('pagehide',stop);
     setTimeout(play,150);
     </script></html>""".replace("PAYLOAD", payload)
+
+
+def audio_markup(audio):
+    """Embed the recording: avoid the server's failing /media HTTP route."""
+    source = base64.b64encode(audio).decode("ascii")
+    return '''<!doctype html><html lang="es"><meta charset="utf-8">
+    <style>body{margin:0;color:#624471;font:14px 'Segoe UI',sans-serif}audio{width:100%}p{margin:4px 0}</style>
+    <audio id="voice" hidden autoplay preload="auto" aria-label="Explicación en voz" src="data:audio/mpeg;base64,''' + source + '''"></audio>
+    <p id="status" hidden>Preparando voz…</p>
+    <script>
+    const audio=document.getElementById('voice'), status=document.getElementById('status');
+    audio.addEventListener('playing',()=>status.textContent='🔊 Reproduciendo voz');
+    audio.addEventListener('ended',()=>status.textContent='Explicación terminada.');
+    audio.addEventListener('pause',()=>{if(!audio.ended)status.textContent='Voz en pausa.';});
+    audio.addEventListener('error',()=>status.textContent='No se pudo reproducir la voz.');
+    audio.play().catch(()=>status.textContent='El navegador bloqueó la voz automática. Pulsa reproducir para escuchar.');
+    window.addEventListener('pagehide',()=>audio.pause());
+    </script></html>'''
 
 
 def hablar(text, parts=None):
@@ -59,6 +75,6 @@ def hablar(text, parts=None):
         # CBR MP3 clips have matching encodings and no ID3/Xing headers, so their
         # frames can be concatenated into a single player with seek/replay.
         audio = b"".join(path.read_bytes() for path in clips)
-        st.audio(audio, format="audio/mpeg", autoplay=True)
+        components.html(audio_markup(audio), height=0)
     else:
-        components.html(voice_markup(text), height=88)
+        components.html(voice_markup(text), height=0)

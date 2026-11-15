@@ -23,6 +23,7 @@ def texts():
                 and any(isinstance(t, ast.Name) and t.id == "BANCO" for t in n.targets))
     bank.update(ADDITIONAL)
     result = {f"Pregunta {number}." for number in range(1, 11)}
+    result.add("Incorrecto.")
     for stage in bank.values():
         for q in stage:
             example = example_for(q)

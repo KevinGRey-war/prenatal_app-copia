@@ -1161,7 +1161,7 @@ elif st.session_state.fase == "test":
         if not st.session_state.resp:
 
             if st.button(
-                "SIGUIENTE",
+                "VERIFICAR",
                 disabled=respuesta is None,
                 use_container_width=True
             ):
@@ -1222,7 +1222,7 @@ elif st.session_state.fase == "test":
 
                 """, unsafe_allow_html=True)
 
-            hablar(st.session_state.fb)
+            hablar(st.session_state.fb, parts=(None if st.session_state.correcto else ["Incorrecto.", st.session_state.fb]))
 
             if st.button("CONTINUAR"):
 

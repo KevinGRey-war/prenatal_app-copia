@@ -8,7 +8,7 @@ import unittest
 
 from additional_questions import ADDITIONAL
 from feedback_examples import example_for, final_narration, test_risk
-from voice_feedback import clip_path, voice_markup
+from voice_feedback import clip_path, voice_markup, audio_markup
 
 
 def original_bank():
@@ -65,7 +65,18 @@ class SurveyTests(unittest.TestCase):
     def test_browser_voice_fallback_escapes_text(self):
         output = voice_markup("'Texto' </script><script>alert(1)</script>")
         self.assertNotIn("</script><script>alert", output)
-        self.assertIn("Escuchar explicación", output)
+        self.assertNotIn("<button", output)
+
+    def test_voice_embeds_recording_without_media_route(self):
+        import base64
+        data = clip_path(ADDITIONAL["Posparto"][0]["q"]).read_bytes()
+        markup = audio_markup(data)
+        self.assertIn("hidden autoplay", markup)
+        self.assertNotIn("controls", markup)
+        self.assertIn("audio.play()", markup)
+        payload = markup.split("data:audio/mpeg;base64,", 1)[1].split('"', 1)[0]
+        self.assertEqual(base64.b64decode(payload), data)
+        self.assertNotIn("/media/", markup)
 
     def test_complete_original_quiz_flow_and_final_audio(self):
         from streamlit.testing.v1 import AppTest
@@ -91,16 +102,18 @@ class SurveyTests(unittest.TestCase):
             for key, value in state.items():
                 app.session_state[key] = value
             app.run()
+            self.assertEqual(len(app.get("iframe")), 0, "No se debe narrar al comenzar")
             for i in range(10):
-                self.assertTrue(next(b for b in app.button if b.label == "SIGUIENTE").disabled)
+                self.assertTrue(next(b for b in app.button if b.label == "VERIFICAR").disabled)
                 question = app.session_state["examen"][i]
                 answer = question["corr"] if i < 7 else next(o for o in question["opts"] if o != question["corr"])
                 app.radio[0].set_value(answer).run()
                 self.assertFalse(app.session_state["resp"])
                 self.assertEqual(len(app.session_state["answers"]), i)
-                next(b for b in app.button if b.label == "SIGUIENTE").click().run()
+                next(b for b in app.button if b.label == "VERIFICAR").click().run()
                 self.assertFalse(app.exception)
                 self.assertTrue(app.session_state["resp"])
+                self.assertEqual(len(app.get("iframe")), 1)
                 self.assertTrue(clip_path(app.session_state["fb"]).is_file())
                 if i >= 7:
                     self.assertIn("Por ejemplo:", app.session_state["fb"])
@@ -110,7 +123,7 @@ class SurveyTests(unittest.TestCase):
             self.assertEqual(app.session_state["pts"], 70)
             self.assertEqual(len(app.session_state["answers"]), 10)
             self.assertTrue(any("Retroalimentación final" in h.value for h in app.subheader))
-            self.assertEqual(len(app.get("audio")), 1)
+            self.assertTrue(any("data:audio/mpeg;base64," in element.proto.srcdoc for element in app.get("iframe")))
             self.assertEqual(len(app.expander), 10)
             next(b for b in app.button if b.label == "VOLVER AL MENÚ").click().run()
             self.assertEqual(app.session_state["user"], "Prueba local")
