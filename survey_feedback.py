@@ -15,10 +15,14 @@ def show_survey_review(stage):
         return
     score = sum(row["correct"] for row in rows)
     st.subheader("🔊 Retroalimentación final")
+    if score < 10:
+        st.write(f"**Preguntas por reforzar: {10 - score}.** Cada error aparece abierto abajo con la respuesta correcta, su explicación y un ejemplo.")
+    else:
+        st.success("¡Todas las respuestas son correctas! Puedes escuchar el repaso completo.")
     st.caption("Repaso de las diez preguntas con explicaciones y ejemplos. La clasificación es educativa, no un diagnóstico médico.")
     hablar(final_narration(rows, score, test_risk(score)), final_parts(rows, score, test_risk(score)))
     for number, row in enumerate(rows, 1):
-        with st.expander(f"{'✅' if row['correct'] else '💡'} {number}. {row['question']}"):
+        with st.expander(f"{'✅' if row['correct'] else '💡'} {number}. {row['question']}", expanded=not row["correct"]):
             st.write("**Tu respuesta:**", row["selected"])
             st.write("**Respuesta correcta:**", row["answer"])
             st.write(row["feedback"])

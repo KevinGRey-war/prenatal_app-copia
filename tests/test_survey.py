@@ -75,7 +75,8 @@ class SurveyTests(unittest.TestCase):
             self.assertFalse(app.exception)
             self.assertEqual([b.label for b in app.button], ["COMENZAR EXPERIENCIA", "🔐 ENTRAR AL PANEL ADMINISTRATIVO"])
             app.text_input[0].set_value("Prueba local")
-            app.selectbox[0].select("Posparto")
+            self.assertEqual(app.selectbox[0].options, ["Juego interactivo de alimentación para bebé", "Test de conocimientos sobre gestación"])
+            app.selectbox[1].select("Posparto")
             app.button[0].click().run()
             self.assertEqual(app.session_state["fase"], "test")
             # Rebind the session: AppTest 1.57 retains removed widgets after a
@@ -88,16 +89,19 @@ class SurveyTests(unittest.TestCase):
                 app.session_state[key] = value
             app.run()
             for i in range(10):
+                self.assertTrue(next(b for b in app.button if b.label == "SIGUIENTE").disabled)
                 question = app.session_state["examen"][i]
                 answer = question["corr"] if i < 7 else next(o for o in question["opts"] if o != question["corr"])
                 app.radio[0].set_value(answer).run()
-                next(b for b in app.button if b.label == "CONFIRMAR RESPUESTA").click().run()
+                self.assertFalse(app.session_state["resp"])
+                self.assertEqual(len(app.session_state["answers"]), i)
+                next(b for b in app.button if b.label == "SIGUIENTE").click().run()
                 self.assertFalse(app.exception)
                 self.assertTrue(app.session_state["resp"])
                 self.assertTrue(clip_path(app.session_state["fb"]).is_file())
                 if i >= 7:
                     self.assertIn("Por ejemplo:", app.session_state["fb"])
-                next(b for b in app.button if b.label == "SIGUIENTE").click().run()
+                next(b for b in app.button if b.label == "CONTINUAR").click().run()
                 self.assertFalse(app.exception)
             self.assertEqual(app.session_state["fase"], "final")
             self.assertEqual(app.session_state["pts"], 70)
@@ -105,6 +109,24 @@ class SurveyTests(unittest.TestCase):
             self.assertTrue(any("Retroalimentación final" in h.value for h in app.subheader))
             self.assertEqual(len(app.get("audio")), 1)
             self.assertEqual(len(app.expander), 10)
+
+    def test_separate_game_entry_and_return(self):
+        from streamlit.testing.v1 import AppTest
+        app = AppTest.from_file(str(Path("app.py").resolve())).run()
+        app.selectbox[0].select("Juego interactivo de alimentación para bebé").run()
+        self.assertEqual(len(app.selectbox), 1)
+        app.button[0].click().run()
+        self.assertEqual(app.session_state["fase"], "login")
+        self.assertTrue(app.warning)
+        app.text_input[0].set_value("Prueba juego")
+        app.button[0].click().run()
+        self.assertFalse(app.exception)
+        self.assertEqual(app.session_state["fase"], "juego")
+        self.assertEqual(app.session_state["examen"], [])
+        next(b for b in app.button if b.label == "VOLVER AL INICIO").click().run()
+        self.assertFalse(app.exception)
+        self.assertEqual(app.session_state["fase"], "login")
+        self.assertEqual(app.text_input[0].value, "Prueba juego")
 
 
 if __name__ == "__main__":

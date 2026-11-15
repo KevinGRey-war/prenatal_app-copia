@@ -28,6 +28,8 @@ Mientras el secreto del despliegue no exista, el panel utiliza un verificador PB
 
 ## Ampliación de la encuesta en prenatal_app-copia
 
+El inicio permite escribir el nombre y elegir entre el juego interactivo de alimentación para bebé y el test de conocimientos sobre gestación. El juego tiene una entrada independiente reservada para su próxima implementación. Solo el test muestra el selector de las cinco etapas. Al seleccionar una respuesta y pulsar **SIGUIENTE**, aparece la corrección y su audio; **CONTINUAR** avanza a la siguiente pregunta. Al finalizar, todos los errores quedan desplegados con explicación y ejemplo, junto al repaso hablado completo.
+
 Se conserva el diseño original de la encuesta: logo, fondo, tarjetas, colores de respuesta, indicadores y navegación. El selector incorpora **Preparación para el parto** y **Posparto**, con diez preguntas cada uno, además de los tres trimestres originales. El nombre visible pasa a Cuidado Materno Infantil.
 
 Cada error incluye explicación hablada y un ejemplo. Al terminar, se ofrece el repaso hablado de las diez preguntas y tarjetas desplegables con respuestas y ejemplos. Los audios MP3 en español están incluidos en `voice_assets/`; no necesitan un servicio externo de voz. Si el navegador bloquea el inicio automático, pulsa Reproducir en el control de audio.

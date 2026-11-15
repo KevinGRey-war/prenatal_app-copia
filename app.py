@@ -947,19 +947,29 @@ if st.session_state.fase == "login":
 
         nombre = st.text_input(
             "Nombre de la mamá",
+            value=st.session_state.user,
             placeholder="Escribe tu nombre..."
         )
 
-        trimestre = st.selectbox(
-            "Elige la etapa de cuidado",
-            list(BANCO.keys())
+        actividad = st.selectbox(
+            "Elige una actividad",
+            ["Juego interactivo de alimentación para bebé", "Test de conocimientos sobre gestación"],
+            index=1,
+            key="actividad_inicio"
         )
+
+        es_test = actividad == "Test de conocimientos sobre gestación"
+        if es_test:
+            trimestre = st.selectbox(
+                "Elige la etapa de cuidado",
+                list(BANCO.keys())
+            )
 
         st.markdown(f"""
 
         <div class='login-note'>
-            {trimestre}
-            <span>La app preparará 10 preguntas aleatorias para esta etapa.</span>
+            {trimestre if es_test else 'Juego interactivo de alimentación para bebé'}
+            <span>{'La app preparará 10 preguntas aleatorias para esta etapa.' if es_test else 'Un espacio separado para el juego de alimentación. Próximamente.'}</span>
         </div>
 
         """, unsafe_allow_html=True)
@@ -969,6 +979,10 @@ if st.session_state.fase == "login":
             if nombre.strip():
 
                 st.session_state.user = nombre
+                if not es_test:
+                    st.session_state.fase = "juego"
+                    st.rerun()
+
                 reset_attempt()
 
                 st.session_state.trimestre = trimestre
@@ -1010,6 +1024,14 @@ if st.session_state.fase == "login":
 # =========================================================
 # TEST
 # =========================================================
+
+elif st.session_state.fase == "juego":
+
+    st.markdown("<h1 class='screen-title'>Juego interactivo de alimentación para bebé</h1>", unsafe_allow_html=True)
+    st.markdown(f"<div class='side-card'><p>Participante: {html.escape(st.session_state.user)}</p><p>Este espacio está reservado para el juego. Sus actividades se incorporarán en la siguiente etapa.</p></div>", unsafe_allow_html=True)
+    if st.button("VOLVER AL INICIO"):
+        st.session_state.fase = "login"
+        st.rerun()
 
 elif st.session_state.fase == "test":
 
@@ -1141,7 +1163,7 @@ elif st.session_state.fase == "test":
         if not st.session_state.resp:
 
             if st.button(
-                "CONFIRMAR RESPUESTA",
+                "SIGUIENTE",
                 disabled=respuesta is None,
                 use_container_width=True
             ):
@@ -1204,7 +1226,7 @@ elif st.session_state.fase == "test":
 
             hablar(st.session_state.fb)
 
-            if st.button("SIGUIENTE"):
+            if st.button("CONTINUAR"):
 
                 st.session_state.idx += 1
 
