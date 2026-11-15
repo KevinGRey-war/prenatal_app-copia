@@ -113,6 +113,9 @@ class SurveyTests(unittest.TestCase):
                 next(b for b in app.button if b.label == "VERIFICAR").click().run()
                 self.assertFalse(app.exception)
                 self.assertTrue(app.session_state["resp"])
+                for block in app.markdown:
+                    self.assertNotIn("<div class='error-box'>", block.value)
+                    self.assertNotIn("<div class='success-box'>", block.value)
                 self.assertEqual(len(app.get("iframe")), 1)
                 self.assertTrue(clip_path(app.session_state["fb"]).is_file())
                 if i >= 7:

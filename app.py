@@ -1198,30 +1198,6 @@ elif st.session_state.fase == "test":
 
         else:
 
-            if st.session_state.correcto:
-
-                st.markdown(f"""
-
-                <div class='success-box'>
-
-                ✅ {st.session_state.fb}
-
-                </div>
-
-                """, unsafe_allow_html=True)
-
-            else:
-
-                st.markdown(f"""
-
-                <div class='error-box'>
-
-                ❌ {st.session_state.fb}
-
-                </div>
-
-                """, unsafe_allow_html=True)
-
             hablar(st.session_state.fb, parts=(None if st.session_state.correcto else ["Incorrecto.", st.session_state.fb]))
 
             if st.button("CONTINUAR"):
