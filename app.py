@@ -946,59 +946,22 @@ if st.session_state.fase == "login":
         st.markdown("<h3 class='brand-subtitle'>Cuidado Materno Infantil</h3>", unsafe_allow_html=True)
 
         nombre = st.text_input(
-            "Nombre de la mamá",
+            "Nombre de la persona",
             value=st.session_state.user,
             placeholder="Escribe tu nombre..."
         )
-
-        actividad = st.selectbox(
-            "Elige una actividad",
-            ["Juego interactivo de alimentación para bebé", "Test de conocimientos sobre gestación"],
-            index=1,
-            key="actividad_inicio"
-        )
-
-        es_test = actividad == "Test de conocimientos sobre gestación"
-        if es_test:
-            trimestre = st.selectbox(
-                "Elige la etapa de cuidado",
-                list(BANCO.keys())
-            )
-
-        st.markdown(f"""
-
-        <div class='login-note'>
-            {trimestre if es_test else 'Juego interactivo de alimentación para bebé'}
-            <span>{'La app preparará 10 preguntas aleatorias para esta etapa.' if es_test else 'Un espacio separado para el juego de alimentación. Próximamente.'}</span>
-        </div>
-
-        """, unsafe_allow_html=True)
 
         if st.button("COMENZAR EXPERIENCIA", use_container_width=True):
 
             if nombre.strip():
 
-                st.session_state.user = nombre
-                if not es_test:
-                    st.session_state.fase = "juego"
-                    st.rerun()
-
-                reset_attempt()
-
-                st.session_state.trimestre = trimestre
-
-                st.session_state.examen = preparar_examen(
-                    BANCO[trimestre],
-                    10
-                )
-
-                st.session_state.fase = "test"
-
+                st.session_state.user = nombre.strip()
+                st.session_state.fase = "menu"
                 st.rerun()
 
             else:
 
-                st.warning("Escribe el nombre de la mamá para comenzar.")
+                st.warning("Escribe tu nombre para comenzar.")
 
         st.markdown(
             "<div style='height:4px'></div>",
@@ -1025,12 +988,47 @@ if st.session_state.fase == "login":
 # TEST
 # =========================================================
 
+elif st.session_state.fase == "menu":
+
+    st.markdown("<h1 class='screen-title'>¿Qué te gustaría aprender hoy?</h1>", unsafe_allow_html=True)
+    st.markdown(f"<p class='screen-caption'>Hola, {html.escape(st.session_state.user)}. Elige una de las dos actividades.</p>", unsafe_allow_html=True)
+    test_col, juego_col = st.columns(2)
+    with test_col:
+        st.markdown("<div class='side-card'><h2>📚 Test de conocimientos sobre gestación</h2><p>Repasa los tres trimestres, la preparación para el parto y el posparto.</p><p>10 preguntas por etapa, con explicaciones, ejemplos y voz.</p></div>", unsafe_allow_html=True)
+        if st.button("ENTRAR AL TEST", use_container_width=True):
+            st.session_state.fase = "etapa"
+            st.rerun()
+    with juego_col:
+        st.markdown("<div class='side-card'><h2>🥣 Aprende a dar de comer a tu bebé</h2><p>Un espacio para el juego interactivo de alimentación del bebé.</p><p>Próximamente: actividades para aprender jugando.</p></div>", unsafe_allow_html=True)
+        if st.button("ENTRAR A ALIMENTACIÓN", use_container_width=True):
+            st.session_state.fase = "juego"
+            st.rerun()
+    if st.button("CAMBIAR NOMBRE"):
+        st.session_state.fase = "login"
+        st.rerun()
+
+elif st.session_state.fase == "etapa":
+
+    st.markdown("<h1 class='screen-title'>Test de conocimientos sobre gestación</h1>", unsafe_allow_html=True)
+    st.markdown(f"<p class='screen-caption'>{html.escape(st.session_state.user)}, elige la etapa que deseas repasar.</p>", unsafe_allow_html=True)
+    trimestre = st.selectbox("Elige la etapa de cuidado", list(BANCO.keys()))
+    st.markdown(f"<div class='login-note'>{trimestre}<span>La app preparará 10 preguntas aleatorias para esta etapa.</span></div>", unsafe_allow_html=True)
+    if st.button("COMENZAR TEST"):
+        reset_attempt()
+        st.session_state.trimestre = trimestre
+        st.session_state.examen = preparar_examen(BANCO[trimestre], 10)
+        st.session_state.fase = "test"
+        st.rerun()
+    if st.button("VOLVER AL MENÚ"):
+        st.session_state.fase = "menu"
+        st.rerun()
+
 elif st.session_state.fase == "juego":
 
     st.markdown("<h1 class='screen-title'>Juego interactivo de alimentación para bebé</h1>", unsafe_allow_html=True)
     st.markdown(f"<div class='side-card'><p>Participante: {html.escape(st.session_state.user)}</p><p>Este espacio está reservado para el juego. Sus actividades se incorporarán en la siguiente etapa.</p></div>", unsafe_allow_html=True)
-    if st.button("VOLVER AL INICIO"):
-        st.session_state.fase = "login"
+    if st.button("VOLVER AL MENÚ"):
+        st.session_state.fase = "menu"
         st.rerun()
 
 elif st.session_state.fase == "test":
@@ -1327,8 +1325,8 @@ elif st.session_state.fase == "final":
 
         st.info("Todavía no hay resultados guardados en el ranking.")
 
-    if st.button("VOLVER A JUGAR"):
+    if st.button("VOLVER AL MENÚ"):
 
-        st.session_state.clear()
+        st.session_state.fase = "menu"
 
         st.rerun()

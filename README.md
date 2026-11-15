@@ -28,7 +28,7 @@ Mientras el secreto del despliegue no exista, el panel utiliza un verificador PB
 
 ## Ampliación de la encuesta en prenatal_app-copia
 
-El inicio permite escribir el nombre y elegir entre el juego interactivo de alimentación para bebé y el test de conocimientos sobre gestación. El juego tiene una entrada independiente reservada para su próxima implementación. Solo el test muestra el selector de las cinco etapas. Al seleccionar una respuesta y pulsar **SIGUIENTE**, aparece la corrección y su audio; **CONTINUAR** avanza a la siguiente pregunta. Al finalizar, todos los errores quedan desplegados con explicación y ejemplo, junto al repaso hablado completo.
+El inicio solicita únicamente el nombre de la persona. Después se abre un menú con dos tarjetas: Test de conocimientos sobre gestación y Aprende a dar de comer a tu bebé. La selección de etapa aparece al entrar al test; al volver al menú se conserva el nombre y cada nuevo test reinicia su puntaje y respuestas. El juego tiene una entrada independiente reservada para su próxima implementación. Solo el test muestra el selector de las cinco etapas. Al seleccionar una respuesta y pulsar **SIGUIENTE**, aparece la corrección y su audio; **CONTINUAR** avanza a la siguiente pregunta. Al finalizar, todos los errores quedan desplegados con explicación y ejemplo, junto al repaso hablado completo.
 
 Se conserva el diseño original de la encuesta: logo, fondo, tarjetas, colores de respuesta, indicadores y navegación. El selector incorpora **Preparación para el parto** y **Posparto**, con diez preguntas cada uno, además de los tres trimestres originales. El nombre visible pasa a Cuidado Materno Infantil.
 

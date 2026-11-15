@@ -7,6 +7,11 @@ from voice_feedback import hablar
 
 def reset_attempt():
     st.session_state.answers = []
+    st.session_state.update(pts=0, idx=0, resp=False, fb="", correcto=False,
+                            respuesta_seleccionada=None, ranking_guardado=False)
+    for key in list(st.session_state):
+        if key.startswith("r_"):
+            del st.session_state[key]
 
 
 def show_survey_review(stage):
