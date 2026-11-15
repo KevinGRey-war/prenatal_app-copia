@@ -26,9 +26,32 @@ def show_survey_review(stage):
         st.success("¡Todas las respuestas son correctas! Puedes escuchar el repaso completo.")
     st.caption("Repaso de las diez preguntas con explicaciones y ejemplos. La clasificación es educativa, no un diagnóstico médico.")
     hablar(final_narration(rows, score, test_risk(score)), final_parts(rows, score, test_risk(score)))
-    for number, row in enumerate(rows, 1):
-        with st.expander(f"{'✅' if row['correct'] else '💡'} {number}. {row['question']}", expanded=not row["correct"]):
-            st.write("**Tu respuesta:**", row["selected"])
-            st.write("**Respuesta correcta:**", row["answer"])
-            st.write(row["feedback"])
-            st.write(row.get("example", ""))
+    st.markdown("""
+    <style>
+    .st-key-preguntas_finales [data-testid="stExpander"] details {
+        background: #FFF1F7;
+        border: 1px solid #F2B8D3;
+        border-radius: 18px;
+        overflow: hidden;
+        color: #24324B;
+    }
+    .st-key-preguntas_finales [data-testid="stExpander"] summary {
+        background: #FCE0ED;
+        color: #24324B;
+    }
+    .st-key-preguntas_finales [data-testid="stExpander"] summary:hover {
+        background: #F8CEE2;
+        color: #24324B;
+    }
+    .st-key-preguntas_finales [data-testid="stExpander"] p {
+        color: #24324B;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    with st.container(key="preguntas_finales"):
+        for number, row in enumerate(rows, 1):
+            with st.expander(f"{'✅' if row['correct'] else '💡'} {number}. {row['question']}", expanded=not row["correct"]):
+                st.write("**Tu respuesta:**", row["selected"])
+                st.write("**Respuesta correcta:**", row["answer"])
+                st.write(row["feedback"])
+                st.write(row.get("example", ""))
