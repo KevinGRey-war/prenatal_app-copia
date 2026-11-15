@@ -1,0 +1,2310 @@
+{
+  "df2496859f240ec7391bd022b9f4b2dcdd23003232a7fdb1763d78530612fd3c": {
+    "seconds": 1.51,
+    "bytes": 9404
+  },
+  "3b74b96c6f39ce0a4c7ec762c36358e11e5cb703828a44bffee88212cc47325b": {
+    "seconds": 5.24,
+    "bytes": 31817
+  },
+  "e0414b22cac9273509f60565720978c3a7638d03249262c3c204a563fcb50fb1": {
+    "seconds": 4.4,
+    "bytes": 26801
+  },
+  "612282b64d833a3f37361eb9db8d4bad49877f7a17bd396b02da83ea1bcf5c7d": {
+    "seconds": 5.06,
+    "bytes": 30720
+  },
+  "35e9e01f1d07eec35ac841629e69c4a702a4c33018678c030a3d079fe1fafd10": {
+    "seconds": 6.24,
+    "bytes": 37773
+  },
+  "e25d6798e264c3f2ddf4426a2957a1e9ddbeccfdc7af8baa3bd88f0b5b3001e8": {
+    "seconds": 5.12,
+    "bytes": 31190
+  },
+  "189bd555fc2547a61fd69b13781f6b7941db7ccb79be3f1390cf8b2e9acc989c": {
+    "seconds": 6.52,
+    "bytes": 39497
+  },
+  "769ce7f702626654e948139e66c89669b8e2c3632b1a7d671b14d38c96eee8d7": {
+    "seconds": 6.0,
+    "bytes": 36362
+  },
+  "83fae20f05a24107369d8e9bf693bd6484191f13cef7123b93f2f6adf9097054": {
+    "seconds": 5.47,
+    "bytes": 33228
+  },
+  "ad6703d1f6fbc1150f2ca65b1da76dc528bacbd2e9fbd484190f35c7cd04f94c": {
+    "seconds": 5.58,
+    "bytes": 33854
+  },
+  "d98ee466105bb7fbf5a55ceb249531e38c2802cf44dc2c768ba087092710ae3a": {
+    "seconds": 6.06,
+    "bytes": 36676
+  },
+  "79b8f2c244caefcbcff4de0cf53ae74d3121bba3e1c843a0cb0ad538b9d325a6": {
+    "seconds": 6.16,
+    "bytes": 37303
+  },
+  "5b141158e6d2cb8e4ac14466028c66afd496961cad36b098179eb12c3d0a9ad4": {
+    "seconds": 6.01,
+    "bytes": 36519
+  },
+  "4a32ddd78225a65523d645895c4b68e2158ae001e626eb1243d0366377be3bf9": {
+    "seconds": 6.2,
+    "bytes": 37616
+  },
+  "a17ea215934a13a86cc1588e8d78625684169d7c78c265bf7bd168ce62456d18": {
+    "seconds": 6.5,
+    "bytes": 39340
+  },
+  "037a326629e3e3e8fa42e92eb78db52130882c06448e5494b8726273599d1231": {
+    "seconds": 5.12,
+    "bytes": 31190
+  },
+  "745e86c51e8b9a572205fa3feb437eb66ad5a007f9337b03dea936490cd7ae43": {
+    "seconds": 5.43,
+    "bytes": 32914
+  },
+  "3bc8a0c21b790c0f60fbb93421df032022d42a79eaefafb51db53029b35f42b4": {
+    "seconds": 4.59,
+    "bytes": 27899
+  },
+  "75c8ccaf953a4b5e7dc4db4292ccb6bd78b5e640ba43da5fdd19e63972314088": {
+    "seconds": 5.76,
+    "bytes": 34952
+  },
+  "61686f76c07134504c67d2e27b483eeaf803c23bb16d4bf0114bea64c799cad2": {
+    "seconds": 6.37,
+    "bytes": 38556
+  },
+  "85ec4de281a18bca32f69021227c7729a4c16a6c774651943a7dfc15d4b663ed": {
+    "seconds": 5.59,
+    "bytes": 33854
+  },
+  "255c5ba683de6acd120b84e85d8c85e0e83d41c370d6c5e0f357b90ab1f102e2": {
+    "seconds": 7.3,
+    "bytes": 44199
+  },
+  "3102308880375dff72bbb6ac512cfa145de9d5b8a5ff516c1db74a543c7360b2": {
+    "seconds": 5.95,
+    "bytes": 36049
+  },
+  "bb6c10b1f53a8235782bf71e6ee670a5f3f5b0755abf7a97a4c2483ea82e887e": {
+    "seconds": 6.46,
+    "bytes": 39183
+  },
+  "502c8cc6ec090685d9d1cdeb2b0aabf6c3cacd9e344cbd3307e17309bc0a5afd": {
+    "seconds": 6.24,
+    "bytes": 37773
+  },
+  "23f9b9e01fdb1b29c790de702479dd070a74804f757c0f6e7e0538189e25b615": {
+    "seconds": 6.0,
+    "bytes": 36362
+  },
+  "5deae6bdd03d8cc13fb387061d4aef22fddc626e195e7a3d3a1aae732e9e4b33": {
+    "seconds": 5.59,
+    "bytes": 33854
+  },
+  "08a20c57bac7b19725c2983d0de3fc7151627d6edd65ec5c714e660ad0b5e7b3": {
+    "seconds": 5.75,
+    "bytes": 34952
+  },
+  "6962612d5e4d652cf721bbf74fdfd01ee7060e139dd1dfc3bd8711463c07f901": {
+    "seconds": 5.39,
+    "bytes": 32757
+  },
+  "4d2940671b07f7dcbd7c8f6ad568e65f5cd5a82b68139228959c92b64536232b": {
+    "seconds": 7.22,
+    "bytes": 43729
+  },
+  "d177dbbe68fd056b2b8ba67bfa4ed4e05a67a0e314ff810859b5ae58711789c6": {
+    "seconds": 5.69,
+    "bytes": 34481
+  },
+  "6c4dff46ae95522b468262bab5c2f90337874841960a7e88f1ca65b33763f85c": {
+    "seconds": 5.46,
+    "bytes": 33228
+  },
+  "698975d89349520083087d96bc440603278cd7dfd90442835296ce116100847d": {
+    "seconds": 5.5,
+    "bytes": 33384
+  },
+  "f7947ff6ccbecd68459c1a2d86f55ab72a0111bea5ea4a9200d9ccb1f4db0906": {
+    "seconds": 5.9,
+    "bytes": 35735
+  },
+  "17af53d555217559471b48606dadd11c78288bebe4ec7477a76cb6aebcb27e5a": {
+    "seconds": 6.27,
+    "bytes": 37930
+  },
+  "25758ee1bbd45043f04ee936882d0dec7f0186b75ca396e86e7d535e201df021": {
+    "seconds": 6.6,
+    "bytes": 39967
+  },
+  "fa63d4ff767df28eb36bf5d199d5bbaf774390b9360843eb5c8211809d4d576d": {
+    "seconds": 6.34,
+    "bytes": 38400
+  },
+  "cefbb3a56c8abee49008232b79b1447d308704990ec8f85072b58bb5ffe21e1b": {
+    "seconds": 6.14,
+    "bytes": 37146
+  },
+  "8a15981351f715a34168a5709d35be4ceb835e539e401a9d0ee6d444717422e2": {
+    "seconds": 5.59,
+    "bytes": 33854
+  },
+  "41f205b4e8f97f6ee25a704ae810de9b69a5cb97731edd5bee86054e33ea00d4": {
+    "seconds": 5.68,
+    "bytes": 34481
+  },
+  "7041a525ae52f3a93575f7bc4101d96549379e739fe45dcbf34f5629826e7a65": {
+    "seconds": 6.34,
+    "bytes": 38400
+  },
+  "525ed6876096608ef2da8e78760ae319954eea1be5fbfe0c87afe6c3c1fb4375": {
+    "seconds": 5.78,
+    "bytes": 35108
+  },
+  "1df88d70117d1191f9534f24b57356cc655f3764fb9dfc92313f6b1fcdcf4fa4": {
+    "seconds": 5.38,
+    "bytes": 32601
+  },
+  "f9b5112fea2be1689b0e504b555c2f6f22f6833205a322949b6111318959605c": {
+    "seconds": 6.07,
+    "bytes": 36832
+  },
+  "52f4952f240cf19d0a17f1536c010224ba3c02edf5e37250c145b46cc148b216": {
+    "seconds": 6.13,
+    "bytes": 37146
+  },
+  "97eae0696dee052e9ce289accfb251f16f1b0c72a4ccaada2c4653d1ea0c292a": {
+    "seconds": 5.86,
+    "bytes": 35579
+  },
+  "415acd9e854213e602c93abdeade0bff3191d16a23569ed9e8ea836491f447f0": {
+    "seconds": 5.64,
+    "bytes": 34325
+  },
+  "6e7f8ff629b116082d001a35a47a20ea2b1d7c23bc0d24791b46ef512920164c": {
+    "seconds": 6.26,
+    "bytes": 37930
+  },
+  "afe01f1668447285a7268a8a88d592bc4f24940310e0c801eff1ae863ea3f96b": {
+    "seconds": 7.32,
+    "bytes": 44356
+  },
+  "1ae40c04967e1b48a0159d1c8bb075d552cf40660efff8c181759866f3534d69": {
+    "seconds": 5.89,
+    "bytes": 35735
+  },
+  "d05f4f866a528d4c9691bc2aa3b68a23cd3c30ca64ce26fd2c0c9bf9dd8f81c8": {
+    "seconds": 6.1,
+    "bytes": 36989
+  },
+  "a340b66a76065ffc284fd6106ea0b92c211f76f468b4f8e48a26a37f67f04c76": {
+    "seconds": 5.83,
+    "bytes": 35422
+  },
+  "34e98d600cd28a461a77a87bd9afbb8d6741b1d285d0a4e69825636281fd1425": {
+    "seconds": 5.84,
+    "bytes": 35422
+  },
+  "c1488196938464f6873e557b956dc2f384435f04b0b56ca93a416d0b5119ee4c": {
+    "seconds": 5.13,
+    "bytes": 31190
+  },
+  "081fcc6d0898749535ab5444edd09e470f60c7d8937571708d31c18c6a3c5c5c": {
+    "seconds": 6.41,
+    "bytes": 38870
+  },
+  "7b5302534e7f6210040765336b1a8da83ad5e671bf2efd1d39f7242558fbbcd9": {
+    "seconds": 4.96,
+    "bytes": 30093
+  },
+  "b0f8c645cf06b312b9a4a6b00f1b64a0984a7e135fff73bb0608bfa94fabaede": {
+    "seconds": 6.31,
+    "bytes": 38243
+  },
+  "824c90c74a43af8a12e494676e82636cd7e95504a8dd7aa4f3f88b611b85b850": {
+    "seconds": 6.1,
+    "bytes": 36989
+  },
+  "05e1e5017b695cc3820b324e3e98ecff43c8bff4b4c477b7d3a241ffeff5e004": {
+    "seconds": 6.11,
+    "bytes": 36989
+  },
+  "c1ba007a0e065c4b8ffd6f070cfa9f4cf72ecac001478d05da30c4e8bb6558ae": {
+    "seconds": 4.65,
+    "bytes": 28369
+  },
+  "bbe93bd9b45ae78bfa5e1fe2b244d90539794088489a275d110f147c8772382a": {
+    "seconds": 4.99,
+    "bytes": 30406
+  },
+  "3d5ad5c05c009634a47c932b467ce53220223e5a9022aa9799397f55f1342763": {
+    "seconds": 4.34,
+    "bytes": 26488
+  },
+  "96480cf2e87c7cef53db74de1b557963279b954b0d1d0f698afcf5006a79bba3": {
+    "seconds": 6.22,
+    "bytes": 37773
+  },
+  "fe2a46ac00d9400535efbcc9593fcd4f5ca16f4e54de075fa1bd095096a9c044": {
+    "seconds": 6.29,
+    "bytes": 38086
+  },
+  "01e1247cf8f8b69c3f0ee4e2add7209bacdb844b7ba9b575157bd920ef4ad7cf": {
+    "seconds": 5.43,
+    "bytes": 32914
+  },
+  "96b51de81f6dcf65bf7a72c426dc04c4e8c652073336d90073157c20dac947f7": {
+    "seconds": 7.0,
+    "bytes": 42318
+  },
+  "f9284c7e0d51dc6616de2578cb78e4c8694452fab761141eade145d71a102b6d": {
+    "seconds": 5.11,
+    "bytes": 31033
+  },
+  "70e9b06d45c1207eadf330a8b3cff5c352771456036cf64567f45226896129dd": {
+    "seconds": 6.44,
+    "bytes": 39027
+  },
+  "6d8e2003950c7cd07d7c174e5d827e8375e08540f381728aa56d0fb605f3b835": {
+    "seconds": 5.07,
+    "bytes": 30876
+  },
+  "a45345ecabb2e1b77ab52d3fcceaf0c197e27e6113496c7a4a6a4d6a3694300f": {
+    "seconds": 5.89,
+    "bytes": 35735
+  },
+  "ba3ae4a72a5b67a5e9874d3e5e1bc74aa4780a31c18bf115ebf88f63cfe77409": {
+    "seconds": 5.17,
+    "bytes": 31347
+  },
+  "a5f3d7690144fd66a1ff852db0bb952424e29cc6e985cce9a03dac444461b69c": {
+    "seconds": 5.96,
+    "bytes": 36205
+  },
+  "c0369b9a738bea113f982a466feffbd9b103ca139907249c7132ca2b640ee2b4": {
+    "seconds": 5.9,
+    "bytes": 35735
+  },
+  "09e04eecd608e148e0853e5382f77f8611f748e39dbb4cc9b15746c4426bd5e9": {
+    "seconds": 5.32,
+    "bytes": 32287
+  },
+  "6d23dc108a9c882261cbf97682995c65aee616c59fb16235ac1457711c171557": {
+    "seconds": 6.69,
+    "bytes": 40594
+  },
+  "64919b9917da99e7c8ac5bb7b3d5cda75fbe360999a550fb8b51234aec14acff": {
+    "seconds": 7.4,
+    "bytes": 44826
+  },
+  "fb7014ad76119b70484a6a8a3824d4061ce86236cca2c881628549a6a7755640": {
+    "seconds": 6.69,
+    "bytes": 40437
+  },
+  "6136729bb6c4e01b28ac8c7d8ede92a17baa77f1e3a6fabe4967b90557fba589": {
+    "seconds": 5.45,
+    "bytes": 33071
+  },
+  "ae638bbf277aa58f51e47cff84899ba28fb3c4f91aa688b52d9e3a032371f544": {
+    "seconds": 5.52,
+    "bytes": 33541
+  },
+  "7b798508ec877819b29dd379744677f56d358f69506a472d187f9e59479cf4df": {
+    "seconds": 5.32,
+    "bytes": 32287
+  },
+  "da47736df99adc09f3ce9ffb5b01d3dd9a568a0ae5c000a58bdc182fbd3aeb90": {
+    "seconds": 5.37,
+    "bytes": 32601
+  },
+  "520cc528371682ae07b63330d543554cdc8646b95f7715bc228460a513e5fc0a": {
+    "seconds": 5.35,
+    "bytes": 32444
+  },
+  "cc4e8599180d08cb9c4b4f79e84d8f4e0b9c78c8eae07854240c7400f18c76f8": {
+    "seconds": 6.67,
+    "bytes": 40437
+  },
+  "70a795d5ab00dfb0761f73f74f2e6ce312745050e587c7d861ebbfd9dd3342cc": {
+    "seconds": 5.8,
+    "bytes": 35108
+  },
+  "fdf9055b1a95c78922dbd34a8fe4e2539fd6f42c12b64b89c53b664806113348": {
+    "seconds": 5.81,
+    "bytes": 35265
+  },
+  "729e359ed97b97f286f36b461a95d56e5cff9fe1504c412d202924d48b08db78": {
+    "seconds": 5.07,
+    "bytes": 30876
+  },
+  "1457866704a1496fe76f0d36044191a3ddaea0580a29c08a7e40c4465ce6bea7": {
+    "seconds": 5.56,
+    "bytes": 33698
+  },
+  "56150d7a0c528096805f64754cfdcf5ffa2fb4bcbeea9361d2f7d2498f3c571d": {
+    "seconds": 6.05,
+    "bytes": 36676
+  },
+  "fa11a7d1ab87e96b35d367e35e2c0e448ce606c09cfab6ea5367e7d57f3c83f2": {
+    "seconds": 5.9,
+    "bytes": 35735
+  },
+  "a0564a0f588816365450f6a868fd69d7a43eca0ac283ff6d70b01b8e0c178add": {
+    "seconds": 6.41,
+    "bytes": 38870
+  },
+  "51415fb3834ee3099e247b9ee3a3ad7ca5f241f51b346435cda6257462c48f1c": {
+    "seconds": 5.06,
+    "bytes": 30720
+  },
+  "c03da069738226b86269f1675f271d1287b37568a242ae227a49b32a4463bd74": {
+    "seconds": 5.24,
+    "bytes": 31817
+  },
+  "cbdeea19179e1c9c5b3b3c1cb6f45bca1b04e53be6f11e7518dbd7d1a832e99c": {
+    "seconds": 6.52,
+    "bytes": 39497
+  },
+  "f2ae41fa26a06411e6828f7d3140fabb7505c5d0c3e7ee28292862937e83f5e6": {
+    "seconds": 6.52,
+    "bytes": 39497
+  },
+  "b164ad8912f4d75a5dff99010d34e611ad7b879bd7dc0671ea9ff81b7642ff7a": {
+    "seconds": 6.26,
+    "bytes": 37930
+  },
+  "4a7790049af601eaf6f46a1370e76a69ca301cae49e8bdd5a64812d2752bea12": {
+    "seconds": 6.25,
+    "bytes": 37930
+  },
+  "943bae6bb09bcfe36291599698b237d06271f4d64cf80e6456fcd006b2a7081c": {
+    "seconds": 5.47,
+    "bytes": 33228
+  },
+  "bc8d7e34245630a262d8827aba7d53507ce3870bead1d774a6c93307b8e0ac8d": {
+    "seconds": 7.0,
+    "bytes": 42475
+  },
+  "91fc208ffa191ed623a7f2e16270510a60183cd282a44fa68e576b1f9c68dd62": {
+    "seconds": 6.91,
+    "bytes": 41848
+  },
+  "7ec236e3db9a1bcc4ada8ce1ecc4b3f944b7e291957ee77e93f70b2aa5e00e5b": {
+    "seconds": 5.23,
+    "bytes": 31817
+  },
+  "59441f2f8226d23f796c3f724baf1af2247e2b95d91a6394940fdf6d5f773295": {
+    "seconds": 6.3,
+    "bytes": 38243
+  },
+  "f2b33171846750c035dc762f8cd9f6c85773ae1b61e4af5b1c139e14f6537e68": {
+    "seconds": 5.11,
+    "bytes": 31033
+  },
+  "13beccef0e4d99ae5af9381cdd5359965c7ac1eb18a99cd11435a7ba75ebb321": {
+    "seconds": 4.65,
+    "bytes": 28369
+  },
+  "0838fe32171fa19610ecde597257a812f48df1895c5d96437b3e86fb08669d87": {
+    "seconds": 5.07,
+    "bytes": 30876
+  },
+  "455af9f893957ac8a214d84e1d324aaa43b97551ecb0ea21f079681ce418466a": {
+    "seconds": 5.64,
+    "bytes": 34168
+  },
+  "5a5c354971fd465b49aeee001c2511fdec8bfbf74ffa37808a036368378d7fd7": {
+    "seconds": 5.06,
+    "bytes": 30720
+  },
+  "d344160359929f52a714d19ff82e2ec6734c483d8c1849e912484b2d49565b7c": {
+    "seconds": 5.77,
+    "bytes": 34952
+  },
+  "2d24a78f8092dd516d9de42c7516f1ddbcef0f69213acbf80dc52ec93c89f7ed": {
+    "seconds": 4.84,
+    "bytes": 29466
+  },
+  "ec05231afc4c0f0fc78f877b6f7d4bca05833d2800524bf90ceb846969e9c708": {
+    "seconds": 5.83,
+    "bytes": 35422
+  },
+  "99d8111a524eb36e3cafd4601487bfc894593ff5670ff53becb4f87e5a75b2d8": {
+    "seconds": 6.02,
+    "bytes": 36519
+  },
+  "16ea914d8b0ee56484d4afd3b5a602e5be5617c6223f8b45b39f954d51168b82": {
+    "seconds": 6.21,
+    "bytes": 37616
+  },
+  "879b3b254dda75bbc678e621da67a3f7a2425fc3c3448c65384c5091f0f2e321": {
+    "seconds": 6.53,
+    "bytes": 39497
+  },
+  "8bc8c07b7e91b0140d717f2f2fa18da43a5e230bfc06671a90928722eca7d1d4": {
+    "seconds": 6.36,
+    "bytes": 38556
+  },
+  "0179ba335ea80fd09d1da1389e71b49622c3fe8950fb791818e85bcc783e6f80": {
+    "seconds": 6.32,
+    "bytes": 38400
+  },
+  "1d12111b56e5e16647f23f4bf28eacf42b1d36ee6ac4102bbf6ca1621a10a818": {
+    "seconds": 6.13,
+    "bytes": 37146
+  },
+  "78e605ef09fbd224341f9586d9c5c1770c6df6e6b3ae13b8162069d8ff0763f2": {
+    "seconds": 5.67,
+    "bytes": 34325
+  },
+  "693aac86c7f7a08b1d9d8f6a7ce659f37fd38031d1dacb5b5e0e678ddb45e4d7": {
+    "seconds": 6.29,
+    "bytes": 38086
+  },
+  "7806cf56e010a316495e1d46238fcbe6006ef10d73f04a5b3d6a24c31893b26b": {
+    "seconds": 6.07,
+    "bytes": 36832
+  },
+  "5937edc1e0cc3fda328eaf1e02859de09dff1c605507d4e46c28c9b89d2945ba": {
+    "seconds": 6.46,
+    "bytes": 39183
+  },
+  "e0c137f2a07ef8541a57b33a3a671c2c82d3e8c48a1c5281a46f43a334bccf90": {
+    "seconds": 6.61,
+    "bytes": 39967
+  },
+  "0794b60058e02f9098d591e117350b0ec5e409b2736db58bae9d240d5442233a": {
+    "seconds": 5.79,
+    "bytes": 35108
+  },
+  "70fb277fd1f6a227a2740664c0702ebe9f17df5b63e8ded901df8581df8dc7f2": {
+    "seconds": 5.49,
+    "bytes": 33384
+  },
+  "3f4f9b34d81bfdc495c9f647f12b050b2bb46e1feee3210ce0d42a61bc37a96e": {
+    "seconds": 6.31,
+    "bytes": 38243
+  },
+  "c61078eafaccc6d0890ac66a009f5a9a9cb6644e9e1201f1cb1c67a309fb7c0c": {
+    "seconds": 6.31,
+    "bytes": 38243
+  },
+  "9909e4f44ebdae7d9aff81c499f92bb2946c967a65f6f59fa833af2a8d428e1a": {
+    "seconds": 5.65,
+    "bytes": 34325
+  },
+  "c19139168229544458d46d6fd85ad730441d03c67cd147b639bec8cea355ef99": {
+    "seconds": 6.72,
+    "bytes": 40751
+  },
+  "af978205414669266d03fdc33f7cc4b8d443bdf169c560725840245db288de4d": {
+    "seconds": 6.93,
+    "bytes": 42005
+  },
+  "cc6efcb61f2de32decf6c7c70ff00f13ac96f88c92e2b2f177d89471a5835631": {
+    "seconds": 6.38,
+    "bytes": 38713
+  },
+  "b87d047a77bfcd9e19bc06f8ade051fa4be900cc02f1186410c807fa1312bf1f": {
+    "seconds": 6.46,
+    "bytes": 39183
+  },
+  "01d1779c41a25fd934d2c5d230b86e4682a9958aac6c38018156dadb257cebbe": {
+    "seconds": 4.35,
+    "bytes": 26488
+  },
+  "e5f16f7aa8d5ace7a944670ece3638d9b3736143c8749ab59177ff95003348d8": {
+    "seconds": 4.81,
+    "bytes": 29309
+  },
+  "c569b990ee0e94c79218f4da73fd07d75986332357d45f2cd56edeb3b7a85182": {
+    "seconds": 6.37,
+    "bytes": 38556
+  },
+  "48ea35d8384e5390465dfc8bf671dcd06054115b7175282d4e07c973d2a7a3b6": {
+    "seconds": 5.78,
+    "bytes": 35108
+  },
+  "41d51d3bc4f06100fc9d1e517635971cbf7f10b1b87aab35d583794272bbab58": {
+    "seconds": 6.36,
+    "bytes": 38556
+  },
+  "f0b3533912d90515819d9ebf5e7aa5c3540649a8773900df3c583316209c77f5": {
+    "seconds": 9.6,
+    "bytes": 57992
+  },
+  "52c697dffefd6a2f47f02f1724b9bf04d8d373434e6124c682aea2423af75506": {
+    "seconds": 8.52,
+    "bytes": 51565
+  },
+  "a8339a435c228615dbb2a84846c41490d1f924300773a611ef5f11583f41a6a2": {
+    "seconds": 7.12,
+    "bytes": 43102
+  },
+  "258b924b4be059b1b36ce087aa52b85e3f9410f83a0fe3d383d4b5ecbd5590d9": {
+    "seconds": 6.67,
+    "bytes": 40437
+  },
+  "0dfa8c52360ff9f7f5c0df6b737ca672f50614c83e51f78700656e5701c4032f": {
+    "seconds": 7.09,
+    "bytes": 42945
+  },
+  "6147ef561f1c0f10babdbfb2fcfb622a10042ad7069e747a87b6aa3d0592ee47": {
+    "seconds": 7.09,
+    "bytes": 42945
+  },
+  "368c73b56bf3ff6e7ab3dc31107e89167151baf15e1b3494b6ca5adb1f8d51f5": {
+    "seconds": 6.84,
+    "bytes": 41378
+  },
+  "ba63bd21c6a2efdf8d9206dab49b33d4654d75a0dbe856600b533115f3978344": {
+    "seconds": 8.01,
+    "bytes": 48431
+  },
+  "2347c9a50e00578927db1e13c6fdd4d4b57d92d4770e6710cfcef6d191f5c57d": {
+    "seconds": 8.22,
+    "bytes": 49685
+  },
+  "c163684ffde89d9d98b12fffee072c9d611164acae28a23b34b7cb3b1cc735a1": {
+    "seconds": 6.72,
+    "bytes": 40751
+  },
+  "0e237b7d8f0d07b6f58af5bfebfbb8ab1d10f7865dcdda1c4c15c18e073507f8": {
+    "seconds": 6.83,
+    "bytes": 41378
+  },
+  "69a5f0a356be2887bf61f5700d937ffa9fc99fdc21aa06f82f615427f52163d3": {
+    "seconds": 7.53,
+    "bytes": 45610
+  },
+  "5dda3d45cd9ffa2d06e2bb8631fa4d6b9da482194d4b6f9d0527020de09186d7": {
+    "seconds": 7.32,
+    "bytes": 44356
+  },
+  "2bed00dc920f7bab4a4dd9346004da371cd050273e64f93d44d719b37b66658e": {
+    "seconds": 6.59,
+    "bytes": 39967
+  },
+  "813309cfb61d3e498f15bf5f651cad3f69a4ab4a93947218bccdbec0a717e75a": {
+    "seconds": 9.23,
+    "bytes": 55797
+  },
+  "49551abf230e41aee6c6d8c0d40bb46dc22a3e4f66226553e63eb7a36d81a178": {
+    "seconds": 8.85,
+    "bytes": 53446
+  },
+  "0c8e9627bf7e8e4dfc6af2882f56e9b74055f847c722e4cf3cf00ed252e1d370": {
+    "seconds": 6.99,
+    "bytes": 42318
+  },
+  "4fbdc55257ad8a0be9669eeb0afdeaa5b9b4ee5257d1f3c9bf4279714d0f5015": {
+    "seconds": 6.47,
+    "bytes": 39183
+  },
+  "c51fcbbc68fc5b5e503526d1cb31b2148f3ab2414c020bcf8bdfbc29f809295f": {
+    "seconds": 8.57,
+    "bytes": 51879
+  },
+  "007159650ef42b39edbe6d6cc2ea8a711a09d4e2c170919be87f077e1c4a3c01": {
+    "seconds": 7.01,
+    "bytes": 42475
+  },
+  "d0e214074a1bfea54f0944cd7ad77c1e58fcad92b7872df4ffde705c1c5bc5f4": {
+    "seconds": 6.05,
+    "bytes": 36676
+  },
+  "f4b79003859cac51283f2956e4f4004dc2bcea59b393bebc7c796dec9ed659d0": {
+    "seconds": 6.55,
+    "bytes": 39654
+  },
+  "9309121c43223331586a9aa4dd9f370879ac8122981c077d727f2825a2d13bea": {
+    "seconds": 7.35,
+    "bytes": 44512
+  },
+  "c3f9a42eeeb3514fda026c551b2a39918c0a6b61055d5953f4cfe44fb4cdfdd1": {
+    "seconds": 6.26,
+    "bytes": 37930
+  },
+  "21dbb57fdaf5324ce43a4798be91b6d2ffb103bf23f846bef886c2aa9e91bd7a": {
+    "seconds": 6.65,
+    "bytes": 40281
+  },
+  "b4b3c76160e55b36cf963b3eb7abd312b4613af13ccb925f1dfaa334c23529f8": {
+    "seconds": 6.91,
+    "bytes": 41848
+  },
+  "abedbb991239a819e55932a8b8cd05047083c6450549940f099a2948c924c146": {
+    "seconds": 6.32,
+    "bytes": 38400
+  },
+  "f848b7b0986d652b46ed9f506f4920ae58ee9fa473db2f0f054bde3577456037": {
+    "seconds": 6.32,
+    "bytes": 38243
+  },
+  "b5072e30457929c08e6473827cd241856dc6c4d0a432bb180acba387d1d0de27": {
+    "seconds": 7.76,
+    "bytes": 47020
+  },
+  "4fa6cb38c7566e87f90b712519c1ecd4ead3f5a73ae8e79a4d81cce9a0d16a0a": {
+    "seconds": 5.88,
+    "bytes": 35735
+  },
+  "d95e757488dc36ba43ea9eebd7be9141a792e76915153575c7c5773c3e3e3284": {
+    "seconds": 7.18,
+    "bytes": 43415
+  },
+  "b1491aaece74fa63bdab56cb452a896782a236a5c18048c485b56f57a5d40235": {
+    "seconds": 7.8,
+    "bytes": 47177
+  },
+  "db31036d682b17baac17c2cbc28185418d474227d0984fdf8d71992b8bc47cb0": {
+    "seconds": 6.14,
+    "bytes": 37303
+  },
+  "58d608c62073faf25bcf26646eaf32741f005c67ab76ae6acc92a97512cb9d3b": {
+    "seconds": 6.81,
+    "bytes": 41221
+  },
+  "9e52c7ce53f7ef7427c67a532da2f999e3ae70143a234cf9ec89852c1e682b7b": {
+    "seconds": 6.12,
+    "bytes": 37146
+  },
+  "f732b958baa86f0cb5af58526efecee90b76dde764118be9f842a22fdaffdf17": {
+    "seconds": 7.55,
+    "bytes": 45766
+  },
+  "ec7518e9bd68ff4ad9514c380fe2b1af4029db1cf21dccf11a41da12448010b4": {
+    "seconds": 7.6,
+    "bytes": 45923
+  },
+  "737be1913c5a02b2930d6e0fbefff17e4bf86069690bc88afdd394d4b5f76c00": {
+    "seconds": 6.79,
+    "bytes": 41064
+  },
+  "6eb652a8957e192635d90e616c9cf0058a84ed9b1c185e375a5d3cbb559e8bc6": {
+    "seconds": 7.08,
+    "bytes": 42945
+  },
+  "5954e2d735a63e9e2ac0346716548b2191b11d074e69d5a86e742091b9c80536": {
+    "seconds": 9.34,
+    "bytes": 56424
+  },
+  "11b005f81df4c0fcae6df78ece6a78b431b06a8623e89c7a527b48818142408a": {
+    "seconds": 23.44,
+    "bytes": 141061
+  },
+  "86667db7661e6983dc3674317e737b2d58715df93031064e5c50f1d6c616c932": {
+    "seconds": 25.64,
+    "bytes": 154227
+  },
+  "8c0f27b6f88fe3bd6d32e24a8dbea8500780b821b1d1e03ff07a86aed31b8470": {
+    "seconds": 23.94,
+    "bytes": 144039
+  },
+  "ae7ed24a315ca8286cb44dd3843cfbfee6e904ef4b78b46b685b7e0fc8504b31": {
+    "seconds": 31.6,
+    "bytes": 189962
+  },
+  "99cbd953d6c36595768f0089f5f138c01927309c7d10c9e31cb8fcd1e13fc7e6": {
+    "seconds": 26.2,
+    "bytes": 157675
+  },
+  "2ebeca7a25e7b15b9b7ca9ca5f39630c733a6510a4d0d35bfd930cd0586363d8": {
+    "seconds": 26.35,
+    "bytes": 158459
+  },
+  "56566429be1d1ddba5416db54e9a88a5673a2fd1c6facf76d9e1cbfddd47aa64": {
+    "seconds": 23.13,
+    "bytes": 139180
+  },
+  "1bcac668eae725b4103541b3b47ecf9befbd2e82812bf8f5525a6b5c9de5ef77": {
+    "seconds": 24.7,
+    "bytes": 148584
+  },
+  "497a659d16197a20c1a04bb85955e8ebc052c96f563f882b515729d7bc90d543": {
+    "seconds": 25.0,
+    "bytes": 150308
+  },
+  "4e601eb729591e92e08c15fc891525baa261454b062b3acc831371465fbf0fcd": {
+    "seconds": 19.93,
+    "bytes": 119902
+  },
+  "d268be32e0dc5cd71b31167bd99a21715b5083ceace629776ab699ca29f571ad": {
+    "seconds": 27.2,
+    "bytes": 163631
+  },
+  "70fc2c1a015e15f2874791fff35541f291a5989876cec1d18e7ac4760602a5bd": {
+    "seconds": 21.37,
+    "bytes": 128522
+  },
+  "0e2a0292e3272a36253f49eccc02fb9015e94cb6f33059aba489958ca8108ac8": {
+    "seconds": 23.9,
+    "bytes": 143725
+  },
+  "b452c6f6de5897549efcb4590923806a10d01d4dac04ef95eb44311d5b87501c": {
+    "seconds": 22.83,
+    "bytes": 137299
+  },
+  "fcec10daa6aabe0fac40847a434e121ec2b6af23d99dcb7f956558c6915cae34": {
+    "seconds": 23.34,
+    "bytes": 140434
+  },
+  "7f5a50bd228104e8053881f44522021937eed76d6909bcb5fec85b38c72b79f1": {
+    "seconds": 27.85,
+    "bytes": 167549
+  },
+  "6ff4b24f34cd250c198b6a0c3f37bb7b7d74eeba61d18cfe78c2fbb2dddd07fc": {
+    "seconds": 22.88,
+    "bytes": 137613
+  },
+  "87fe9cf317d609d0a53f335a7c902308dce36e35647a0214ed6d5ba598590fc2": {
+    "seconds": 23.69,
+    "bytes": 142628
+  },
+  "a6a71a35ef8bb601c35f5a8587285061cd47ac1fafe93f807d43cfd47f1afbcc": {
+    "seconds": 25.89,
+    "bytes": 155794
+  },
+  "dcc543cad0f37b1849b54374521ed934cd214849e68ccd80a2018b9fadb9b048": {
+    "seconds": 23.83,
+    "bytes": 143412
+  },
+  "22c1d84407d5503fc5389a7437a85b63f7d7a6a842f5c11e1bbf53e15f7b1caa": {
+    "seconds": 23.49,
+    "bytes": 141374
+  },
+  "0e5b6464460d26fc3f8a3c07e9a5359b1b3ffb5edee998a6b68206f9eb239b68": {
+    "seconds": 23.03,
+    "bytes": 138553
+  },
+  "7d4f2a4ce46d4908a7cb989115ba203063eaf5f6ca2c1d52abac4829869167e7": {
+    "seconds": 22.27,
+    "bytes": 134008
+  },
+  "8fe319279513628ea7d567eeeb103c0cd92e47c6ecb36aee9e12af1c436e2a13": {
+    "seconds": 21.91,
+    "bytes": 131814
+  },
+  "365167c23301df7476afb7f70ae4805579fef3d85dfe56de058bb1e621abbb3b": {
+    "seconds": 24.09,
+    "bytes": 144979
+  },
+  "51ef995622a17e18b6cf79eafc0b25c8bde25bd5448dad644af58787d717a752": {
+    "seconds": 27.64,
+    "bytes": 166295
+  },
+  "848faf7005f7f0ecce118b8a7d42bb9b82be7ab225b1bfc91011da8ddd13f841": {
+    "seconds": 22.79,
+    "bytes": 137143
+  },
+  "501f59b61001feb184f9faf88ed59e4cd0ca5685fec1c05332bd514ed85c34de": {
+    "seconds": 22.83,
+    "bytes": 137299
+  },
+  "828d4a426d36b5005e53aefd8ea71f1bc119dbe4be29bbc3922e4f169bfa1da9": {
+    "seconds": 23.39,
+    "bytes": 140748
+  },
+  "ecc8a733b8887f6ca3405ef139f421e6867839c3ba41b15c923e6e1a043b64e4": {
+    "seconds": 26.87,
+    "bytes": 161593
+  },
+  "fadf6406d416a3703b779dfeeb178b0eed5fe68f2c14da027fc4321428770f53": {
+    "seconds": 24.53,
+    "bytes": 147644
+  },
+  "cdc48449c11245f076a7a9c03a78babf72e9078fcf6ac731aa4547fb8550c43c": {
+    "seconds": 23.52,
+    "bytes": 141531
+  },
+  "91e2f2713b8844d55ab904165ae5d2aebac9f757ffe542528cf27d37e0cacef0": {
+    "seconds": 24.07,
+    "bytes": 144823
+  },
+  "8765637cc7dbc80784bf1bba4a44eb51e428498ae41f986799606b9b66a22903": {
+    "seconds": 27.36,
+    "bytes": 164571
+  },
+  "016786f6aa3be94a340de8b95d37fbe1937a5b54f1cce0bd6999fc64532a789d": {
+    "seconds": 22.78,
+    "bytes": 136986
+  },
+  "6a75760fbf4082683001d50e58cd6263f789b5798eb19206d59e104147bed841": {
+    "seconds": 23.44,
+    "bytes": 141061
+  },
+  "969826f79062170b47283bc609fd6f25707605e42c1a727cf5b67141bb1bb02f": {
+    "seconds": 27.73,
+    "bytes": 166765
+  },
+  "f29d6cecbb38071194fe687d28efeb0932df895c96e524058003202b51447d39": {
+    "seconds": 22.5,
+    "bytes": 135419
+  },
+  "5d07170d1dee1ddc0d616c19e668206cffab66c13369bc1b77ccbe6885d803a7": {
+    "seconds": 24.12,
+    "bytes": 145136
+  },
+  "36c3ba8bdcf60f4decb63fe94a3ca6c65eba3ad051f27284970c72bd6ec92023": {
+    "seconds": 25.84,
+    "bytes": 155481
+  },
+  "18c2472d453eceda779fd354e59424c9439e672574a09196641fa2d4431d4b0a": {
+    "seconds": 26.28,
+    "bytes": 158145
+  },
+  "d71c88d89a267a69e38433839ab9aa61fc5963e13701e0e37146f0a72ce21d31": {
+    "seconds": 24.22,
+    "bytes": 145763
+  },
+  "3056affcde4cec9eb4559a21f6f285c1d4de7ea2639b14ecf154e6cd3f0ff0eb": {
+    "seconds": 28.53,
+    "bytes": 171624
+  },
+  "99d29e0cfef6fb9a3338fcda9fa43f89c1b98a5cbe8f8a106eb739dde3d9629b": {
+    "seconds": 28.78,
+    "bytes": 173035
+  },
+  "08ab61094dec3890d2d856a2c49a5032046a42791dc9d9a3cbf860d74b60cf60": {
+    "seconds": 23.44,
+    "bytes": 141061
+  },
+  "1d84acd1941ecbb62e4679981f9bc5e439e06e4a0e5b42e59cc1ea4f6aa75bf7": {
+    "seconds": 25.99,
+    "bytes": 156421
+  },
+  "3a45d6a2eb44b978d6bada91c892332bd37bda0bd649c5d1df87d733955108b9": {
+    "seconds": 26.24,
+    "bytes": 157832
+  },
+  "80e6ce0ad3a850ddb6442b6a5106106fc46b03feb39e69177e98203a4b8edb7a": {
+    "seconds": 27.95,
+    "bytes": 168176
+  },
+  "84659e8c0526ed7ba36aa1ce23affaa4ae9c72a6a437de3cb6e318a9e0c7cef6": {
+    "seconds": 22.57,
+    "bytes": 135732
+  },
+  "49153c3554ba432e86e588de782b61cd488871ba6e68c5d237d305e65e6f375e": {
+    "seconds": 24.27,
+    "bytes": 146076
+  },
+  "3c5d6e094b26aa7645e8425b9761371250da13cfa260c6ada7c9ff653372d811": {
+    "seconds": 20.64,
+    "bytes": 124134
+  },
+  "fb9257362013ee928e12f0410374fbbefc9cc4b4180cfbd44684734818f07fe5": {
+    "seconds": 21.89,
+    "bytes": 131657
+  },
+  "298fd4e6d11ecaa405fd5c58cd9017ec298990bd23655d631225800848b0bacc": {
+    "seconds": 24.82,
+    "bytes": 149368
+  },
+  "0686dd889e2da343e62fe6a63ba2dde21bae0d54b94c9b3d08aedcef430da186": {
+    "seconds": 25.82,
+    "bytes": 155324
+  },
+  "f33a23e678f51dcf61122d5e5dbd1f663c5961288da2c76d8a79336827a72e6f": {
+    "seconds": 20.33,
+    "bytes": 122410
+  },
+  "6046c9e457b21b814a8e63bd4a6e56fada8c1ff7c510a7dd8e3ad92273fae7d0": {
+    "seconds": 22.52,
+    "bytes": 135575
+  },
+  "59c394b6d10485fe8abb2db0de147e0fd9ed235e2863f984ed78d284590e78d8": {
+    "seconds": 24.94,
+    "bytes": 149995
+  },
+  "f18c516002f9afa8eec61e7bcc7a995eb9ad0f76cecfd0d9238c8ec142eb651d": {
+    "seconds": 23.65,
+    "bytes": 142315
+  },
+  "a97713cf12eaaf07e968c2a799e2e90eae0e39fa2d2374656beaca4ea741e565": {
+    "seconds": 24.68,
+    "bytes": 148428
+  },
+  "dcdbf1d6965851a3ca7b4f4e8c72bbea22edb8541c32d03692f74395a7246b50": {
+    "seconds": 25.93,
+    "bytes": 155951
+  },
+  "d94b328cf51be7b98b298745630a666d466a5afb71c492f22a9a6d77f2ab98ae": {
+    "seconds": 25.63,
+    "bytes": 154070
+  },
+  "241fe26f7be972e448fae5a22eb7c64c442966fec0e4dff020fbfad67c61836c": {
+    "seconds": 25.51,
+    "bytes": 153443
+  },
+  "ff5a0d6509f56ba8eb9d01e9bf74f49e53589fdc9eb79fb742ea534aaa8718fb": {
+    "seconds": 27.22,
+    "bytes": 163788
+  },
+  "f90fd61de91def3f8f47adab366b3ce4f1d8ae1c87b51c203737221dc70c5483": {
+    "seconds": 26.59,
+    "bytes": 159869
+  },
+  "da66d274e73af8545cc1811d626ff076b6b83cb8f5411f594593afef87cdbc13": {
+    "seconds": 19.87,
+    "bytes": 119588
+  },
+  "5faaee318dcae8a14c2577a946b3d7a0265e08929f2280be5b58488ea78b2b48": {
+    "seconds": 31.91,
+    "bytes": 191843
+  },
+  "60d410c3e02154ee806bbf1c647a575ec951347de70cf33243f4caa869e7f508": {
+    "seconds": 22.77,
+    "bytes": 136986
+  },
+  "353db27b2dc631ed0642324e2b8ccecc338492192c181ede5173472aba91fa42": {
+    "seconds": 23.7,
+    "bytes": 142628
+  },
+  "67383091603bd2505f0ade66e07c68ecab046dee5e2d406d21f6b2045d8e187d": {
+    "seconds": 20.7,
+    "bytes": 124604
+  },
+  "270f1e020550f0c109a5912ef5c3982efe4465b9b2965887a62e1b5e1a73f531": {
+    "seconds": 23.11,
+    "bytes": 139023
+  },
+  "97e8594ebf18753f1c9fcd070df46786618fa3b72e6f1a6be15337e60dc9ded7": {
+    "seconds": 24.26,
+    "bytes": 145920
+  },
+  "7b24495a803c24c07b5481ca947310d6e6d1a8aad53f7ec746fc0339b2a4dc05": {
+    "seconds": 27.86,
+    "bytes": 167549
+  },
+  "40471ea85af81e7250094b7e63333b8f4e8c2426ddbaaae8ead0400d45e7014a": {
+    "seconds": 27.1,
+    "bytes": 163004
+  },
+  "56ee2a11177d9ca36baab219a3aa87d12b0e21b78b10dd84d1aa86cc7dc6a634": {
+    "seconds": 25.5,
+    "bytes": 153443
+  },
+  "305b3a36c4d9152a71401291ac911d051920458ccebf1610a704c2fa5e507dc5": {
+    "seconds": 24.47,
+    "bytes": 147174
+  },
+  "241fb4ba11425a2639741de6d7295ed82c15a1bceeac7acdc4d6f6de9e61c7f4": {
+    "seconds": 22.25,
+    "bytes": 133851
+  },
+  "dddd5ae088eec31e9ba628b63ab351433145102f4c597169203d7bf0993a34de": {
+    "seconds": 26.06,
+    "bytes": 156734
+  },
+  "6f35d095f988b4bdaf810c8dc28d21811bb8dfbd11a6db27ba10006bd6aa56bd": {
+    "seconds": 25.75,
+    "bytes": 154854
+  },
+  "77211a037871014047889efef6753c2c0aced07a26f64945d10fc0b0cad2ce94": {
+    "seconds": 25.18,
+    "bytes": 151562
+  },
+  "24a62958fd7a6de6d1b44fe851f0283b092a4117444e2da6e80bf2be2833f103": {
+    "seconds": 22.78,
+    "bytes": 136986
+  },
+  "48d45aa99252ead6ffa136e2e205a4a87c4bd982abfc8f70ec6886105f681ba6": {
+    "seconds": 27.27,
+    "bytes": 164101
+  },
+  "3e8b3fded2eed59e750df53bb6a96c6677381c6ccc1e7140f49e85961678e979": {
+    "seconds": 22.6,
+    "bytes": 136045
+  },
+  "4e14d6f6a690910fa79d13a9f0a08247b8a7ecc5909e3354878716faa3994681": {
+    "seconds": 23.51,
+    "bytes": 141531
+  },
+  "8725d7a02be12294803027c881cd880de875e0b69d530e2c143361e66f33bf7e": {
+    "seconds": 23.82,
+    "bytes": 143412
+  },
+  "238be8457b57746b78baeaf83b1188aee8ed80bc4782a509c372de7f955c6858": {
+    "seconds": 23.76,
+    "bytes": 142942
+  },
+  "251833d35479b9840ea93fbeb17dec9796a43ab08408691c18a550af525664b6": {
+    "seconds": 22.93,
+    "bytes": 137926
+  },
+  "106343c6c872eab3b01a8b61e3e907b46b042f6aed24b0329765a1b17cc2503e": {
+    "seconds": 21.57,
+    "bytes": 129776
+  },
+  "aab7a85e7cf0955840af5d0a77032ad9df775a5794090152cfe09d045c2a967e": {
+    "seconds": 21.41,
+    "bytes": 128836
+  },
+  "87ec65ec1bfc87ed847370b753fa55b79f3c4d8adb6e39852d7f775bec0f10d3": {
+    "seconds": 24.07,
+    "bytes": 144823
+  },
+  "020038565e517918be1b2525fa6e6f7407fd47e56419634f02aac10901b7213b": {
+    "seconds": 23.59,
+    "bytes": 141845
+  },
+  "c421cb1acde4cf1822049896b27e91d297186e6f98b7e8740a044183f61b8d09": {
+    "seconds": 21.06,
+    "bytes": 126798
+  },
+  "4c08569017bc311dca8b668ec79cb29e0e080ca4223b3845aa4c647ba40a6dfb": {
+    "seconds": 24.08,
+    "bytes": 144823
+  },
+  "55e9ef5261a80eb91ab991ad494bbf64324126162ae50fe8af5c5c42c51284c8": {
+    "seconds": 23.42,
+    "bytes": 140904
+  },
+  "0c4b5d7172b76fb9449e395986e527aee14958373f267d52b7acfebf5dff0124": {
+    "seconds": 26.1,
+    "bytes": 157048
+  },
+  "b2415c7c27ce515c5447ce9bf478ea0afb2098d9926a4b78ec25fd7f27f1c567": {
+    "seconds": 24.68,
+    "bytes": 148428
+  },
+  "94f6471c4e7fc00781d979b7375d3e410de1e3aae5359cbc65fbb28033d9c9d6": {
+    "seconds": 23.02,
+    "bytes": 138553
+  },
+  "811c47734d64239a1941e174a5e77752eb4465ee7789fbd78b45fc65c583740a": {
+    "seconds": 25.4,
+    "bytes": 152816
+  },
+  "5f54abe9cc8883ca9e9c10faf964c28d8f6e76c0f7efe537539ed781c3930c0b": {
+    "seconds": 25.8,
+    "bytes": 155167
+  },
+  "544f65e8b5b392302809f5996f299dad6f6a50f5ac84ead695da48eecfe531a9": {
+    "seconds": 22.22,
+    "bytes": 133694
+  },
+  "205d6f64ae3f545c7626d4962c90cd2dc01d4f43108520b99304f91485b19fff": {
+    "seconds": 25.12,
+    "bytes": 151092
+  },
+  "d94d8d45939ffb4a234644840f65239bf60e8c2228c90a6dfd9b756dcba1c055": {
+    "seconds": 26.1,
+    "bytes": 157048
+  },
+  "322c742f9cb70005428a77e5a20305ab80865a226d5e55351754bd7bb96cca5c": {
+    "seconds": 24.12,
+    "bytes": 145136
+  },
+  "13d0299052177cdd3f400183b692717dd7368b88f3a2582f0e88efeb1ec5b5b0": {
+    "seconds": 26.21,
+    "bytes": 157675
+  },
+  "922e4e42e5874eef30e9d21aa170814e528eedadaa77c797cb7c64bd835458dd": {
+    "seconds": 25.17,
+    "bytes": 151405
+  },
+  "b48faf8d6ec93d867c5dc9b2752d475d049444c0be939a3a9296d5758c1c5baa": {
+    "seconds": 22.7,
+    "bytes": 136672
+  },
+  "30f2fe52410d46446f7cba861bc733f476c3244b74b9526fc043b6118acb0bf4": {
+    "seconds": 25.2,
+    "bytes": 151562
+  },
+  "8d3025c348774eae20990eef57c415dc136ae2ad52a7524e4aa4dc2241fdff04": {
+    "seconds": 25.39,
+    "bytes": 152659
+  },
+  "c08d4ce715b3240f3bf845eeb6ad0d169acc1d194d984ffa7c68265e7a841812": {
+    "seconds": 23.92,
+    "bytes": 143882
+  },
+  "aa1a50b6ee7937d95f0b27fb3684e77e93f8a39a34dd0b33956696a5eddc8154": {
+    "seconds": 25.79,
+    "bytes": 155167
+  },
+  "3caf460b35ed5a17a66a09d552f2f448c7a67cd77159d3d6a56a8aa8f4d0153f": {
+    "seconds": 23.72,
+    "bytes": 142628
+  },
+  "52bc402aaea7ef892e4ca35d02bd68718e0d77a9b060e1cb0c677c48d33c66ad": {
+    "seconds": 22.59,
+    "bytes": 135889
+  },
+  "62ba25cc544778b8439269e2010056de55d27771825b94ef0ebcda460d672225": {
+    "seconds": 22.13,
+    "bytes": 133224
+  },
+  "7f9c7bd5bbbbbbfb620ed339682362223e3ac816853e570d731b51ca7e92e6b5": {
+    "seconds": 27.27,
+    "bytes": 163944
+  },
+  "46019ce845055e0d00b95291baa58fba6437dab9660177c79d78d7d0734531ae": {
+    "seconds": 27.05,
+    "bytes": 162690
+  },
+  "097ebbdf31d314e3e897e395de8c9e6162aa81b2d88ef062cdd022f28f1a7f07": {
+    "seconds": 24.5,
+    "bytes": 147487
+  },
+  "8bad9661e58cbebaeeb41729d821b4201cea30c5b6469289dd82870c7c7e0adf": {
+    "seconds": 25.19,
+    "bytes": 151562
+  },
+  "1542580af87f687eaae06de59f3a954451c619359a35c128a667093ec70ea7e5": {
+    "seconds": 22.97,
+    "bytes": 138240
+  },
+  "2bf0a662e98fe4ad5f714ff90acc0ea9452e9aa631115c195509e42fbd55bc63": {
+    "seconds": 21.66,
+    "bytes": 130403
+  },
+  "05e698f7c6994470b68b83f936e1c7f9b67ddac63e50691d9a4e37356c055b71": {
+    "seconds": 26.1,
+    "bytes": 157048
+  },
+  "4ab2b5dc95f2262d5d19cb4250bee3613ce124cf29b2cc5efe2c23583a58c4dd": {
+    "seconds": 26.09,
+    "bytes": 156891
+  },
+  "d55aa6cc48df312e5d56eb1ca6445680b663eda0cce8a51648a9b3b946c5256e": {
+    "seconds": 24.71,
+    "bytes": 148584
+  },
+  "3718ac3b3d5d007413aa46d1a7a0546d64c9c5bf1ee20082cc4afb4dc1e17ffc": {
+    "seconds": 24.55,
+    "bytes": 147644
+  },
+  "6fafa9fd314d2f89e25e4cd4138aada4dcd71d7851dd12f5f3c1a19aeff56f76": {
+    "seconds": 25.64,
+    "bytes": 154227
+  },
+  "c54529e990e3e7155ebb6acb5874dcfb2dcce55cb25de2e57320ebfb3fcbdd62": {
+    "seconds": 26.98,
+    "bytes": 162220
+  },
+  "deb6fc28fd26501a6a5ea122d74679f578599d2ca8ba22fc73c4a03d1780d055": {
+    "seconds": 26.35,
+    "bytes": 158459
+  },
+  "f3704ebfedba91779783531b0638b831b3f9840ca88c39890feaf0d7a33bc345": {
+    "seconds": 21.13,
+    "bytes": 127112
+  },
+  "3bb8bf57602171ff821bda3d07dbfd716618b8f20a1ec9fbea5a8c95ab01b08d": {
+    "seconds": 25.4,
+    "bytes": 152816
+  },
+  "83fdef077a65bf95ef825dd4e3989f09cc4deaed129558d9e0149ec24467e4c8": {
+    "seconds": 25.32,
+    "bytes": 152346
+  },
+  "92027721be134c164cbeaf159489c9b21455cb7ebe5f6d361289a00f51dcc34b": {
+    "seconds": 26.11,
+    "bytes": 157048
+  },
+  "af105281154e6e30bb0d285ef182a15e26b657d6ab8150ed14e4946a84f026b1": {
+    "seconds": 26.8,
+    "bytes": 161280
+  },
+  "4c0f479a2e24345d6b0f3111ce75ac71dc9a4c005a3dc9a26860fe759e2d96b8": {
+    "seconds": 5.25,
+    "bytes": 31817
+  },
+  "591787d643ec9f0e5bfa67dea462a85a56ef5c9b811a00b1aa0b8a6badaf740e": {
+    "seconds": 5.64,
+    "bytes": 34168
+  },
+  "273234896fa670e2c9677a0753369afa6f964576f86fdbe925cd89daf5814362": {
+    "seconds": 8.86,
+    "bytes": 53603
+  },
+  "008b962468c66015f82c8d5529544467eb0b916d11e783b418ee744b61989be4": {
+    "seconds": 6.94,
+    "bytes": 42005
+  },
+  "5e3dbd267a9a0c9617be216f60adc7c129df6a288b51b9cef4287a77d0108fee": {
+    "seconds": 7.43,
+    "bytes": 44983
+  },
+  "ed5fe56aca06e9e71426adb690fc2ea4c2089f996517d8948661291878d08ea8": {
+    "seconds": 6.67,
+    "bytes": 40437
+  },
+  "f015d058112fe29b9619a9ff37a0b170c759babf102d2cbaeecd666b7fef2c9c": {
+    "seconds": 6.98,
+    "bytes": 42318
+  },
+  "664425400be590d66d9f3771bdd62a9fbfc427a52321e63b83bcfc83ba830385": {
+    "seconds": 6.83,
+    "bytes": 41378
+  },
+  "5a69f4aa89fdd582e3881959617a6954210d93400212d70f58d45342fb0093ca": {
+    "seconds": 6.89,
+    "bytes": 41691
+  },
+  "de48cb6de241e540dd5e805586ce1c272a756bcd452ff1c5654422cc6989b668": {
+    "seconds": 6.93,
+    "bytes": 42005
+  },
+  "b9db9897482d7975a47b1540ce697c1d9f5e7bf396ae0307df34e6c6f5e6f821": {
+    "seconds": 6.97,
+    "bytes": 42161
+  },
+  "b758e06bd98d892402a71cd1dac4dcfa8a27df702a99087cbd422539e273f830": {
+    "seconds": 7.04,
+    "bytes": 42632
+  },
+  "354f5504e35c7f9db8c1f09e2178c915f5d54095068c1367f7524c49bd2bce13": {
+    "seconds": 7.03,
+    "bytes": 42632
+  },
+  "4228afe9b80440cb79cc1c530055250428e713bc0c14f9476cb189817f425a9b": {
+    "seconds": 7.01,
+    "bytes": 42475
+  },
+  "1cef71833b9cca0a6c8e6a3a56baca1559d2cef2e99f77b41ab5480f63f10b8e": {
+    "seconds": 6.96,
+    "bytes": 42161
+  },
+  "c5fe0e7a391aff6d7839dcb57dab07e34df21b25947c2a55bf9c4f8aee7612fa": {
+    "seconds": 6.88,
+    "bytes": 41691
+  },
+  "3f7c2f0e971d6e9e5e3404c949df6be18cd643879971d7147d751f79a22b9f12": {
+    "seconds": 6.89,
+    "bytes": 41691
+  },
+  "102cc5bded73514d7895ad7520c3d74bc81f0a38cf0c5ad2f5f0a7be0fa3ae7a": {
+    "seconds": 8.97,
+    "bytes": 54230
+  },
+  "6ef132ca83e567e8ebade520df77a8314f36376ae8533429ff082c131ea62b6f": {
+    "seconds": 9.19,
+    "bytes": 55484
+  },
+  "74d1b81cd4435b3a82ee2a2b26377c7974672e303a00f01ec886cca99a10b348": {
+    "seconds": 9.6,
+    "bytes": 57992
+  },
+  "0f1aae5d6cf3e6a5e6853506a4499ac69fb3e421dc9a8ac2741bde539992b0f4": {
+    "seconds": 13.47,
+    "bytes": 81188
+  },
+  "345e35eb04a2a65bab62907ad31e96a8dcac340fe09cf4f9c42b103e833ba5bf": {
+    "seconds": 6.87,
+    "bytes": 41534
+  },
+  "51ffe2ca47c724b24cf4755c945a5c2ff97980053d3d6d116a7e5227d7c96f27": {
+    "seconds": 6.5,
+    "bytes": 39340
+  },
+  "353120e6231e7c7c4ed6582ad62257ef0ea69069ab4b3e58703468ece3dc8450": {
+    "seconds": 7.85,
+    "bytes": 47490
+  },
+  "1396988678ab06ca88920a37d878b1e1290eb367d1c00bb22faec8d74c7bcc1a": {
+    "seconds": 6.74,
+    "bytes": 40908
+  },
+  "5b3611f33eb2d4d1a66821136f3c23a5b053f8119e226db77acbc9757ef39ab1": {
+    "seconds": 6.11,
+    "bytes": 36989
+  },
+  "5b60d4c85a95955137f1fa12fdb796228c9539f0a3fb6848ad725c0925e52b82": {
+    "seconds": 5.86,
+    "bytes": 35579
+  },
+  "e45cd8d5d7e898f8c486dc6153d77ca3985480fd2d7ea4f8f4b66e9cc3256a7e": {
+    "seconds": 7.15,
+    "bytes": 43259
+  },
+  "bd151512c19a61ca3066d6f6d1eae4a85016c1d536e104935fb4da60af96140c": {
+    "seconds": 7.05,
+    "bytes": 42632
+  },
+  "eee90d5c6ab66894d461d361e4de42b3fc3c35bfc88a0a9cc933e71af88848d0": {
+    "seconds": 5.35,
+    "bytes": 32444
+  },
+  "c3e50477730d29937da897d7d332ceb0340cdb83b97ab9edf4653432aeb71623": {
+    "seconds": 6.66,
+    "bytes": 40437
+  },
+  "58972d87ea7b9dc61021e01776e8a87c77cd34abaa1e81a03ea428cc1f122794": {
+    "seconds": 7.31,
+    "bytes": 44199
+  },
+  "8b0badddb476dabd366849f539fba9ec043c372187cde954d3062d05a6f546af": {
+    "seconds": 6.74,
+    "bytes": 40751
+  },
+  "1de3d38c1a6ea5be6b96fe691b82d257fde8ecdac3fe45ed3696ec9a09211a9e": {
+    "seconds": 7.81,
+    "bytes": 47334
+  },
+  "1c35ecbf5c5e62f40789066b01b003835b753b10ee8bcf7494308943a56805b1": {
+    "seconds": 6.33,
+    "bytes": 38400
+  },
+  "a3e6c983d422d826f5f99507500d06c1635837b8d0a97de8fa075eda8c5fba5e": {
+    "seconds": 7.01,
+    "bytes": 42475
+  },
+  "a22b521f85889c778cd0b709e34f1882b2c1ac5534b2482f748cc0d424d1f0a8": {
+    "seconds": 7.18,
+    "bytes": 43415
+  },
+  "dacbfa65347bc132f9bbc2092e9b66e3511aa90277f6d9227a5164cbbf4bc043": {
+    "seconds": 7.35,
+    "bytes": 44512
+  },
+  "a1156a844198e08eccd743f7f2e43c536b1535ca4dd1216686fbfec62e2193e6": {
+    "seconds": 6.68,
+    "bytes": 40437
+  },
+  "9dc3f122b0d532c6b8f5ae4f6d6ad7db85e295cb253a9eb74e66b3e41276af9e": {
+    "seconds": 7.09,
+    "bytes": 42945
+  },
+  "28b339e0f5104794ce41e405f3130a0a4e333caeef780ed811d83dc9f9601a45": {
+    "seconds": 8.55,
+    "bytes": 51722
+  },
+  "7ecd0e87a2782746a377bac16a8299e79c281af6853bb5e0e9878d36bb64f5d9": {
+    "seconds": 7.31,
+    "bytes": 44199
+  },
+  "abacde70880a290227009542347271f5152363275b85a980a4cc28654e557669": {
+    "seconds": 7.74,
+    "bytes": 46863
+  },
+  "d031d099049218920443b20e687d6f9ec6849000107d3dd309735a89d764074f": {
+    "seconds": 7.29,
+    "bytes": 44199
+  },
+  "b2d56ac3e200fca75eafc7d95b6a61396bc069a836cbfcb53c64fe7ce3a608ab": {
+    "seconds": 6.89,
+    "bytes": 41691
+  },
+  "797adc2770bf9f78becdeefe6e1d2a153451abcf908320c2748df62b30b2a3aa": {
+    "seconds": 7.25,
+    "bytes": 43885
+  },
+  "6bde454d4c99eaac2a23394792d6da3f5db5d59dd1b4049298783a96b2d04aba": {
+    "seconds": 7.74,
+    "bytes": 46863
+  },
+  "3642213de405a8876c4562d885ef8f7a1a9308649aa1d42460a3260918869ad4": {
+    "seconds": 8.77,
+    "bytes": 52976
+  },
+  "4a01b35a00f90b08dac171273e5199abdc4735d669c8a11fcfe9834a86e352ac": {
+    "seconds": 5.71,
+    "bytes": 34638
+  },
+  "7e280675214fd213870f3359b8e2f6ee3c7f299757c292c30610754d9dd2dce1": {
+    "seconds": 7.57,
+    "bytes": 45766
+  },
+  "afff920006af94003844899e0f5ba43a854247b8514bda48726526613de8fc6c": {
+    "seconds": 7.89,
+    "bytes": 47804
+  },
+  "b40de447b5bd9da6b76ce87cf5fa9e29c2ff853ce6a732e40023519876fe9cf4": {
+    "seconds": 7.96,
+    "bytes": 48117
+  },
+  "b7db16d93f723e4ec1a9a378c40188ad975062a7e6fa6b8d9f82407d1b235762": {
+    "seconds": 6.09,
+    "bytes": 36989
+  },
+  "9bf814b999b88e7db20ecbfb8ab51d4fa5c123fd4e260d146fee4181626eaff6": {
+    "seconds": 7.23,
+    "bytes": 43729
+  },
+  "145b7808212a12f9ca446da08e682cc63f041a7959123c18d363fa3c1d112719": {
+    "seconds": 6.42,
+    "bytes": 38870
+  },
+  "82b6d7668bc1253b440489b6799d5d7d6df9c3a14d968aa91091b8acb549b229": {
+    "seconds": 8.96,
+    "bytes": 54230
+  },
+  "f468582ec282a6c3b64fdf8941e770d21936cdad1c633cc41db810f4c5b5764b": {
+    "seconds": 8.76,
+    "bytes": 52976
+  },
+  "a58a1ea0220e7dd966742f12e259175473fad42324d0b7ca0ac0d6eb1102f7a2": {
+    "seconds": 8.1,
+    "bytes": 48901
+  },
+  "e23cf0045e11c087a3de63a49051cb41bef254bb7366da635f248268a641fe38": {
+    "seconds": 4.95,
+    "bytes": 30093
+  },
+  "371ff3822ab050275de872287cb922d14c5ad2962ff701fc0e82285071b65b55": {
+    "seconds": 9.26,
+    "bytes": 55954
+  },
+  "912d7d2c055898cb1f82863a42c68a1b2ffd3e5bfdda557cce3119306c5aac16": {
+    "seconds": 7.16,
+    "bytes": 43259
+  },
+  "74624de08c46e1a934c9d8e258541e2f6778802628da20de81934989068ef1ff": {
+    "seconds": 6.44,
+    "bytes": 39027
+  },
+  "2020d808e5bb0f3fa11fe934b585b2656b4e60d4b472b96514a7ff34aa1c2fd1": {
+    "seconds": 6.28,
+    "bytes": 38086
+  },
+  "773b647c2ebadf077d5b4d715243f09f0414a7c9ba1229bab8fb1f0c9aeb3176": {
+    "seconds": 7.88,
+    "bytes": 47647
+  },
+  "9e2853904152b616370d39f61ca6a9aa8d4fe0d8bf6abe3bb03b51c2300b57fb": {
+    "seconds": 8.05,
+    "bytes": 48744
+  },
+  "578034e6cb4d3f5777a1f17dccbaf5bc149be1ea23255084f8fd2f63c5e5164c": {
+    "seconds": 3.27,
+    "bytes": 20062
+  },
+  "7a4ae5492ea2ab9708f6f2f29ce9b6aa12cfa8b4d6edcf53dc6fa5a2d877da66": {
+    "seconds": 5.43,
+    "bytes": 32914
+  },
+  "7c2d4a618db129c031b892aa4d15838acfb891877786cea082dd72654f336ff1": {
+    "seconds": 5.62,
+    "bytes": 34168
+  },
+  "b2c7d24b033edac1bcb1fcd69b6e622b67fe968a8bd1317914dba08feb9374de": {
+    "seconds": 5.29,
+    "bytes": 32130
+  },
+  "cee3a735cc7e975fc96b0ecfa19be8a3b627448f963673f26612b89db18de178": {
+    "seconds": 4.66,
+    "bytes": 28369
+  },
+  "169f18e07b352da8456ade4aeb9e36111e2b4ad69efd63ceab2c77e59c62f0ab": {
+    "seconds": 4.35,
+    "bytes": 26488
+  },
+  "690c2352b67c443a355a8e68bdf2f0761dc3c90b8e4719cda9963e85c9305384": {
+    "seconds": 4.47,
+    "bytes": 27272
+  },
+  "23d75512bbe1e552a29ce5c297cfbb7d588e7219b9d5165b7899bc6bf21143f9": {
+    "seconds": 4.09,
+    "bytes": 24921
+  },
+  "45372bf0fcb857a37d507ecbbb2423a9ddd99c5d3fbc8eef7815061de433fb63": {
+    "seconds": 3.14,
+    "bytes": 19278
+  },
+  "e501f731ed3a667090a2256981759085a9a5f03cd09454a796a00335bf688e9a": {
+    "seconds": 5.35,
+    "bytes": 32444
+  },
+  "fd429dd14f6eec49f2b7e6a8df63853949c27c3f9898b70191390abcfed8a017": {
+    "seconds": 4.44,
+    "bytes": 27115
+  },
+  "da1e65aa675b542cb907810b852397b1f53981f9bcdad5f45d4e8afa4d689a9d": {
+    "seconds": 6.4,
+    "bytes": 38713
+  },
+  "b5b356ac016eb2d746792dcfc63b40f984c6c436c159a4368e60723db2035c55": {
+    "seconds": 3.93,
+    "bytes": 23980
+  },
+  "eab9fce168d24d5cbac409a4ee4f74c63dc46ac21073ca8fde4c431d1ea064c9": {
+    "seconds": 5.64,
+    "bytes": 34168
+  },
+  "1abacb587feaea7b74ecee5561f8f85dabdda4adbe7a7bf0ef0a5a0ee7004571": {
+    "seconds": 5.87,
+    "bytes": 35579
+  },
+  "827fa41b059781aa35b73cb855201bc3f823a03da4c9fe779f74b5ce8a260596": {
+    "seconds": 5.01,
+    "bytes": 30406
+  },
+  "158e55e225cb209af52064ff250f66537a6a0a80604b7b5c7a97e896389bca33": {
+    "seconds": 4.1,
+    "bytes": 24921
+  },
+  "eb8340a5eae7f426c8d4dc4ea5b6060f0066dcefcc9f37515b239e1775a402f7": {
+    "seconds": 4.94,
+    "bytes": 30093
+  },
+  "fe0b69f43362a0f55c5bb01d0bfb014758f9e55e19cd2ef2939e9ebb653e8903": {
+    "seconds": 4.7,
+    "bytes": 28525
+  },
+  "f9b505e7ca72f9b6b3cd6dffc985274a9fc934a0f69ada28f5b7679345c42545": {
+    "seconds": 4.58,
+    "bytes": 27899
+  },
+  "b10bb2168b7be71de430bd68243edabc944eba6f8e39b8e458f7d39118b3d8cb": {
+    "seconds": 5.32,
+    "bytes": 32287
+  },
+  "8962e863c351db4bddf775d5e728af214f050b970063814b05abbd93c99d36b3": {
+    "seconds": 4.42,
+    "bytes": 26958
+  },
+  "6b270ef9fedaf3ed65f2103ca744f0bd0c1cf8180bad30b35364f5c73084b362": {
+    "seconds": 3.95,
+    "bytes": 24137
+  },
+  "b668d5f9212155d34960b7e2778068b5e37c3554e2dab270e736c93e6303ba34": {
+    "seconds": 4.99,
+    "bytes": 30406
+  },
+  "ac4af8f7e634ee31c9ab21a8c9285eaecc3c8e22d49a1f669f442deacbe7910d": {
+    "seconds": 6.11,
+    "bytes": 36989
+  },
+  "69d33fe8f8abe1aace969001d9324c5f81822c726f124d18bd129d760cde869e": {
+    "seconds": 5.11,
+    "bytes": 31033
+  },
+  "5cb535d4462ca90f0a1f0c62ad055a1e480a5094459bb30d76beb2cc39835e3f": {
+    "seconds": 4.64,
+    "bytes": 28212
+  },
+  "c710d39ca5611618044face4c95136fc1aeca24b3f610b5eb8c693086e955a35": {
+    "seconds": 3.9,
+    "bytes": 23823
+  },
+  "761e9277d3119902c6f46d73247d1fb329908a4a4dafc12ecb6e342b1d6eab4d": {
+    "seconds": 3.78,
+    "bytes": 23040
+  },
+  "15a21472c387c55ca76bbe4eed606b2bce88ea4612f1ff3e3d96034a29bb7f96": {
+    "seconds": 5.45,
+    "bytes": 33071
+  },
+  "8e71d95c2dd16a292f47108e0478f188c9c3e5eb24246dd899389e10875e5104": {
+    "seconds": 5.81,
+    "bytes": 35265
+  },
+  "b7c3da1ab53ae292f269f844cac6b3403529a8c6d21351774726e54e925f3feb": {
+    "seconds": 4.71,
+    "bytes": 28682
+  },
+  "2a6d93572c513cba264a1fce30523b880b1d93be758250ec3d12aa66cbb88ce0": {
+    "seconds": 5.27,
+    "bytes": 31974
+  },
+  "71d43502a91f8bef6f51b22b5dd14e234f331c8a17d8be3f1891e8607956d72a": {
+    "seconds": 3.83,
+    "bytes": 23353
+  },
+  "d48135494c9d28f0125d54bcd9e27043697bcd15dc946b646c799051011c4b11": {
+    "seconds": 2.89,
+    "bytes": 17711
+  },
+  "97646634e774be6fd02f60c33edc717b84df403e18552c4b19dbfe9c14f1d883": {
+    "seconds": 5.15,
+    "bytes": 31347
+  },
+  "80d53ca66257ff03a7e28f84769fae39301cbf515284faf29b33a8543d76819c": {
+    "seconds": 4.71,
+    "bytes": 28682
+  },
+  "648d9c25754bd2ebc847b37fe0866441cd2d042dba128ff37399151c7c7b0f40": {
+    "seconds": 4.12,
+    "bytes": 25077
+  },
+  "e68879b97fc00d230c67e9414cb182f9f99241d7d45f73385b84e598cbaffef0": {
+    "seconds": 6.53,
+    "bytes": 39654
+  },
+  "977bcdb044ba6572b9e6118049dc2e973c8c0f9169b16226d679574928a173c3": {
+    "seconds": 5.24,
+    "bytes": 31817
+  },
+  "cd82396741d339addfabae682afeac35833d540c1a0cb9b78ee8ec7660fd6b0b": {
+    "seconds": 4.8,
+    "bytes": 29152
+  },
+  "33060c5cf63e3836f225bc232c397c49d8461ba29ee3c6f65a64d7ae3639e020": {
+    "seconds": 3.41,
+    "bytes": 20845
+  },
+  "7b7a9722adc81560d3be46dccf878d7381386a63052ea698d6f4fae272da87bc": {
+    "seconds": 4.96,
+    "bytes": 30093
+  },
+  "2c60917402bff9b6484e7f40e0f32451bb635fe3e5e165ce04afe4b30f615228": {
+    "seconds": 3.57,
+    "bytes": 21786
+  },
+  "188d84fbddb092604eaa462ed0a9f92414f4d8cfde040affeecd91e57186bbaa": {
+    "seconds": 3.7,
+    "bytes": 22570
+  },
+  "65d7456b18ee1a6b71fc640db9e4f3c14edaf6ab224c1638046868e9d5fb656a": {
+    "seconds": 5.29,
+    "bytes": 32130
+  },
+  "2409bd76d54d09cd6e0459adcb49c583ec707dfb0e6ac4fed701a405a4af57de": {
+    "seconds": 5.45,
+    "bytes": 33071
+  },
+  "ea12e512bac44ac238f8b9aca708d14f53e06cc1c9cafdb3d74fa58de4ea0962": {
+    "seconds": 6.65,
+    "bytes": 40281
+  },
+  "3e1711bb6ce1b331a35008760016394d8dd4f3a3963ea3d1c402e9db92a434c9": {
+    "seconds": 4.87,
+    "bytes": 29623
+  },
+  "87d86f6e48d148304a601c9f77297ac3090e7124f3bb7f50dfbf278a2246835d": {
+    "seconds": 6.42,
+    "bytes": 38870
+  },
+  "d6ee02c048a0213cf0f1c5475c0dcab3155c8f66bb73eb0c131dc39617b610bf": {
+    "seconds": 5.5,
+    "bytes": 33384
+  },
+  "ff4b7de56e949eefeb79f2268c269d68c91664c8ffc9aefe6a8177b906bba05c": {
+    "seconds": 5.56,
+    "bytes": 33698
+  },
+  "b876e9f04741e88f230592067d8acccc7b9a957fc9855c8c54b56c498e90dff7": {
+    "seconds": 4.96,
+    "bytes": 30093
+  },
+  "6bbec8b7d9359c1f07c9f24868953d023d02636b44e69b6eabbc03f110682818": {
+    "seconds": 4.9,
+    "bytes": 29779
+  },
+  "e8f6dac96dffcb7b6d85ca01db8c19c365c0da8859f8141728b95d4b261ff291": {
+    "seconds": 5.71,
+    "bytes": 34638
+  },
+  "20da38abc8a527f347bb180ebaeaa47e8fce43eac6bb4d909aa3ac6e64640911": {
+    "seconds": 5.67,
+    "bytes": 34481
+  },
+  "b29d78fae50116eb104fa66c41d99375386e26062ca4a10658fe8b91749c9e46": {
+    "seconds": 4.92,
+    "bytes": 29936
+  },
+  "ff545c99b146f94d37b9f463ec47293095dc52c9a6f66cd00746536774d92e87": {
+    "seconds": 5.53,
+    "bytes": 33541
+  },
+  "e7e2fb9a6f402341dbc76e1cf0899076497e22bb1e0bdf2a1110bbb45f9958d4": {
+    "seconds": 4.88,
+    "bytes": 29623
+  },
+  "7aed733d78e60c2baad40b0abf9513992d0066dca6d25609ec208142c1f4cb64": {
+    "seconds": 4.63,
+    "bytes": 28212
+  },
+  "89954a78d20db14d2aa7bff1fbe8f1d5ac673f14cdeca675e3e72fd2f3124f5d": {
+    "seconds": 5.33,
+    "bytes": 32444
+  },
+  "50045ec62dcbad3fb161f99cd4dbcc38f2109556c55a4f94074b4917415ecdd2": {
+    "seconds": 3.35,
+    "bytes": 20532
+  },
+  "63f6c92609188dc6359d83e23cc5d0410b74d16cd65a7bf89d358efcf24ae99a": {
+    "seconds": 8.73,
+    "bytes": 52819
+  },
+  "26f4173d3031dfa8c4e02ef807c6527279cb631d0bdd85defeeae09d462c0841": {
+    "seconds": 8.75,
+    "bytes": 52819
+  },
+  "06c74efc6f0538e236418da926ed5dad6dbc11d986918aa3b566eb901c5aa7af": {
+    "seconds": 6.55,
+    "bytes": 39654
+  },
+  "a832b5c7ed00ccdd3f13a2bfd840b8cf8686e9247673b055beb9d0c1006f0d8d": {
+    "seconds": 5.87,
+    "bytes": 35579
+  },
+  "72d7616d210757d454f9d956c9047aa733d1ee2afe96d559dbd2e87c7229f2ce": {
+    "seconds": 6.52,
+    "bytes": 39497
+  },
+  "27745367d95b1dd6cfcc2e2fbec0ddce28cce004365fc47812bd26488fa9ad37": {
+    "seconds": 6.72,
+    "bytes": 40751
+  },
+  "c14e5f85d21e532a2e6ca8771678e7b8c19844ae1270bdef810611f917bc9791": {
+    "seconds": 7.48,
+    "bytes": 45296
+  },
+  "80aa4726fb8da8d004c96b25c6177327ea469813d7a9e76046e3f09118a3bddc": {
+    "seconds": 8.41,
+    "bytes": 50782
+  },
+  "6b653ad8611592b7e824bb60b6f4c524bbf6a4610826a173ce994d323f83c99b": {
+    "seconds": 6.65,
+    "bytes": 40281
+  },
+  "0c8a5c520dad69a1dec47ca5a2815a4fa66084fcd46f82421cf66c82af3e3a98": {
+    "seconds": 7.55,
+    "bytes": 45610
+  },
+  "cb0c86b46a90baf96f9d41fa241ff1a9abacdba692cb51314d6edd394e6ba74b": {
+    "seconds": 8.48,
+    "bytes": 51252
+  },
+  "96b55804451954391a8bfb64f26e0770f2b0d965e4442ca3cb7758601805e977": {
+    "seconds": 7.03,
+    "bytes": 42475
+  },
+  "633621c1c2f4189f63da1f60209cdf7e2f1b840a5b949571fdaebf90b3533551": {
+    "seconds": 6.98,
+    "bytes": 42318
+  },
+  "8bbdf58edd2178c55cb8b4849f3a7966ca56d11960f080a0d31475083c5dd0bf": {
+    "seconds": 6.7,
+    "bytes": 40594
+  },
+  "3be8ac8307543170d936ca2f7b520796a857e9cf8a575f359b0cb0e42969e0c3": {
+    "seconds": 7.67,
+    "bytes": 46393
+  },
+  "01dbc30a8b674f544be239c837ff645ebf6963db0a97868c1db0a42fc7bf7b4c": {
+    "seconds": 8.78,
+    "bytes": 53133
+  },
+  "b0729a831491c875ca98b8b86632d31904b9ba55b6d9996ddfab654a48a115ee": {
+    "seconds": 7.59,
+    "bytes": 45923
+  },
+  "351826e624b3238ac8cf83e8161b930086a1b87acdb4b7393e9826e999f8af5b": {
+    "seconds": 6.47,
+    "bytes": 39183
+  },
+  "414648da00ed9e68ca31e59bb570af19a61d05f0f669f99533f30a47e4f6c408": {
+    "seconds": 7.66,
+    "bytes": 46393
+  },
+  "106afd5975db8ed7bb5a9df9426bb1e2f09730be5ce293e7166b8d658382c64f": {
+    "seconds": 8.0,
+    "bytes": 48431
+  },
+  "6a16e9d988e1485bca6293baa5652e7a6a9d3b539132750534a22b8b7f659a30": {
+    "seconds": 8.67,
+    "bytes": 52349
+  },
+  "983bd44358bd07184a389cd3a4bdb1e05cd8b6627dce735175e7ac2ab7b2d32e": {
+    "seconds": 7.92,
+    "bytes": 47961
+  },
+  "51b083371d046454e5010af9d66b5fab9d3328f83d281f7d8a195c9a8ade7feb": {
+    "seconds": 7.1,
+    "bytes": 42945
+  },
+  "140ffb583004ccb944de9c43718a80587c453889dfd3f994eb196e5e8417effe": {
+    "seconds": 8.05,
+    "bytes": 48744
+  },
+  "b15c3fdf1321a7b6760ea7e937037fd8669b72f3ff2c15ecce18eed7fd92a621": {
+    "seconds": 8.14,
+    "bytes": 49214
+  },
+  "281065a7fb98e0f2973ee16ef7ae3e49dcd141936ca53bc7939fcc3e10de58eb": {
+    "seconds": 11.69,
+    "bytes": 70530
+  },
+  "9f4a3c51dad6630cb92788cc011ca99a0f829db0d33613655ff075086557cf97": {
+    "seconds": 8.11,
+    "bytes": 49058
+  },
+  "eb73a5116bceb073bc3544443627be4cd61ce6bedbff7a92670a3634ad578b2c": {
+    "seconds": 6.85,
+    "bytes": 41534
+  },
+  "c97a94efe9ee62b7ac3debec017bd97f0629723e3dd9d7fb046c746c7b21e131": {
+    "seconds": 7.73,
+    "bytes": 46707
+  },
+  "48ed83ec55b64b4f83460790c814b627f6509944d2f0e734f89cb40b3f75f0df": {
+    "seconds": 8.26,
+    "bytes": 49998
+  },
+  "b7cee8064b108c844749f929cbea3a451e585ae500aacdc189a9ec86a6d1c5eb": {
+    "seconds": 7.98,
+    "bytes": 48274
+  },
+  "53fef262b5da8d222651ed1d65ebe76d802a2ba17f59a8248a3331a02110c241": {
+    "seconds": 9.87,
+    "bytes": 59559
+  },
+  "6fe908d755e2add6dc3193a6488ceb257810e72f929344e3171ef78dfed98a1c": {
+    "seconds": 8.67,
+    "bytes": 52349
+  },
+  "e2b1bbfa10567cc1a4188dbd09e5c2f8a7dd97d6cd3d65b68efff60248ea6a8f": {
+    "seconds": 6.75,
+    "bytes": 40908
+  },
+  "4c95bcf371ee09f8a1f9f2eaba24a226fde57250b11c01e3140aa26067fa960b": {
+    "seconds": 7.09,
+    "bytes": 42945
+  },
+  "ed9fe07ea4812d5c5b3f1415070f1d1887709c025900af32937c01591cc4dafe": {
+    "seconds": 8.65,
+    "bytes": 52192
+  },
+  "1d5ccced6c5fb90e981e5d6fe8132167e378a1b23efde7086af4fcb8574c68a7": {
+    "seconds": 6.64,
+    "bytes": 40281
+  },
+  "249034e91f674d09463aa6fd1a2d91285e6a5190b9506eeea038fe9cb2919390": {
+    "seconds": 8.12,
+    "bytes": 49058
+  },
+  "e9f15b38c518094b975884aea082d6b371e0b9a860e759f976aa8dac07d1a583": {
+    "seconds": 7.21,
+    "bytes": 43729
+  },
+  "b79ed862d5b7ca4a85c2de96eafced08883b005dda29a5002d574ac2801810a9": {
+    "seconds": 7.88,
+    "bytes": 47647
+  },
+  "c766b52308b908346316ef9ef2bf7ccf8262b2c6dfc77a35496028bbf27c4f09": {
+    "seconds": 7.99,
+    "bytes": 48274
+  },
+  "6479001f62357a28c2ff5773f19b64020e25d053f4b56e4358544e5609152a9f": {
+    "seconds": 7.99,
+    "bytes": 48274
+  },
+  "9f16eb6eab9cd57632e25bb5cdde936ecdb60a2bda20e3763f422b72168042f2": {
+    "seconds": 7.67,
+    "bytes": 46393
+  },
+  "5d2c024f0ac63a655db87033983dd712ae05e82ca7ffc9576ba9bca3bc744ae7": {
+    "seconds": 7.82,
+    "bytes": 47334
+  },
+  "9771dc2ccf1895ae179def74de462d1e60cc71922aabaee0b509b3728d823be9": {
+    "seconds": 10.84,
+    "bytes": 65358
+  },
+  "f8177a92f876445c5898c25ef174ea891023ecc6e0577c2eacaa76612096b37f": {
+    "seconds": 8.1,
+    "bytes": 48901
+  },
+  "559f8e9d0cfdc076cfc271a9eeecc5522a8c19050bc425fa31ce69e0f3a6688b": {
+    "seconds": 9.11,
+    "bytes": 55014
+  },
+  "04b2258a1a7c2516b2f32142052042b777232de99235c71e7b9023b0230fc51a": {
+    "seconds": 10.0,
+    "bytes": 60343
+  },
+  "9edffa059aaa01ba99d2739ac53068adf45dd4fda8866985d64ed74f01d81380": {
+    "seconds": 7.58,
+    "bytes": 45923
+  },
+  "6671382d0ac50637081c4a25122a1b7469132bd09b9778d0f63295339bc9ed90": {
+    "seconds": 9.99,
+    "bytes": 60343
+  },
+  "a59758a037ecb960696cccbb3ded1500d9155df8f96edd96403033381b19b111": {
+    "seconds": 8.67,
+    "bytes": 52349
+  },
+  "457b8c1eee176b1d290f3deffd4b36065595296083a393bf8e2607cee50108c0": {
+    "seconds": 8.46,
+    "bytes": 51095
+  },
+  "79eede9ac47be387ed6211718c27528f28ddd83a5bf0613ae755138f8b515857": {
+    "seconds": 7.83,
+    "bytes": 47334
+  },
+  "7b72127db14461ec5edda42ff559661d122e527f8d91080ffdf9fdcd91d96e39": {
+    "seconds": 9.66,
+    "bytes": 58305
+  },
+  "60583c17e1e40775bfd4c7753725f12b3743b6d379ea4eaeb7f6abf390e1fd77": {
+    "seconds": 7.57,
+    "bytes": 45766
+  },
+  "5c205c6bbe148ae21fc8de2e696751d222f6853c1691e66805240595f5cbf465": {
+    "seconds": 8.7,
+    "bytes": 52663
+  },
+  "06c1dfa95270e1f50248122ae1cbdaa2227fb5a165f35aa35eeab3a0f5e7dbb1": {
+    "seconds": 7.88,
+    "bytes": 47647
+  },
+  "88edf87155d17fde44e1c95fef2c353d8ba6e4aefaf698224da4b3c07e69f646": {
+    "seconds": 7.2,
+    "bytes": 43572
+  },
+  "6c76c8f96b2678e9299c4e276ac76f1d9987bbaba44eba897e1aeafb78b801a6": {
+    "seconds": 8.93,
+    "bytes": 53916
+  },
+  "d6aafe3d24d62e74b86ed744bc1416a0399eda0852b0bb17a575a87413685c4b": {
+    "seconds": 8.6,
+    "bytes": 52036
+  },
+  "df5367ea9bd09810d90741926eae5abce1aadc8f8a1a96cadf9ff5cf11db0692": {
+    "seconds": 8.51,
+    "bytes": 51409
+  },
+  "8ec195f54f48aa419975fff7102de42bebcbbc70aa4bea1753462c4ccaedc9f0": {
+    "seconds": 7.51,
+    "bytes": 45453
+  },
+  "94ad104a72188dbee6355d5958c7b51db044166f3d42d2788c0a2bc472747a01": {
+    "seconds": 7.57,
+    "bytes": 45766
+  },
+  "55e3dbbf593f2d3cc22f206378c8836f6c5effeccb4c5059930c8532060e747e": {
+    "seconds": 8.56,
+    "bytes": 51722
+  },
+  "3c9d8dc06b49bcf2331171995282767584e6d261e2a7fd8b2a5dda643c76a030": {
+    "seconds": 8.08,
+    "bytes": 48901
+  },
+  "749f4822da70f548ca1f45effba3949b8610addb295da8ef36bc0a1113dc48f9": {
+    "seconds": 9.48,
+    "bytes": 57208
+  },
+  "73bec929f05cc9753d330a92d8d0448e3fb311317e7849a7a2daa3b92d0c0404": {
+    "seconds": 8.79,
+    "bytes": 53133
+  },
+  "b1dc6bc55c778719715b8fab6061750f86c1043b12734df5dcd14978b9abf49c": {
+    "seconds": 7.19,
+    "bytes": 43572
+  },
+  "a3fea6c912e39fb0d7fcfca9b5eff461b1419c944148ba30f66b20a157a41dd7": {
+    "seconds": 7.22,
+    "bytes": 43729
+  },
+  "3de4e8cb4f9257316e63bcd7ce0f3374ae8c9d83641499d89d756610243445ce": {
+    "seconds": 1.71,
+    "bytes": 10658
+  },
+  "8dc49fdb14923b4e0a813715a58531af06210e79c7e16ba8a48441db2bca01a7": {
+    "seconds": 1.81,
+    "bytes": 11285
+  },
+  "2e5eec1c295019b36d1f524102ab328dd7fdac035c6f7d637fecdf85969a19e2": {
+    "seconds": 1.77,
+    "bytes": 10971
+  },
+  "e4ce857801d65cf96714608c9ff5128bf37bd0801a80590baffbb9c6694b3d9e": {
+    "seconds": 1.83,
+    "bytes": 11441
+  },
+  "85d42efad068a555c5ec6058a416b0263b185121322f1ea6b4246545dba8e35a": {
+    "seconds": 1.88,
+    "bytes": 11755
+  },
+  "0435188a156af25b631f3b55a826b2089ea0345740a1df6c1877c152d6847151": {
+    "seconds": 1.88,
+    "bytes": 11598
+  },
+  "39718c21d1339e1ab4002f2a9e6ab20d2356a1347ae15db48174a555693f4c0b": {
+    "seconds": 1.84,
+    "bytes": 11441
+  },
+  "996e3ae91ad443322f6fccca94a69a0b3c101adefd354439f6c6cc5c57e5e479": {
+    "seconds": 1.85,
+    "bytes": 11441
+  },
+  "e38977660c3dcfdf9ea5a15eec93cc872ad0f6394c948939eef42250709d7b5c": {
+    "seconds": 1.8,
+    "bytes": 11285
+  },
+  "ff581af308a6c35eeef72a1018275ebfb44547ba9f86fd6a79f803f430a46b59": {
+    "seconds": 1.79,
+    "bytes": 11128
+  },
+  "d609e094da10869ffb958e3c7e04474fbe9c0d82355cd5a1724ce106e120b1fd": {
+    "seconds": 9.63,
+    "bytes": 58148
+  },
+  "0f1e6f0e66fc11f23390d4bc930e84b1275dfe00d1d2e80f5665d91b0e26126b": {
+    "seconds": 6.33,
+    "bytes": 38400
+  },
+  "ea73666e8a4dcf19c6cbd451a5ad2561825377db0873377eafe1a6884b950e7b": {
+    "seconds": 7.45,
+    "bytes": 45139
+  },
+  "18db321f65390740bee5c51dc931bb0216588981891e0036dfea8700a12e85ef": {
+    "seconds": 5.13,
+    "bytes": 31190
+  },
+  "01a9cd57ccf1b73b93a24bd7667a1f718dc5beb685e917b525b19505fc06f14d": {
+    "seconds": 5.33,
+    "bytes": 32444
+  },
+  "f38e2995ad4c8fff043265a7519262e6fd2031ae2451a22a842aecd568cc5ece": {
+    "seconds": 6.07,
+    "bytes": 36832
+  },
+  "cd29a2e7ba0cfdae7a01947f0f38f7f53eee87ba2445442e6df8f2a72722f399": {
+    "seconds": 4.51,
+    "bytes": 27428
+  },
+  "40830820cb4a7ab09c7cb067315381195eb5aaa50f806ff19f78142f47a3ec8a": {
+    "seconds": 6.38,
+    "bytes": 38713
+  },
+  "906f6b000d0e62bfb8b96c42ef52863d8ef732a595a4c41e7aeba390dc15c458": {
+    "seconds": 3.79,
+    "bytes": 23196
+  },
+  "543b4110fbee63a520303a16cfcb928903b3b2103084391ccfa54046b84d5e03": {
+    "seconds": 5.65,
+    "bytes": 34325
+  },
+  "1f3085e9c576de5e912cd0480dd79ceb539740128ec8f03c6f184c7468c0990a": {
+    "seconds": 4.78,
+    "bytes": 29152
+  },
+  "8d24b9fb545ba997f64a9dac60b609e7acc9474232af71344c2a0d06a0971411": {
+    "seconds": 4.73,
+    "bytes": 28682
+  },
+  "87b612e849b349fd43d91d706970b6c9c93f6b6b09aa52dc027694fe3f34a8b8": {
+    "seconds": 5.45,
+    "bytes": 33071
+  },
+  "89e5c3a8e3d9c26670075a4bdabcc8d703dc704234ef5dc0b0d7bbb189871b40": {
+    "seconds": 7.19,
+    "bytes": 43572
+  },
+  "f7216bde04a12c6da720afa068189327e67d94d542fc70b5429497531de05bef": {
+    "seconds": 8.25,
+    "bytes": 49841
+  },
+  "43b125ff623ebdfe2124b217aff0a67e69366721494b7e2f97375447cfcbc6db": {
+    "seconds": 6.06,
+    "bytes": 36832
+  },
+  "5214d57f490e0b4b8e5a7f5c07062c3757d12c7856a13e1aeddd679eedc32a1a": {
+    "seconds": 6.42,
+    "bytes": 38870
+  },
+  "d19218fa115b42ac6c2694aff7e44fd71482c83547df44afe28c96384afe22c7": {
+    "seconds": 5.56,
+    "bytes": 33698
+  },
+  "7fbc20efe978a1f917f7f7a361ff8b7bfd9f8de19b886b5535a63ca7ff7d1189": {
+    "seconds": 4.33,
+    "bytes": 26331
+  },
+  "b548440657d497756f62a2c0d9f787fb210e32924a5cfec27ef548c3d8f26ec3": {
+    "seconds": 4.49,
+    "bytes": 27272
+  },
+  "8c761b12539350664944b8e1dafb8059ff862be4f541d461dbff44599575abfa": {
+    "seconds": 4.2,
+    "bytes": 25548
+  },
+  "87a656b157c547d8a9b85d6a6b82f6fe574fa57fc6fedd81932d0a331375c62f": {
+    "seconds": 4.79,
+    "bytes": 29152
+  },
+  "b03e5d8cf45b3c07dab3b2ef57c63c1d069fdeebbb79f80182aaab79bcf5e9ba": {
+    "seconds": 4.73,
+    "bytes": 28682
+  },
+  "48cd44847420eb16778150ed3f3f74462584c64916d18529f01c720de0bb914f": {
+    "seconds": 3.23,
+    "bytes": 19748
+  },
+  "9bc2703f2829fcecb6fc48674fa26c0d011545fd945a977d2a624a2d5fb3d1dd": {
+    "seconds": 3.72,
+    "bytes": 22726
+  },
+  "4f6939461020483367fce728de399b3f883ee0672ec07a59978262a4ab8f98de": {
+    "seconds": 5.08,
+    "bytes": 30876
+  },
+  "623b77c4621da10c736c4683456dfb1b29e25b1f693d580c3e0720f4dc347e84": {
+    "seconds": 3.09,
+    "bytes": 18965
+  },
+  "0bd137cfcb73af4a3661cbc94639e6a1f9843d884239696533283d5a4039d247": {
+    "seconds": 3.27,
+    "bytes": 20062
+  },
+  "6d6b2ae472f0ba0aa034499d77f18ba0c7148c00e1641dafa9dfa10e41192f49": {
+    "seconds": 4.25,
+    "bytes": 25861
+  },
+  "bd4ba5d7acca55afe2a7b09caf29e942a488798f8f693a7f49ab347380b38d6f": {
+    "seconds": 3.68,
+    "bytes": 22413
+  },
+  "a7db2e730e27c2a65bd0b050ee9b0b1405ca99d7324b77f2b0edca23d7d1af09": {
+    "seconds": 3.71,
+    "bytes": 22726
+  },
+  "cafdc3b6b0d48a2b41704a81bca21e253dbaef41e2f726e7c8294096c3f88a78": {
+    "seconds": 4.04,
+    "bytes": 24607
+  },
+  "73f48c63e863a5dbf10d0a23cd745e647801349603050e97db7a19177da47466": {
+    "seconds": 4.05,
+    "bytes": 24764
+  },
+  "0507701fcc0f24e7ec9c8aa740c5dc39b7cb4fb85f8f1c1bb4453830056a7097": {
+    "seconds": 4.65,
+    "bytes": 28369
+  },
+  "bc74c98ada1e63dc61123a096b7b5f6d91200f1a9313d6e86241b6979f5ef702": {
+    "seconds": 5.35,
+    "bytes": 32444
+  },
+  "5bd92a4dcdb5b68c4f2e4cb1b9e4d4d71c82a8a5683df87918163d784089efee": {
+    "seconds": 4.84,
+    "bytes": 29466
+  },
+  "00a11e85c86f1d1f8eb8911a6f2349b37dbfb7a2ef244da12c2f97b06b892b1e": {
+    "seconds": 4.4,
+    "bytes": 26801
+  },
+  "da904ebb9e0cfdf464ec7aa974b39b8f593ee0bdc535e3d62a846f0f72f4539a": {
+    "seconds": 4.48,
+    "bytes": 27272
+  },
+  "ee6edc487ec136e1e6a655d2a57e9e2292b8f71b215db1a09339c96378ab9053": {
+    "seconds": 4.25,
+    "bytes": 25861
+  },
+  "8f82b624805880c455f73dea7590a1763374715c97213911ad0d765dabc4fc92": {
+    "seconds": 4.78,
+    "bytes": 28996
+  },
+  "e172106b13371047beb27d036d4fb40c368ff612c894f04b5befd25d4d56e3b8": {
+    "seconds": 4.32,
+    "bytes": 26331
+  },
+  "5e0d405dcea0666a70d36694542c21b84c70ce01cbf01eb3aadb769e055fae8c": {
+    "seconds": 2.96,
+    "bytes": 18181
+  },
+  "5078ecc3631308b82153c2a29c90204bd479b53a584ece3eb9d97de56d652458": {
+    "seconds": 2.73,
+    "bytes": 16770
+  },
+  "8ada8732b9940f9248eeebafc71ec32e66a84099a2fb9ea31bb1ec7ef551a258": {
+    "seconds": 3.09,
+    "bytes": 18965
+  },
+  "942e6ab215a8b9607e8404325154632429cc4b78fc59bb7745e645c3a68457e0": {
+    "seconds": 3.87,
+    "bytes": 23667
+  },
+  "43211810503e9a4a021ceecd9e8b12d1d771849084d7e490d4e258095634c091": {
+    "seconds": 5.4,
+    "bytes": 32757
+  },
+  "bff6558de482df74ac53357b52ae9eddbda666ead51c881f3edb6b46c0297a8e": {
+    "seconds": 4.13,
+    "bytes": 25234
+  },
+  "404b9449416154aa4b268eb734426a48fbeab7dd28806160f40b598fe52188c2": {
+    "seconds": 5.57,
+    "bytes": 33854
+  },
+  "c5463253ff7d08e640b2a933f0a3b1104a7ebc1e8da3d6fad4aad0777700d5ee": {
+    "seconds": 4.28,
+    "bytes": 26018
+  },
+  "bb8f52e6a85dcbd73abe5a0879dd049713ac6f4c1e09aa0a729f7a69d91b8e04": {
+    "seconds": 5.46,
+    "bytes": 33071
+  },
+  "f03a573470b4c0a9a8bc632f89f0819294b23432b8891f2600470f861c8818d5": {
+    "seconds": 3.91,
+    "bytes": 23823
+  },
+  "7b3da86a20574ce14fd77f559e7c965e337e90d20640f97badaefc0169146970": {
+    "seconds": 4.22,
+    "bytes": 25704
+  },
+  "8a7e817bf1363f218bde5516fa218cbd15eebdb872f044f117d5c6977b4ae7ec": {
+    "seconds": 4.49,
+    "bytes": 27272
+  },
+  "2a1713f14edd58f976841cb44ff686eda828d35e4a53f74b003dd27ea7800730": {
+    "seconds": 4.9,
+    "bytes": 29779
+  },
+  "73b5be18a2d13fc14c7cf34128636385d56e860ace0cad38cd47c3bdf7e424ff": {
+    "seconds": 4.78,
+    "bytes": 28996
+  },
+  "5d95ca7f15d4ff0e61b1f99948aa98c1cad5732f0e654833abe60be3a3e365b1": {
+    "seconds": 4.3,
+    "bytes": 26174
+  },
+  "7b4f833edd1e8ee01b8455db8e8559789a16bf4d1bda4a8d935ca9693d293251": {
+    "seconds": 6.05,
+    "bytes": 36676
+  },
+  "6e8fa3ebc2d421634f3f12dbf5e1d493adcb1ef31882dc0cfe80c16cc954f57a": {
+    "seconds": 4.82,
+    "bytes": 29309
+  },
+  "324ea81c786318c0da8e1fdab010879fac69ec2dc30d26d1066ceced8280a723": {
+    "seconds": 3.93,
+    "bytes": 23980
+  },
+  "e4994886e217a54a1cc31e4c682913ea9a9653bdb6b38f734878574e13111b02": {
+    "seconds": 4.4,
+    "bytes": 26801
+  },
+  "61f81ef88678c20668adb4a694bbec4383f2a782fb88ec9500b70305cd01c9c5": {
+    "seconds": 4.21,
+    "bytes": 25704
+  },
+  "86c4e7ef9f0384bafc2efa7dcf5ab5390da9d8307af3ad0c7451c752c4a0c469": {
+    "seconds": 4.37,
+    "bytes": 26645
+  },
+  "9cceb1ced0f7019ce538b14e2ab465c8b8372c6830b8a1d493bb84c630ec75ca": {
+    "seconds": 4.06,
+    "bytes": 24764
+  },
+  "d5dc170859378a22525b09a4dd3eb3915d622763182b9f182ab0fc4c44967e00": {
+    "seconds": 3.91,
+    "bytes": 23823
+  },
+  "8feb22192eb07bbf409aae9a96fe725c67ddf4d3189749e0d9d4a9b9aae2d21b": {
+    "seconds": 5.63,
+    "bytes": 34168
+  },
+  "447b1b9583a4ba69e2ba76ff648aab4a1b27d193c087bdc0dab13a60bacf36b3": {
+    "seconds": 4.61,
+    "bytes": 28055
+  },
+  "98e8492d65d95d80717aa689b1fec7450e3776bb716f5b3470c43ae8a0c2264d": {
+    "seconds": 4.04,
+    "bytes": 24607
+  }
+}

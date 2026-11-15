@@ -24,3 +24,6 @@ plantilla.txt
 # Sistema operativo
 Thumbs.db
 desktop.ini
+
+.venv/
+.test-data/

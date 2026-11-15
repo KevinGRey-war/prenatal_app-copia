@@ -45,7 +45,7 @@ db = crear_cliente_supabase()
 # =========================================================
 
 st.set_page_config(
-    page_title="Vida Nueva Premium",
+    page_title="Vida Nueva · Cuidado Materno Infantil",
     page_icon="🤰",
     layout="wide"
 )
@@ -679,29 +679,10 @@ if bg_base64:
 # 🔊 VOZ
 # =========================================================
 
-def hablar(texto):
-
-    texto = texto.replace("'", "")
-
-    st.components.v1.html(f"""
-
-    <script>
-
-    window.speechSynthesis.cancel();
-
-    var msg = new SpeechSynthesisUtterance('{texto}');
-
-    msg.lang = 'es-ES';
-
-    msg.rate = 0.95;
-
-    msg.pitch = 1.1;
-
-    speechSynthesis.speak(msg);
-
-    </script>
-
-    """, height=0)
+from voice_feedback import hablar
+from feedback_examples import example_for
+from additional_questions import ADDITIONAL
+from survey_feedback import reset_attempt, show_survey_review
 
 # =========================================================
 # 📚 PREGUNTAS
@@ -761,6 +742,8 @@ BANCO = {
     ]
 }
 
+
+BANCO.update(ADDITIONAL)
 
 def preparar_examen(preguntas, cantidad=10):
     """Elige preguntas y mezcla sus opciones sin modificar el banco original."""
@@ -960,7 +943,7 @@ if st.session_state.fase == "login":
 
         st.markdown("<h1 class='brand-title'>Tecnológico Universitario Vida Nueva</h1>", unsafe_allow_html=True)
 
-        st.markdown("<h3 class='brand-subtitle'>Cuidado Prenatal Inteligente</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 class='brand-subtitle'>Cuidado Materno Infantil</h3>", unsafe_allow_html=True)
 
         nombre = st.text_input(
             "Nombre de la mamá",
@@ -968,7 +951,7 @@ if st.session_state.fase == "login":
         )
 
         trimestre = st.selectbox(
-            "Elige el trimestre de embarazo",
+            "Elige la etapa de cuidado",
             list(BANCO.keys())
         )
 
@@ -983,9 +966,10 @@ if st.session_state.fase == "login":
 
         if st.button("COMENZAR EXPERIENCIA", use_container_width=True):
 
-            if nombre != "":
+            if nombre.strip():
 
                 st.session_state.user = nombre
+                reset_attempt()
 
                 st.session_state.trimestre = trimestre
 
@@ -1128,15 +1112,18 @@ elif st.session_state.fase == "test":
 
             """, unsafe_allow_html=True)
 
+        respondida = st.session_state.resp
+        seleccionada = st.session_state.respuesta_seleccionada
+
         def mostrar_opcion(opcion):
 
-            if not st.session_state.resp:
+            if not respondida:
                 return opcion
 
             if opcion == actual["corr"]:
                 return f"✓ {opcion}"
 
-            if opcion == st.session_state.respuesta_seleccionada:
+            if opcion == seleccionada:
                 return f"✕ {opcion}"
 
             return opcion
@@ -1144,7 +1131,7 @@ elif st.session_state.fase == "test":
         respuesta = st.radio(
             "Opciones de respuesta",
             actual["opts"],
-            index=None,
+            index=actual["opts"].index(seleccionada) if respondida else None,
             format_func=mostrar_opcion,
             key=f"r_{st.session_state.idx}",
             disabled=st.session_state.resp,
@@ -1176,9 +1163,15 @@ elif st.session_state.fase == "test":
                 else:
 
                     st.session_state.fb = (
-                        f"Elegiste «{respuesta}». {actual['mal']}"
+                        f"Elegiste «{respuesta}». La respuesta correcta es «{actual['corr']}». {actual['mal']} {example_for(actual)}"
                     )
 
+                st.session_state.answers.append({
+                    "question": actual["q"], "selected": respuesta,
+                    "answer": actual["corr"], "correct": correcto,
+                    "feedback": actual["bien"] if correcto else actual["mal"],
+                    "example": example_for(actual),
+                })
                 st.session_state.resp = True
 
                 st.rerun()
@@ -1258,7 +1251,7 @@ elif st.session_state.fase == "final":
     st.markdown("""
 
     <h1 class='screen-title'>¡Felicidades!</h1>
-    <p class='screen-caption'>Completaste la experiencia de cuidado prenatal.</p>
+    <p class='screen-caption'>Completaste la evaluación de cuidado materno infantil.</p>
 
     """, unsafe_allow_html=True)
 
@@ -1275,6 +1268,8 @@ elif st.session_state.fase == "final":
     </div>
 
     """, unsafe_allow_html=True)
+
+    show_survey_review(st.session_state.trimestre)
 
     st.markdown("<h2 class='screen-title' style='font-size:1.55rem;margin-top:24px;'>Ranking de participantes</h2>", unsafe_allow_html=True)
 

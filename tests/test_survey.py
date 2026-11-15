@@ -1,0 +1,111 @@
+import ast
+import hashlib
+import json
+import os
+from pathlib import Path
+import tempfile
+import unittest
+
+from additional_questions import ADDITIONAL
+from feedback_examples import example_for, final_narration, test_risk
+from voice_feedback import clip_path, voice_markup
+
+
+def original_bank():
+    tree = ast.parse(Path("app.py").read_text(encoding="utf-8"))
+    return next(ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
+                and any(isinstance(t, ast.Name) and t.id == "BANCO" for t in n.targets))
+
+
+class SurveyTests(unittest.TestCase):
+    def test_original_styles_and_questions_unchanged(self):
+        source = Path("app.py").read_text(encoding="utf-8")
+        css = source[source.index('st.markdown("""'):].split('# =========================================================\n# 🔊 VOZ')[0]
+        self.assertEqual(hashlib.sha256(css.encode()).hexdigest(), "2035775b110ca12746276971347b6ca8bca66bc77202c4ce37cb8b1961255912")
+        self.assertEqual(hashlib.sha256(json.dumps(original_bank(), sort_keys=True, ensure_ascii=True).encode()).hexdigest(),
+                         "231f7f69376dba3f580d8722c6e4a646a4d3c9acb9aae0104ff5529d340e8093")
+
+    def test_five_stages_and_ten_new_questions_each(self):
+        self.assertEqual(len(original_bank() | ADDITIONAL), 5)
+        for stage, questions in ADDITIONAL.items():
+            self.assertEqual(len(questions), 10, stage)
+            self.assertEqual(len({q["q"] for q in questions}), 10)
+            for q in questions:
+                self.assertEqual(q["opts"].count(q["corr"]), 1)
+                self.assertTrue(q["bien"] and q["mal"])
+
+    def test_specific_examples_for_every_question(self):
+        for questions in (original_bank() | ADDITIONAL).values():
+            for q in questions:
+                self.assertTrue(example_for(q).startswith("Por ejemplo:"), q["q"])
+
+    def test_all_score_boundaries(self):
+        for score in range(11):
+            self.assertIn("alto" if score <= 6 else "leve" if score <= 8 else "Sin", test_risk(score))
+
+    def test_final_voice_includes_all_answers_and_examples(self):
+        rows = [dict(question=q["q"], selected=q["opts"][1], answer=q["corr"], correct=False,
+                     feedback=q["mal"], example=example_for(q)) for q in ADDITIONAL["Posparto"]]
+        text = final_narration(rows, 0, test_risk(0))
+        for row in rows:
+            for key in ["question", "selected", "answer", "feedback", "example"]:
+                self.assertIn(row[key], text)
+        self.assertIn("Pregunta 10.", text)
+
+    def test_audio_assets_cover_every_possible_explanation(self):
+        from scripts.build_voice_assets import texts
+        manifest = json.loads(Path("voice_assets/manifest.json").read_text(encoding="utf-8"))
+        for text in texts():
+            path = clip_path(text)
+            self.assertTrue(path.is_file(), text)
+            self.assertGreater(manifest[path.stem]["seconds"], .1)
+            self.assertGreater(path.stat().st_size, 500)
+            self.assertFalse(path.read_bytes().startswith(b"ID3"))
+
+    def test_browser_voice_fallback_escapes_text(self):
+        output = voice_markup("'Texto' </script><script>alert(1)</script>")
+        self.assertNotIn("</script><script>alert", output)
+        self.assertIn("Escuchar explicación", output)
+
+    def test_complete_original_quiz_flow_and_final_audio(self):
+        from streamlit.testing.v1 import AppTest
+        with tempfile.TemporaryDirectory() as directory:
+            os.environ["RANKING_DB_PATH"] = str(Path(directory) / "ranking.sqlite3")
+            app = AppTest.from_file(str(Path("app.py").resolve())).run()
+            self.assertFalse(app.exception)
+            self.assertEqual([b.label for b in app.button], ["COMENZAR EXPERIENCIA", "🔐 ENTRAR AL PANEL ADMINISTRATIVO"])
+            app.text_input[0].set_value("Prueba local")
+            app.selectbox[0].select("Posparto")
+            app.button[0].click().run()
+            self.assertEqual(app.session_state["fase"], "test")
+            # Rebind the session: AppTest 1.57 retains removed widgets after a
+            # st.rerun inside the original login's column.
+            keys = ["fase", "user", "examen", "trimestre", "pts", "idx", "resp", "fb", "correcto",
+                    "respuesta_seleccionada", "ranking_guardado", "ranking_storage_version", "answers"]
+            state = {key: app.session_state[key] for key in keys}
+            app = AppTest.from_file(str(Path("app.py").resolve()))
+            for key, value in state.items():
+                app.session_state[key] = value
+            app.run()
+            for i in range(10):
+                question = app.session_state["examen"][i]
+                answer = question["corr"] if i < 7 else next(o for o in question["opts"] if o != question["corr"])
+                app.radio[0].set_value(answer).run()
+                next(b for b in app.button if b.label == "CONFIRMAR RESPUESTA").click().run()
+                self.assertFalse(app.exception)
+                self.assertTrue(app.session_state["resp"])
+                self.assertTrue(clip_path(app.session_state["fb"]).is_file())
+                if i >= 7:
+                    self.assertIn("Por ejemplo:", app.session_state["fb"])
+                next(b for b in app.button if b.label == "SIGUIENTE").click().run()
+                self.assertFalse(app.exception)
+            self.assertEqual(app.session_state["fase"], "final")
+            self.assertEqual(app.session_state["pts"], 70)
+            self.assertEqual(len(app.session_state["answers"]), 10)
+            self.assertTrue(any("Retroalimentación final" in h.value for h in app.subheader))
+            self.assertEqual(len(app.get("audio")), 1)
+            self.assertEqual(len(app.expander), 10)
+
+
+if __name__ == "__main__":
+    unittest.main()

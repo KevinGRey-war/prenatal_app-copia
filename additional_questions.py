@@ -1,0 +1,42 @@
+"""Preguntas educativas de preparación para el parto y posparto."""
+
+def question(q, correct, wrong1, wrong2, explanation, topic):
+    return dict(q=q, opts=[correct, wrong1, wrong2], corr=correct,
+                bien=explanation, mal=explanation, topic=topic)
+
+
+ADDITIONAL = {
+    "Preparación para el parto": [
+        question("¿Qué debe incluir un plan para el nacimiento?", "Lugar de atención, transporte, acompañante y contactos", "Solo la ropa del bebé", "Una fecha exacta garantizada", "Planifica con el equipo de salud dónde acudir, cómo llegar y quién te acompañará, también ante una urgencia.", "🏥 Plan de nacimiento"),
+        question("Si hay pérdida de líquido por vagina, ¿qué debes hacer?", "Contactar al servicio de salud para valoración", "Esperar siempre hasta el día siguiente", "Introducir un tampón", "La pérdida de líquido puede indicar rotura de membranas. Contacta al servicio de salud y sigue sus instrucciones; no introduzcas objetos en la vagina.", "🚨 Señales de alarma"),
+        question("¿Qué hacer si los movimientos del bebé disminuyen respecto a lo habitual?", "Buscar valoración sin demora", "Esperar a la próxima cita", "Asumir que se mueve menos porque va a nacer", "Un cambio importante en el patrón de movimientos requiere valoración oportuna, incluso cerca del parto.", "🚨 Movimientos del bebé"),
+        question("¿Quién puede acompañarte durante el parto según tus preferencias y condiciones de atención?", "Una persona de confianza elegida por ti", "Únicamente alguien elegido por otras personas", "Nadie puede acompañar nunca", "Comenta tu elección con el equipo. El acompañamiento de confianza y el trato respetuoso forman parte de una experiencia positiva.", "🤝 Acompañamiento"),
+        question("¿Qué conviene llevar al centro de salud?", "Documentos, registros de controles y artículos indicados", "Solo dinero", "Medicamentos para inducir el parto por cuenta propia", "Prepara los registros prenatales, documentos y una bolsa según las indicaciones del centro de salud.", "👜 Preparativos"),
+        question("¿Cómo se decide una opción para aliviar el dolor del parto?", "Conversando sobre beneficios y riesgos con el equipo", "Tomando cualquier analgésico sin avisar", "Todas las personas deben usar la misma opción", "Pregunta por respiración, movimiento, apoyo y opciones farmacológicas disponibles; la elección depende de preferencias y condiciones clínicas.", "🌬️ Manejo del dolor"),
+        question("¿Es seguro usar hierbas o medicamentos para provocar el parto sin indicación?", "No, pueden causar complicaciones", "Sí, si son naturales", "Sí, si los recomienda una amistad", "Natural no significa seguro. La inducción del parto requiere valoración e indicación profesional.", "💊 Uso seguro de medicamentos"),
+        question("Ante sangrado abundante o convulsiones durante el embarazo, ¿qué corresponde?", "Solicitar atención de emergencia de inmediato", "Esperar a completar el cuestionario", "Descansar hasta la próxima cita", "Son señales de alarma. Acude a emergencias o solicita ayuda inmediata, independientemente de tu puntaje educativo.", "🚨 Emergencias"),
+        question("¿Qué significa consentimiento informado durante la atención?", "Recibir explicación y participar en las decisiones", "Aceptar procedimientos sin ninguna explicación", "No poder hacer preguntas", "Tienes derecho a información comprensible, preguntas y decisiones informadas sobre tu atención.", "💬 Atención respetuosa"),
+        question("¿Qué debes acordar antes del nacimiento para el regreso a casa?", "Apoyo, controles y cuidados de la madre y el bebé", "Evitar todas las consultas si te sientes bien", "Que la madre haga sola todas las tareas", "Organiza ayuda práctica, contactos de salud y seguimiento. La atención continúa después del nacimiento.", "🏠 Red de apoyo"),
+    ],
+    "Posparto": [
+        question("¿Cuándo se necesitan cuidados después del parto?", "En las primeras 24 horas y con seguimiento posterior", "Solo si hay dolor", "Únicamente después de seis meses", "La OMS recomienda atención en las primeras 24 horas y al menos tres contactos adicionales durante las primeras seis semanas, ajustados a cada caso.", "📅 Controles posparto"),
+        question("Ante sangrado abundante, desmayo o dificultad respiratoria después del parto, ¿qué haces?", "Buscar atención de emergencia inmediata", "Esperar a ver si desaparece al día siguiente", "Considerarlo siempre normal", "Estas señales pueden indicar una complicación. Solicita atención urgente; un buen resultado del test no descarta problemas de salud.", "🚨 Alarmas maternas"),
+        question("Si el recién nacido no se alimenta bien, tiene fiebre o respira con dificultad, ¿qué corresponde?", "Buscar atención médica sin demora", "Esperar varios días", "Darle medicamentos de adultos", "El rechazo de alimento, fiebre y dificultad respiratoria en el recién nacido requieren atención profesional urgente.", "👶 Alarmas del recién nacido"),
+        question("¿Qué alimentación se recomienda de forma general durante los primeros seis meses?", "Lactancia materna exclusiva cuando sea posible", "Jugos y papillas desde el nacimiento", "Agua con miel para complementar", "La recomendación general es lactancia materna exclusiva seis meses. Si se necesita una alternativa, el equipo de salud orienta sobre fórmula y preparación segura; no se ofrecen miel ni sólidos al recién nacido.", "🤱 Alimentación temprana"),
+        question("¿Qué hacer ante dolor persistente o dificultades al amamantar?", "Pedir apoyo para revisar agarre y alimentación", "Soportar siempre el dolor sin consultar", "Suspender por consejo de cualquier persona", "Pide apoyo de lactancia. Revisar posición, agarre y transferencia de leche ayuda a resolver dificultades y cuidar a ambos.", "🤱 Apoyo en lactancia"),
+        question("Si hay tristeza intensa o ansiedad persistente que dificulta cuidarte, ¿qué debes hacer?", "Buscar apoyo profesional y de personas de confianza", "Ocultarlo por vergüenza", "Esperar indefinidamente sin ayuda", "La salud emocional también necesita atención. Habla con el equipo de salud y tu red de apoyo si los síntomas persisten o interfieren en tu vida.", "💜 Salud emocional"),
+        question("¿Cómo cuidar una herida de cesárea o del periné?", "Seguir indicaciones y consultar ante fiebre, pus o dolor creciente", "Aplicar sustancias caseras sin preguntar", "Ignorar cualquier secreción", "Sigue la higiene indicada al alta. Fiebre, secreción maloliente o dolor que aumenta requieren valoración.", "🩹 Recuperación"),
+        question("¿Se puede volver a ovular antes de la primera menstruación posparto?", "Sí, por eso conviene conversar sobre anticoncepción", "No, es imposible", "Solo después de un año", "La ovulación puede preceder a la menstruación. Consulta métodos apropiados para tu situación y lactancia; no asumas protección automática.", "📋 Planificación familiar"),
+        question("¿Cómo debe dormir un bebé para un sueño más seguro?", "Boca arriba en superficie firme, plana y despejada", "Boca abajo sobre almohadas", "En un sofá con mantas sueltas", "Colócalo boca arriba en su propio espacio firme y plano, sin almohadas ni objetos sueltos. Consulta orientación de sueño seguro en los controles.", "🌙 Sueño seguro"),
+        question("¿Qué conviene llevar a los controles del bebé?", "Su registro de salud y vacunas, junto con tus dudas", "Solo fotografías", "Nada si parece crecer bien", "El seguimiento permite revisar alimentación, crecimiento, desarrollo y vacunación. Lleva el registro y comenta tus observaciones.", "📒 Seguimiento infantil"),
+    ],
+}
+
+SOURCES = {
+    "OMS · Alimentación complementaria": "https://www.who.int/publications/i/item/9789240081864",
+    "OMS · Cuidados después del parto": "https://www.who.int/tools/your-life-your-health/life-phase/pregnancy--birth-and-after-childbirth/getting-the-health-services-you-need-after-childbirth",
+    "OMS · Preparación para el nacimiento": "https://www.who.int/tools/your-life-your-health/life-phase/pregnancy--birth-and-after-childbirth/making-plans-for-childbirth-when-pregnant",
+    "CDC · Alimentos que evitar o limitar": "https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/foods-and-drinks-to-avoid-or-limit.html",
+    "CDC · Prevención del atragantamiento": "https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/choking-hazards.html",
+    "CDC · Sueño seguro": "https://www.cdc.gov/sudden-infant-death/sleep-safely/index.html",
+}
