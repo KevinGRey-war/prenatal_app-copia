@@ -1,7 +1,7 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jardín de vida · Nutrición por etapas</title><link rel="stylesheet" href="style.css"></head>
+<title>Jardín de vida · Nutrición por etapas</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="playful.css"></head>
 <body><main id="game">
-  <header><div><div class="brand"><img src="logo.svg" width="56" height="56" alt="Jardín de vida"><p class="eyebrow">VIDA NUEVA<br>JARDÍN DE VIDA</p></div><h1>Un pequeño comienzo,<br>una vida por cuidar.</h1></div>
+  <header><div><div class="brand"><img src="logo.svg" width="56" height="56" alt="Jardín de vida"><p class="eyebrow">VIDA NUEVA<br>JARDÍN DE VIDA</p></div><h1>Nutrición en acción</h1></div>
     <div class="tools"><button id="music" class="soft" aria-pressed="false">♫ Música</button><button id="pause" class="soft" disabled>Ⅱ Pausa</button></div></header>
   <div id="intro" class="welcome"><img class="welcome-icon logo" src="logo.svg" width="100" height="100" alt="Cuidado y crecimiento"><h2>Del embrión al primer abrazo</h2>
     <p>Recorre las cinco etapas. Elige alimentos seguros para mamá y, al nacer, la alimentación apropiada para el bebé.</p>
@@ -16,7 +16,7 @@
     <div class="scene-layout">
       <section class="scene" id="dropzone" aria-label="Zona de aprendizaje; también puedes pulsar las tarjetas">
         <div class="orb orb-one"></div><div class="orb orb-two"></div><span class="spark s1">✦</span><span class="spark s2">✧</span>
-        <div id="illustration" role="img"></div><div class="scene-label" id="figureLabel"></div>
+        <span id="reaction" class="reaction" aria-hidden="true"></span><div id="illustration" role="img"></div><div class="scene-label" id="figureLabel"></div>
         <div class="growth"><span id="progressLabel"></span><progress id="growth" max="5" value="0"></progress></div>
         <p class="small" id="recipientHint"></p>
       </section>

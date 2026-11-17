@@ -23,7 +23,29 @@ function art(stage){
   if(stage<4){const scale=stage===1?.78:stage===2?.93:1;
     return `<svg viewBox="0 0 300 260" aria-hidden="true">${defs}<ellipse cx="150" cy="130" rx="111" ry="119" fill="url(#bubble)" stroke="#fff8" stroke-width="8"/><path d="M162 160C112 219 61 172 89 151" fill="none" stroke="#c78ba8" stroke-width="8" stroke-linecap="round"/><g transform="translate(${150*(1-scale)} ${130*(1-scale)}) scale(${scale}) rotate(-18 150 130)"><ellipse class="skin" cx="153" cy="156" rx="45" ry="57" fill="url(#skin)"/><circle class="skin" cx="145" cy="88" r="46" fill="url(#skin)" stroke="#d9a28c" stroke-width="2"/><path d="M113 85q9 9 18 0M149 85q9 9 18 0" fill="none" stroke="#74505a" stroke-width="3" stroke-linecap="round"/><path d="M133 106q10 6 19 0" fill="none" stroke="#b76c75" stroke-width="3" stroke-linecap="round"/><ellipse cx="119" cy="101" rx="10" ry="6" fill="#efa0a0" opacity=".6"/><path class="skin" d="M177 138q-28 22-43 5M170 192q-21 21-39 0" fill="none" stroke="#efbd9b" stroke-width="20" stroke-linecap="round"/><ellipse class="skin" cx="128" cy="190" rx="12" ry="9" fill="#f5c5a1"/><path d="M123 51q24-18 43 2" fill="none" stroke="#8b6557" stroke-width="5" stroke-linecap="round"/></g></svg>`;
   }
-  return `<svg viewBox="0 0 300 260" aria-hidden="true">${defs}<ellipse cx="150" cy="238" rx="86" ry="12" fill="#c89ab82b"/><path d="M91 126Q55 220 150 243Q245 220 209 126Z" fill="#dfc5ed" stroke="#bc91cf" stroke-width="2"/><path d="M92 145L199 219M210 145L106 219" stroke="#fff8" stroke-width="12"/><circle class="skin" cx="150" cy="92" r="60" fill="url(#skin)" stroke="#d9a28c" stroke-width="2"/><circle cx="127" cy="91" r="5" fill="#594854"/><circle cx="172" cy="91" r="5" fill="#594854"/><ellipse cx="113" cy="108" rx="12" ry="7" fill="#ed9ca4" opacity=".7"/><ellipse cx="187" cy="108" rx="12" ry="7" fill="#ed9ca4" opacity=".7"/><path d="M137 116q13 17 26 0" fill="#c06b7e"/><path d="M126 37q17-20 31-1q-10-5-13 5" fill="#8c6354"/><path class="tear" d="M119 99q-17 24 0 24q17 0 0-24M179 99q-17 24 0 24q17 0 0-24" fill="#8fc8e4"/><path d="M132 183q18-23 36 0q-18 30-36 0" fill="#fff4fa"/></svg>`;
+  return `<svg viewBox="0 0 300 300" aria-hidden="true">${defs}
+  <ellipse cx="150" cy="275" rx="95" ry="15" fill="#59963730"/>
+  <g stroke="#895032" stroke-width="3" stroke-linejoin="round">
+  <ellipse class="skin" cx="87" cy="249" rx="36" ry="24" fill="url(#skin)" transform="rotate(-25 87 249)"/>
+  <ellipse class="skin" cx="212" cy="249" rx="36" ry="24" fill="url(#skin)" transform="rotate(25 212 249)"/>
+  <path d="M111 165Q91 204 108 250Q150 273 194 248Q211 204 188 165Z" fill="#40b9ec"/>
+  <path d="M123 167V212Q150 232 178 212V167" fill="#fff6d6"/>
+  <path d="M150 209v-19m0 7q-22 0-19-15q19 0 19 15m0-4q1-17 18-15q-1 16-18 15" fill="#88c944" stroke="#4b9236" stroke-width="2"/>
+  <path class="skin" d="M112 181Q89 171 73 151Q54 142 47 158Q51 187 98 211" fill="url(#skin)"/>
+  <path class="skin" d="M187 179Q212 168 223 145Q242 134 250 151Q245 184 202 207" fill="url(#skin)"/>
+  <circle class="skin" cx="79" cy="112" r="18" fill="url(#skin)"/><circle class="skin" cx="222" cy="112" r="18" fill="url(#skin)"/>
+  <path class="skin" d="M79 103Q72 36 149 31Q225 32 223 108Q232 168 152 181Q78 173 79 103Z" fill="url(#skin)"/>
+  <path d="M80 99Q54 54 101 30Q132 5 174 26Q211 19 227 67L220 104Q207 65 191 64Q201 85 168 75Q182 53 156 51Q114 85 106 63Q108 86 80 99Z" fill="#9b562b"/>
+  <path d="M92 55Q116 29 150 31M169 35q26-6 41 20" fill="none" stroke="#df9a4e" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="119" cy="111" rx="15" ry="21" fill="#fff" stroke="none"/><ellipse cx="181" cy="111" rx="15" ry="21" fill="#fff" stroke="none"/>
+  <ellipse cx="122" cy="114" rx="10" ry="16" fill="#593522"/><ellipse cx="178" cy="114" rx="10" ry="16" fill="#593522"/>
+  <g fill="white" stroke="none"><circle cx="125" cy="107" r="5"/><circle cx="181" cy="107" r="5"/></g>
+  <g fill="#f79582" stroke="none" opacity=".65"><ellipse cx="100" cy="137" rx="17" ry="10"/><ellipse cx="202" cy="137" rx="17" ry="10"/></g>
+  <path d="M145 131q5 5 10 0" fill="none" stroke="#d58b65" stroke-linecap="round"/>
+  <path class="happy-mouth" d="M131 144Q150 151 172 142Q166 171 150 167Q136 166 131 144Z" fill="#9b3b33"/>
+  <path class="sad-mouth" d="M131 158Q148 126 171 156Q151 150 131 158Z" fill="#9b3b33"/>
+  <path class="tear" d="M106 127q-13 23 0 23q13 0 0-23M195 127q-13 23 0 23q13 0 0-23" fill="#57c9f7" stroke="#fff" stroke-width="2"/>
+  </g></svg>`;
 }
 function render(){
   $('intro').hidden=state.started;$('board').hidden=!state.started||state.done;$('summary').hidden=!state.done;
@@ -58,6 +80,7 @@ function choose(index){
   $('feedback').className='feedback '+(f.good?'good':'bad');$('feedback').replaceChildren();
   const title=document.createElement('strong');title.textContent=(f.good?'✓ Buena elección: ':'✕ Revisemos esta elección: ')+f.name;
   $('feedback').append(title,document.createTextNode(f.explanation));
+  $('reaction').textContent=f.good?'¡Muy bien! ★':'¡Vamos a aprender!';
   clearTimeout(emotionTimer);$('dropzone').classList.remove('error','success');$('dropzone').classList.add(f.good?'success':'error');
   emotionTimer=setTimeout(()=>$('dropzone').classList.remove('error','success'),1800);
   Music.effect(f.good);speak((f.good?'Correcto. ':'Esta elección no es adecuada. ')+f.explanation);resize();
@@ -81,7 +104,7 @@ $('closeLesson').onclick=()=>$('lesson').close();
 $('next').onclick=()=>{if(paused)return;const previous=state;state=E.next(state,stages);if(previous===state)return;stopVoice();save();
   $('feedback').className='feedback';$('feedback').textContent='Elige una tarjeta para descubrir su aporte o aprender por qué debes evitarla.';render();
   if(state.done){const stats=E.stats(state,stages);Music.stop();musicLabel();speak(`Completaste las cinco etapas con ${stats.good} aciertos y ${stats.errors} errores. Revisa tus elecciones en el resumen.`);}
-  else{Music.effect(true);$('stageTitle').setAttribute('tabindex','-1');$('stageTitle').focus();}
+  else{$('dropzone').classList.remove('error','success');const scene=document.querySelector('.scene-layout');scene.classList.remove('entering');void scene.offsetWidth;scene.classList.add('entering');Music.effect(true);$('stageTitle').setAttribute('tabindex','-1');$('stageTitle').focus();}
 };
 $('restart').onclick=()=>{stopVoice();state={...E.fresh(),started:true};save();$('feedback').className='feedback';$('feedback').textContent='Comienza un nuevo recorrido y aplica lo aprendido.';render();Music.start().then(musicLabel);};
 $('dropzone').ondragover=e=>{e.preventDefault();if(!paused)$('dropzone').classList.add('drop-ready');};

@@ -114,6 +114,8 @@ def show_menu_music():
 
 
 def menu_styles():
+    garden = base64.b64encode((ROOT / "garden.svg").read_bytes()).decode("ascii")
+    st.markdown("<style>.st-key-learning_menu .menu-card.garden{background:linear-gradient(#ffffffb8,#fffcebdc),url(data:image/svg+xml;base64," + garden + ") center/cover!important;border:2px solid #9dbe66}.st-key-learning_menu .menu-card{min-height:320px!important;border-width:2px!important;box-shadow:0 7px 0 #ad8a4b18!important}.st-key-learning_menu .menu-card.garden .menu-icon img{width:88px;height:88px;filter:drop-shadow(0 5px 3px #6c954e40)}.st-key-learning_menu .menu-card.garden h2{color:#42642b!important}.st-key-learning_menu .menu-badge{border:1px solid #e7d7a0}.st-key-learning_menu .menu-trail span{background:#fffbe9!important;color:#645436!important;border-color:#dfc895!important}@media(max-width:650px){.st-key-learning_menu .menu-card{min-height:0!important}.st-key-learning_menu .menu-badge{float:none;display:table;margin-top:8px}}</style>", unsafe_allow_html=True)
     st.markdown("""<style>
     .st-key-learning_menu .menu-card {position:relative;overflow:hidden;min-height:285px;
         border:1px solid #ecd7e8;border-radius:26px;padding:25px;
