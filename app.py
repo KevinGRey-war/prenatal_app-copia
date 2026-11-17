@@ -683,6 +683,9 @@ from voice_feedback import hablar
 from feedback_examples import example_for
 from additional_questions import ADDITIONAL
 from survey_feedback import reset_attempt, show_survey_review
+from responsive_ui import apply_responsive_layout
+
+apply_responsive_layout()
 
 # =========================================================
 # 📚 PREGUNTAS
@@ -990,19 +993,24 @@ if st.session_state.fase == "login":
 
 elif st.session_state.fase == "menu":
 
+    from gestation_game import menu_styles, show_menu_music, menu_logo
+    menu_styles()
     st.markdown("<h1 class='screen-title'>¿Qué te gustaría aprender hoy?</h1>", unsafe_allow_html=True)
     st.markdown(f"<p class='screen-caption'>Hola, {html.escape(st.session_state.user)}. Elige una de las dos actividades.</p>", unsafe_allow_html=True)
-    test_col, juego_col = st.columns(2)
-    with test_col:
-        st.markdown("<div class='side-card'><h2>📚 Test de conocimientos sobre gestación</h2><p>Repasa los tres trimestres, la preparación para el parto y el posparto.</p><p>10 preguntas por etapa, con explicaciones, ejemplos y voz.</p></div>", unsafe_allow_html=True)
-        if st.button("ENTRAR AL TEST", use_container_width=True):
-            st.session_state.fase = "etapa"
-            st.rerun()
-    with juego_col:
-        st.markdown("<div class='side-card'><h2>🥣 Aprende a dar de comer a tu bebé</h2><p>Un espacio para el juego interactivo de alimentación del bebé.</p><p>Próximamente: actividades para aprender jugando.</p></div>", unsafe_allow_html=True)
-        if st.button("ENTRAR A ALIMENTACIÓN", use_container_width=True):
-            st.session_state.fase = "juego"
-            st.rerun()
+    show_menu_music()
+    with st.container(key="learning_menu"):
+        st.markdown("<div class='menu-trail'><span>🌱 Primer trimestre</span><span>🌿 Segundo trimestre</span><span>🌸 Tercer trimestre</span><span>✨ Preparación para el parto</span><span>👶 Posparto</span></div>", unsafe_allow_html=True)
+        test_col, juego_col = st.columns(2)
+        with test_col:
+            st.markdown("<div class='menu-card'><span class='menu-icon'>📚</span><span class='menu-badge'>5 etapas · 10 preguntas</span><h2>Test de conocimientos<br>sobre gestación</h2><p>Descubre lo que sabes sobre el embarazo, el parto y el posparto. Aprende con cada respuesta y tu repaso final.</p></div>", unsafe_allow_html=True)
+            if st.button("ENTRAR AL TEST", use_container_width=True):
+                st.session_state.fase = "etapa"
+                st.rerun()
+        with juego_col:
+            st.markdown(f"<div class='menu-card garden'><span class='menu-icon'>{menu_logo()}</span><span class='menu-badge'>Juego · Del embrión al bebé</span><h2>Nutrir una vida,<br>paso a paso</h2><p>Elige, descubre y acompaña cada etapa. Alimentación para mamá durante el embarazo y para el bebé al nacer.</p></div>", unsafe_allow_html=True)
+            if st.button("ENTRAR A ALIMENTACIÓN", use_container_width=True):
+                st.session_state.fase = "juego"
+                st.rerun()
     if st.button("CAMBIAR NOMBRE"):
         st.session_state.fase = "login"
         st.rerun()
@@ -1025,8 +1033,8 @@ elif st.session_state.fase == "etapa":
 
 elif st.session_state.fase == "juego":
 
-    st.markdown("<h1 class='screen-title'>Juego interactivo de alimentación para bebé</h1>", unsafe_allow_html=True)
-    st.markdown(f"<div class='side-card'><p>Participante: {html.escape(st.session_state.user)}</p><p>Este espacio está reservado para el juego. Sus actividades se incorporarán en la siguiente etapa.</p></div>", unsafe_allow_html=True)
+    from gestation_game import show_game
+    show_game()
     if st.button("VOLVER AL MENÚ"):
         st.session_state.fase = "menu"
         st.rerun()

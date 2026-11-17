@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Jardín de vida: cuidado y crecimiento">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#fff0f6"/><stop offset="1" stop-color="#eadff7"/></linearGradient></defs>
+<rect x="3" y="3" width="114" height="114" rx="34" fill="url(#bg)" stroke="#e6cce1" stroke-width="2"/>
+<path d="M61 98C31 84 17 58 33 40C46 25 65 34 62 49" fill="none" stroke="#b86d99" stroke-width="6" stroke-linecap="round"/>
+<path d="M62 96C91 80 104 62 90 48C79 38 67 49 68 59" fill="none" stroke="#8e71b0" stroke-width="6" stroke-linecap="round"/>
+<circle cx="58" cy="58" r="13" fill="#f4c9a5" stroke="#c89583" stroke-width="2"/>
+<path d="M48 73Q34 94 62 98Q87 84 73 72Z" fill="#c7a9df"/>
+<path d="M51 80l20 12" stroke="#fff5fb" stroke-width="5" stroke-linecap="round"/>
+<path d="M52 59q3 4 6 0m4 0q3 4 6 0" fill="none" stroke="#765565" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M71 37Q68 17 89 17Q88 35 71 37Z" fill="#88b6a0"/>
+<path d="M69 37Q53 34 55 20Q71 20 69 37Z" fill="#b9d3b6"/>
+<path d="M70 41l11-17" stroke="#5f937d" stroke-width="2.3" stroke-linecap="round"/>
+<path d="M27 76v10m-5-5h10" stroke="#d4af68" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
