@@ -91,13 +91,33 @@ SOURCES = [
 ]
 
 
-def show_game():
+@st.cache_data(show_spinner=False)
+def artwork_payload():
+    # Pass binary illustrations through the component channel. Some Streamlit
+    # ASGI versions return 500 for PNG responses from component static routes.
+    return {name: base64.b64encode((ROOT / "assets" / filename).read_bytes()).decode("ascii")
+            for name, filename in (("characters", "characters-v2.png"), ("foods", "foods-v2.png"))}
+
+
+def show_game(database_path=None, participant=None):
     if "nutrition_session" not in st.session_state:
         st.session_state.nutrition_session = uuid.uuid4().hex
     # A stable component key preserves playback and the board across reruns.
     game = components.declare_component("gestation_nutrition", path=str(ROOT))
-    game(stages=STAGES, session=st.session_state.nutrition_session, sources=SOURCES,
-         key="gestation_nutrition", default=None)
+    result = game(stages=STAGES, session=st.session_state.nutrition_session, sources=SOURCES,
+         artwork=artwork_payload(),
+         key="gestation_nutrition_" + st.session_state.nutrition_session, default=None)
+    if result is not None and database_path and participant:
+        from learning_score import validated_game_score, save_score
+        import sqlite3
+        score = validated_game_score(result, STAGES)
+        if score is not None:
+            try:
+                save_score(database_path, participant, "game", score)
+            except sqlite3.Error:
+                st.warning("Tu recorrido está completo, pero no se pudo guardar el puntaje conjunto. Intenta volver al menú.")
+            return score
+    return None
 
 
 def show_menu_music():
@@ -114,28 +134,28 @@ def show_menu_music():
 
 
 def menu_styles():
-    garden = base64.b64encode((ROOT / "garden.svg").read_bytes()).decode("ascii")
-    st.markdown("<style>.st-key-learning_menu .menu-card.garden{background:linear-gradient(#ffffffb8,#fffcebdc),url(data:image/svg+xml;base64," + garden + ") center/cover!important;border:2px solid #9dbe66}.st-key-learning_menu .menu-card{min-height:320px!important;border-width:2px!important;box-shadow:0 7px 0 #ad8a4b18!important}.st-key-learning_menu .menu-card.garden .menu-icon img{width:88px;height:88px;filter:drop-shadow(0 5px 3px #6c954e40)}.st-key-learning_menu .menu-card.garden h2{color:#42642b!important}.st-key-learning_menu .menu-badge{border:1px solid #e7d7a0}.st-key-learning_menu .menu-trail span{background:#fffbe9!important;color:#645436!important;border-color:#dfc895!important}@media(max-width:650px){.st-key-learning_menu .menu-card{min-height:0!important}.st-key-learning_menu .menu-badge{float:none;display:table;margin-top:8px}}</style>", unsafe_allow_html=True)
     st.markdown("""<style>
-    .st-key-learning_menu .menu-card {position:relative;overflow:hidden;min-height:285px;
-        border:1px solid #ecd7e8;border-radius:26px;padding:25px;
-        background:linear-gradient(135deg,#fff9fc,#f7effb);box-shadow:0 12px 32px #75418212;
-        transition:transform .2s,box-shadow .2s}
-    .st-key-learning_menu .menu-card:hover {transform:translateY(-5px);box-shadow:0 20px 38px #ab6b9b25}
-    .st-key-learning_menu .menu-card.garden {background:linear-gradient(135deg,#fff7ef,#edf8f0)}
-    .st-key-learning_menu .menu-card .menu-icon {font-size:44px;display:inline-block;animation:menu-float 4s ease-in-out infinite}
-    .st-key-learning_menu .menu-icon img {width:64px;height:64px;display:block}
-    .st-key-learning_menu .menu-card h2 {font-size:1.65rem;line-height:1.2;margin:10px 0;color:#24324b}
-    .st-key-learning_menu .menu-card p {font-size:.95rem;line-height:1.55;color:#677287}
-    .st-key-learning_menu .menu-badge {float:right;padding:6px 11px;border-radius:30px;background:#ffffffbc;color:#80537d;font-size:.75rem;font-weight:800}
-    .st-key-learning_menu .menu-trail {display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 24px}
-    .st-key-learning_menu .menu-trail span {padding:7px 12px;border-radius:20px;background:#fff9;border:1px solid #eadce9;color:#786080;font-size:.8rem}
-    @keyframes menu-float {50% {transform:translateY(-6px) rotate(4deg)}}
-    @media(prefers-reduced-motion:reduce){.st-key-learning_menu *{animation:none!important;transition:none!important}}
-    @media(max-width:650px){.st-key-learning_menu .menu-card{min-height:0;padding:20px}}
+    .st-key-learning_menu div.stButton > button:first-child{background:#a52f6d!important;border:1px solid #8e275e!important;color:#fff!important;box-shadow:0 5px 14px #74294b20!important}
+    .st-key-learning_menu div.stButton > button:first-child:disabled{background:#e6dce4!important;border-color:#cdbdca!important;color:#665761!important;box-shadow:none!important}
+    .st-key-learning_menu button:disabled p{color:#665761!important}
+    .st-key-learning_menu button:hover{background:#842356!important}
+    .st-key-learning_menu button p{color:#fff!important}
+    .st-key-learning_menu .menu-card{min-height:310px;padding:28px;border:1px solid #dfcedb;border-radius:24px;background:#fffafdeF;box-shadow:0 8px 25px #633d5a10;transition:transform .2s,box-shadow .2s}
+    .st-key-learning_menu .menu-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #633d5a20}
+    .st-key-learning_menu .menu-card.garden{background:linear-gradient(140deg,#fffafd,#f9e8f0);border-color:#d8adbf}
+    .st-key-learning_menu .menu-icon{display:inline-flex;align-items:center;justify-content:center;width:68px;height:68px;border-radius:18px;background:#f8e1ec;color:#87335b;font-size:35px}
+    .st-key-learning_menu .menu-icon img{width:54px;height:54px}
+    .st-key-learning_menu .menu-card h2{font-size:1.65rem;line-height:1.25;color:#3e2940!important;margin:18px 0 12px}
+    .st-key-learning_menu .menu-card p{font-size:.95rem;line-height:1.6;color:#554a5c!important}
+    .st-key-learning_menu .menu-badge{float:right;background:#f6eaf1;color:#713d5c;border:1px solid #dfc5d5;border-radius:20px;padding:7px 10px;font-size:.72rem;font-weight:700}
+    .st-key-learning_menu .menu-trail{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 24px}
+    .st-key-learning_menu .menu-trail span{background:#fff8fc;border:1px solid #dec3d3;color:#653e58;border-radius:18px;padding:7px 12px;font-size:.8rem}
+    @media(max-width:650px){.st-key-learning_menu .menu-card{min-height:0;padding:22px}.st-key-learning_menu .menu-badge{float:none;display:table;margin-top:12px}}
+    @media(prefers-reduced-motion:reduce){.st-key-learning_menu *{transition:none!important}}
     </style>""", unsafe_allow_html=True)
 
 
-def menu_logo():
-    encoded = base64.b64encode((ROOT / "logo.svg").read_bytes()).decode("ascii")
-    return f'<img src="data:image/svg+xml;base64,{encoded}" alt="Jardín de vida: cuidado y crecimiento">'
+def menu_logo(kind="game"):
+    encoded = base64.b64encode((ROOT / ("test.svg" if kind == "test" else "logo.svg")).read_bytes()).decode("ascii")
+    label = 'Test de conocimientos' if kind == 'test' else 'Nutrir una vida: cuidado y crecimiento'
+    return f'<img src="data:image/svg+xml;base64,{encoded}" alt="{label}">'

@@ -26,4 +26,5 @@ Thumbs.db
 desktop.ini
 
 .venv/
+.venv-current/
 .test-data/

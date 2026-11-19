@@ -128,6 +128,9 @@ class SurveyTests(unittest.TestCase):
             self.assertTrue(any("Retroalimentación final" in h.value for h in app.subheader))
             self.assertTrue(any("data:audio/mpeg;base64," in element.proto.srcdoc for element in app.get("iframe")))
             self.assertEqual(len(app.expander), 10)
+            self.assertTrue(app.session_state["test_completed"])
+            self.assertTrue(any(b.label == "CONTINUAR AL JUEGO" for b in app.button))
+            self.assertFalse(any("un solo puntaje" in h.value for h in app.subheader))
             next(b for b in app.button if b.label == "VOLVER AL MENÚ").click().run()
             self.assertEqual(app.session_state["user"], "Prueba local")
             next(b for b in app.button if b.label == "ENTRAR AL TEST").click().run()
@@ -138,7 +141,7 @@ class SurveyTests(unittest.TestCase):
             self.assertFalse(app.session_state["ranking_guardado"])
             self.assertFalse(app.exception)
 
-    def test_separate_game_entry_and_return(self):
+    def test_game_requires_test_and_resets_when_participant_changes(self):
         from streamlit.testing.v1 import AppTest
         app = AppTest.from_file(str(Path("app.py").resolve())).run()
         self.assertEqual(len(app.selectbox), 0)
@@ -148,16 +151,29 @@ class SurveyTests(unittest.TestCase):
         app.text_input[0].set_value("Prueba juego")
         app.button[0].click().run()
         self.assertEqual(app.session_state["fase"], "menu")
+        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR A ALIMENTACIÓN").disabled)
+        app.session_state["fase"] = "juego"
+        app.run()
+        self.assertEqual(app.session_state["fase"], "menu")
+        app.session_state["test_completed"] = True
+        app.session_state["journey_test_score"] = 70
+        app.run()
         next(b for b in app.button if b.label == "ENTRAR A ALIMENTACIÓN").click().run()
         self.assertFalse(app.exception)
         self.assertEqual(app.session_state["fase"], "juego")
         self.assertEqual(app.session_state["examen"], [])
+        self.assertFalse(any("un solo puntaje" in h.value for h in app.subheader))
         next(b for b in app.button if b.label == "VOLVER AL MENÚ").click().run()
         self.assertEqual(app.session_state["fase"], "menu")
         next(b for b in app.button if b.label == "CAMBIAR NOMBRE").click().run()
         self.assertFalse(app.exception)
         self.assertEqual(app.session_state["fase"], "login")
         self.assertEqual(app.text_input[0].value, "Prueba juego")
+        app.text_input[0].set_value("Otra persona")
+        next(b for b in app.button if b.label == "COMENZAR EXPERIENCIA").click().run()
+        self.assertFalse(app.session_state["test_completed"])
+        self.assertFalse(app.session_state["game_completed"])
+        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR A ALIMENTACIÓN").disabled)
 
 
 if __name__ == "__main__":

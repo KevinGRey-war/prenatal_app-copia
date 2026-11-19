@@ -47,3 +47,16 @@ Validación: `python -m unittest discover -s tests -v`. Las pruebas comprueban c
 Para regenerar los audios en Windows, se necesita una voz SAPI española e instalar `lameenc==1.9.0` solo para desarrollo; ejecutar `python scripts/build_voice_assets.py`. El despliegue no necesita Windows ni lameenc.
 
 Esta ampliación se publica únicamente en `KevinGRey-war/prenatal_app-copia`. No modifica el repositorio ni el despliegue originales.
+
+
+## Puntaje conjunto y nueva identidad visual
+
+El menú y el juego usan la paleta de la pantalla de inicio y emblemas propios. Los personajes y alimentos ilustrados están en `gestation_game/assets/`, generados con la herramienta integrada ImageGen (procedencia y especificaciones en `ARTWORK.md`). Se conserva la transparencia y se animan mediante CSS; no se requieren servicios de generación durante el uso.
+
+El ranking conjunto local guarda el mejor test (hasta 50 puntos) y la mejor precisión del juego (hasta 50 puntos). La precisión del juego es `100 × aciertos / elecciones realizadas`. Solo entran al ranking quienes completan ambas actividades; los resultados parciales se muestran al participante. Se incorporan los resultados locales anteriores del test sin borrarlos. El total no sustituye las categorías educativas: test 0–6 alto, 7–8 leve, 9–10 sin riesgo; juego 0–4 errores sin riesgo, 5–10 leve, 11+ alto. La tabla conjunta reside en la misma base SQLite; no se sincroniza con Supabase. Como el sistema existente, identifica al participante por nombre, por lo que personas con el mismo nombre comparten registro.
+
+Al finalizar el juego se envía el historial al servidor, que comprueba etapas, duplicados y finalización y recalcula el puntaje. Las explicaciones de todos los errores se incluyen en el repaso visual y hablado. El test conserva sus preguntas, formato y audio automático originales.
+
+### Recorrido obligatorio
+
+Nombre → menú → test de 10 preguntas de la etapa elegida → repaso del test con voz → «CONTINUAR AL JUEGO» → cinco etapas del juego → repaso de errores con voz y ranking conjunto. La segunda tarjeta queda bloqueada hasta completar el test. El ranking no se presenta antes de terminar el juego. El resultado del recorrido actual se distingue del mejor resultado histórico del ranking. Cambiar de participante o iniciar otro test restablece el progreso del juego para evitar mezclar personas o intentos.
