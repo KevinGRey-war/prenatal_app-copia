@@ -151,14 +151,14 @@ class SurveyTests(unittest.TestCase):
         app.text_input[0].set_value("Prueba juego")
         app.button[0].click().run()
         self.assertEqual(app.session_state["fase"], "menu")
-        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR A ALIMENTACIÓN").disabled)
+        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR AL JUEGO").disabled)
         app.session_state["fase"] = "juego"
         app.run()
         self.assertEqual(app.session_state["fase"], "menu")
         app.session_state["test_completed"] = True
         app.session_state["journey_test_score"] = 70
         app.run()
-        next(b for b in app.button if b.label == "ENTRAR A ALIMENTACIÓN").click().run()
+        next(b for b in app.button if b.label == "ENTRAR AL JUEGO").click().run()
         self.assertFalse(app.exception)
         self.assertEqual(app.session_state["fase"], "juego")
         self.assertEqual(app.session_state["examen"], [])
@@ -173,7 +173,7 @@ class SurveyTests(unittest.TestCase):
         next(b for b in app.button if b.label == "COMENZAR EXPERIENCIA").click().run()
         self.assertFalse(app.session_state["test_completed"])
         self.assertFalse(app.session_state["game_completed"])
-        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR A ALIMENTACIÓN").disabled)
+        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR AL JUEGO").disabled)
 
 
 if __name__ == "__main__":

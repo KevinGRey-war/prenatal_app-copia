@@ -82,7 +82,16 @@ STAGES = [
          ]),
 ]
 
+from obstetric_learning import add_obstetric_cases, SOURCE as OBSTETRIC_SOURCE
+add_obstetric_cases(STAGES)
+for stage, label in zip(STAGES, ('Mamá · Inicio del embarazo', 'Mamá · El embarazo avanza',
+                                'Mamá · Crecemos juntos', 'Mamá · Preparándonos para el encuentro',
+                                'Mamá y bebé · El primer abrazo')):
+    stage['short'] = label
+
 SOURCES = [
+    OBSTETRIC_SOURCE,
+    ("CDC · Comunicar tus preocupaciones", "https://www.cdc.gov/hearher/pregnant-postpartum/index.html"),
     ("OMS · Alimentación del lactante", "https://www.who.int/news-room/fact-sheets/detail/infant-and-young-child-feeding"),
     ("CDC · Alimentos seguros en el embarazo", "https://www.cdc.gov/food-safety/foods/pregnant-women.html"),
     ("CDC · Ácido fólico", "https://www.cdc.gov/folic-acid/about/intake-and-sources.html"),
@@ -96,10 +105,15 @@ def artwork_payload():
     # Pass binary illustrations through the component channel. Some Streamlit
     # ASGI versions return 500 for PNG responses from component static routes.
     return {name: base64.b64encode((ROOT / "assets" / filename).read_bytes()).decode("ascii")
-            for name, filename in (("characters", "characters-v2.png"), ("foods", "foods-v2.png"))}
+            for name, filename in (("characters", "maternal-stages-v3.png"), ("foods", "foods-v2.png"))}
 
 
 def show_game(database_path=None, participant=None):
+    if st.session_state.get('game_content_version') != 'obstetric-actions-v4':
+        st.session_state.nutrition_session = uuid.uuid4().hex
+        st.session_state.game_content_version = 'obstetric-actions-v4'
+        st.session_state.game_completed = False
+        st.session_state.pop('journey_game_score', None)
     if "nutrition_session" not in st.session_state:
         st.session_state.nutrition_session = uuid.uuid4().hex
     # A stable component key preserves playback and the board across reruns.

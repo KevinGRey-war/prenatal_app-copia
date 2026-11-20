@@ -1,8 +1,8 @@
 const assert=require('node:assert/strict');
 const E=require('../gestation_game/engine.js');
 const stages=JSON.parse(require('node:fs').readFileSync(0,'utf8'));
-const {foodIcon}=require('../gestation_game/icons.js');
-for(const stage of stages)for(const food of stage.foods){const icon=foodIcon(food.name);assert(icon.includes('<svg'));assert(!icon.includes('<script'));}
+const {foodIcon,careIcon}=require('../gestation_game/icons.js');
+for(const stage of stages)for(const food of stage.foods){const icon=careIcon(food.icon);assert(icon.includes('<svg'));assert(!icon.includes('<script'));}
 let state=E.fresh();
 assert.equal(E.choose(state,stages,0),state,'Must start before choosing');
 state.started=true;

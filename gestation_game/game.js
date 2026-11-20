@@ -53,12 +53,14 @@ function render(){
   $('illustration').style.transform=`scale(${.88+.12*stats.stageGood/stats.target})`;
   $('figureLabel').textContent=s.short;$('growth').max=stats.target;$('growth').value=stats.stageGood;
   $('progressLabel').textContent=`Aprendizaje de la etapa: ${stats.stageGood} de ${stats.target} elecciones adecuadas`;
-  $('recipientHint').textContent=state.stage<4?'🤰 Elige alimentos para mamá. Sus nutrientes llegan al bebé.':'🤱 Revisa la etiqueta: algunas opciones son para mamá y otras para el recién nacido.';
-  const order=s.foods.map((_,i)=>i).sort((a,b)=>((a*7+state.stage*3)%s.foods.length)-((b*7+state.stage*3)%s.foods.length));
+  $('recipientHint').textContent='Arrastra o toca las acciones para acompañar a mamá. Los puntos representan aprendizaje.';
+  $('eventTitle').textContent=s.emergency.title;
+  $('eventSituation').textContent=s.emergency.situation;
+  const order=s.foods.map((_,i)=>i).sort((a,b)=>((a*7+state.stage*3)%9)-((b*7+state.stage*3)%9));
   $('foods').replaceChildren(...order.map(i=>{const f=s.foods[i],used=state.chosen.includes(`${state.stage}:${i}`),button=document.createElement('button');
     button.type='button';button.className='food'+(used?' chosen '+(f.good?'good':'bad'):'');button.disabled=used;button.draggable=!used;
     button.setAttribute('aria-label',`${f.name}. ${f.detail}. Para ${f.recipient}${used?'. Ya elegida':''}`);
-    const icon=document.createElement('span');icon.className='emoji';icon.innerHTML=foodIcon(f.name);button.append(icon);
+    const icon=document.createElement('span');icon.className='emoji';icon.innerHTML=careIcon(f.icon);button.append(icon);
     for(const [tag,cls,text] of [['b','',f.name],['small','',f.detail],['span','recipient','Para '+f.recipient]]){const el=document.createElement(tag);el.className=cls;el.textContent=text;button.append(el);}
     if(used){const mark=document.createElement('span');mark.className='check';mark.textContent=f.good?'✓':'✕';button.append(mark);}
     button.onclick=()=>choose(i);button.ondragstart=e=>{e.dataTransfer.setData('text/plain',String(i));e.dataTransfer.effectAllowed='copy';};return button;}));
@@ -77,12 +79,13 @@ function choose(index){
   clearTimeout(emotionTimer);$('dropzone').classList.remove('error','success');$('dropzone').classList.add(f.good?'success':'error');
   emotionTimer=setTimeout(()=>$('dropzone').classList.remove('error','success'),1800);
   Music.effect(f.good);speak((f.good?'Correcto. ':'Esta elección no es adecuada. ')+f.explanation);resize();
+
 }
 function renderSummary(stats){
   $('finalScore').textContent=`${stats.good} elecciones adecuadas · ${stats.errors} ${stats.errors===1?'error':'errores'} · 5 etapas recorridas`;
   $('finalRisk').textContent=E.risk(stats.errors)+'. Esta categoría mide aprendizaje, no riesgo clínico.';
   const mistakes=state.history.filter(h=>!h.good);$('review').replaceChildren();
-  if(!mistakes.length){const p=document.createElement('p');p.textContent='¡Sin errores! Recuerda: alimentación variada y segura para mamá; leche materna o fórmula infantil apropiada para el recién nacido.';$('review').append(p);}
+  if(!mistakes.length){const p=document.createElement('p');p.textContent='¡Sin errores! Practicaste acciones de cuidado y búsqueda oportuna de ayuda. Los alimentos no sustituyen la atención de una emergencia.';$('review').append(p);}
   for(const h of mistakes){const f=stages[h.stage].foods[h.index],d=document.createElement('details'),s=document.createElement('summary'),p=document.createElement('p');
     s.textContent=stages[h.stage].name+' · '+f.name;p.textContent=f.explanation;d.append(s,p);d.open=true;$('review').append(d);}
   const recap=document.createElement('details'),heading=document.createElement('summary');heading.textContent='Repasar las cinco etapas';recap.append(heading);
@@ -95,11 +98,11 @@ $('resume').onclick=async()=>{paused=false;$('board').inert=false;$('pausePanel'
 $('learn').onclick=()=>{const s=stages[state.stage];$('lessonTitle').textContent=s.name;$('lessonText').textContent=s.lesson;$('lesson').showModal();stopVoice();};
 $('closeLesson').onclick=()=>$('lesson').close();
 $('next').onclick=()=>{if(paused)return;const previous=state;state=E.next(state,stages);if(previous===state)return;stopVoice();save();
-  $('feedback').className='feedback';$('feedback').textContent='Elige una tarjeta para descubrir su aporte o aprender por qué debes evitarla.';render();
+  $('feedback').className='feedback';$('feedback').textContent='Elige una acción para acompañar a mamá y aprender a actuar ante este evento.';render();
   if(state.done){const stats=E.stats(state,stages);Music.stop();musicLabel();
     publishFinal();
     const review=state.history.filter(h=>!h.good).map(h=>{const f=stages[h.stage].foods[h.index];return stages[h.stage].name+'. '+f.name+'. '+f.explanation;}).join(' ');
-    speak(`Completaste las cinco etapas con ${stats.good} aciertos y ${stats.errors} errores. ${E.risk(stats.errors)}. Esta categoría mide aprendizaje. `+(review||'Todas tus elecciones fueron adecuadas. Recuerda lo aprendido en cada etapa.'));}
+    speak(`¡Felicitaciones por completar tu aprendizaje! Practicaste cómo reconocer señales de alarma y pedir ayuda. Completaste las cinco etapas con ${stats.good} aciertos y ${stats.errors} errores. ${E.risk(stats.errors)}. Esta categoría mide aprendizaje, no la salud de mamá ni del bebé. `+(review||'Todas tus elecciones fueron adecuadas. Recuerda lo aprendido en cada etapa.'));}
 
   else{$('dropzone').classList.remove('error','success');const scene=document.querySelector('.scene-layout');scene.classList.remove('entering');void scene.offsetWidth;scene.classList.add('entering');Music.effect(true);$('stageTitle').setAttribute('tabindex','-1');$('stageTitle').focus();}
 };

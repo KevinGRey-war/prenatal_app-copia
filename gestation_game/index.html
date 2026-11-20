@@ -1,18 +1,19 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jardín de vida · Nutrición por etapas</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="playful.css"></head>
+<title>Cuidar una vida · Eventos obstétricos</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="playful.css"></head>
 <body><main id="game">
-  <header><div><div class="brand"><img src="logo.svg" width="56" height="56" alt="Jardín de vida"><p class="eyebrow">VIDA NUEVA<br>CUIDADO MATERNO INFANTIL</p></div><h1>Nutrir una vida</h1></div>
+  <header><div><div class="brand"><img src="logo.svg" width="56" height="56" alt="Jardín de vida"><p class="eyebrow">VIDA NUEVA<br>CUIDADO MATERNO INFANTIL</p></div><h1>Cuidar una vida</h1></div>
     <div class="tools"><button id="music" class="soft" aria-pressed="false">♫ Música</button><button id="pause" class="soft" disabled>Ⅱ Pausa</button></div></header>
   <div id="intro" class="welcome"><img class="welcome-icon logo" src="logo.svg" width="100" height="100" alt="Cuidado y crecimiento"><h2>Del embrión al primer abrazo</h2>
-    <p>Recorre las cinco etapas. Elige alimentos seguros para mamá y, al nacer, la alimentación apropiada para el bebé.</p>
+    <p>Acompaña a mamá durante cinco etapas. Toca o arrastra acciones de cuidado y descubre cómo actuar ante eventos obstétricos.</p>
     <div class="instructions"><span>① Mira la etapa y el destinatario</span><span>② Pulsa o arrastra una opción</span><span>③ Aprende y avanza</span></div>
-    <p class="small">Durante la gestación, la madre aporta los nutrientes. Las animaciones son simbólicas: un acierto no produce un cambio inmediato en un bebé real.</p>
+    <p class="small">Las animaciones son simbólicas y celebran el aprendizaje. El juego no diagnostica ni predice la salud de mamá o del bebé.</p>
     <button id="start" class="primary">COMENZAR MI RECORRIDO →</button>
   </div>
   <section id="board" hidden>
     <ol id="timeline" aria-label="Etapas del recorrido"></ol>
     <div class="scorebar"><span>⭐ Aciertos <b id="correct">0</b></span><span>💡 Errores <b id="errors">0</b></span><span id="risk"></span></div>
     <div class="stage-heading"><div><p class="eyebrow" id="weeks"></p><h2 id="stageTitle"></h2><p id="focus"></p></div><button class="soft" id="learn">✦ Aprender sobre esta etapa</button></div>
+    <section class="event-banner" aria-labelledby="eventTitle"><p class="eyebrow">EVENTO DE ESTA ETAPA</p><h3 id="eventTitle"></h3><p id="eventSituation"></p><p class="small">Ante una señal de alarma real, busca atención inmediata. Las señales no son exclusivas de una etapa. No esperes a completar una lista de acciones para pedir ayuda.</p></section>
     <div class="scene-layout">
       <section class="scene" id="dropzone" aria-label="Zona de aprendizaje; también puedes pulsar las tarjetas">
         <div class="orb orb-one"></div><div class="orb orb-two"></div><span class="spark s1">✦</span><span class="spark s2">✧</span>
@@ -20,13 +21,13 @@
         <div class="growth"><span id="progressLabel"></span><progress id="growth" max="5" value="0"></progress></div>
         <p class="small" id="recipientHint"></p>
       </section>
-      <section class="pantry"><div class="pantry-title"><h3>¿Qué elegirías?</h3><span>Lee cómo está preparado</span></div><div id="foods" class="foods"></div></section>
+      <section class="pantry"><div class="pantry-title"><h3>¿Qué elegirías?</h3><span>Acciones para acompañar a mamá</span></div><div id="foods" class="foods"></div></section>
     </div>
-    <div id="feedback" class="feedback" role="status" aria-live="polite">Elige una tarjeta para descubrir su aporte o aprender por qué debes evitarla.</div>
+    <div id="feedback" class="feedback" role="status" aria-live="polite">Elige una acción para acompañar a mamá y aprender a actuar ante este evento.</div>
     <div class="actions"><p id="hint"></p><button id="next" class="primary" disabled>SIGUIENTE ETAPA →</button></div>
     <details class="reference"><summary>¿Qué significan los errores?</summary><p>Se evalúan elecciones del juego, no la salud de la madre ni del bebé: de 0 a 4 errores, sin riesgo educativo; de 5 a 10, riesgo educativo leve; 11 o más, riesgo educativo alto. El progreso representa aprendizaje, no crecimiento biológico.</p></details>
   </section>
-  <section id="summary" class="welcome" hidden><span class="welcome-icon">🌸</span><h2>¡Completaste el recorrido!</h2><p id="finalScore"></p><p id="finalRisk"></p><h3>Tu repaso para cuidar mejor</h3><div id="review"></div><button id="restart" class="primary">VOLVER A EXPLORAR</button></section>
+  <section id="summary" class="welcome" hidden><div class="final-embrace" role="img" aria-label="Mamá sonriente con su bebé en brazos"><span class="character stage-4" aria-hidden="true"></span></div><h2>¡Del cuidado al primer abrazo!</h2><p>¡Felicitaciones por completar tu aprendizaje y practicar decisiones de cuidado! Pedir ayuda también es una buena práctica. Esta escena celebra tu recorrido: las complicaciones no son culpa de la madre ni dependen de los puntos.</p><p id="finalScore"></p><p id="finalRisk"></p><h3>Tu repaso para cuidar mejor</h3><div id="review"></div><button id="restart" class="primary">VOLVER A EXPLORAR</button></section>
   <section id="pausePanel" class="overlay" hidden><div><span>☁</span><h2>Un momento para respirar</h2><p>Tu progreso está guardado en esta sesión.</p><button id="resume" class="primary">CONTINUAR EL JUEGO</button></div></section>
   <dialog id="lesson"><h2 id="lessonTitle"></h2><p id="lessonText"></p><button id="closeLesson" class="primary">ENTENDIDO</button></dialog>
   <footer><details><summary>Fuentes de aprendizaje</summary><div id="sources"></div><p>Material educativo. Para decisiones sobre tu embarazo o la alimentación de tu bebé, consulta al equipo de salud.</p></details></footer>

@@ -1020,8 +1020,8 @@ elif st.session_state.fase == "menu":
                 st.session_state.fase = "etapa"
                 st.rerun()
         with juego_col:
-            st.markdown(f"<div class='menu-card garden'><span class='menu-icon'>{menu_logo()}</span><span class='menu-badge'>Juego · Del embrión al bebé</span><h2>Nutrir una vida,<br>paso a paso</h2><p>Elige, descubre y acompaña cada etapa. Alimentación para mamá durante el embarazo y para el bebé al nacer.</p></div>", unsafe_allow_html=True)
-            if st.button("ENTRAR A ALIMENTACIÓN", use_container_width=True,
+            st.markdown(f"<div class='menu-card garden'><span class='menu-icon'>{menu_logo()}</span><span class='menu-badge'>Juego · Eventos obstétricos</span><h2>Cuidar una vida,<br>paso a paso</h2><p>Toca o arrastra acciones de cuidado, reconoce señales de alarma y acompaña a mamá durante cada etapa.</p></div>", unsafe_allow_html=True)
+            if st.button("ENTRAR AL JUEGO", use_container_width=True,
                          disabled=not st.session_state.test_completed):
                 st.session_state.fase = "juego"
                 st.rerun()
