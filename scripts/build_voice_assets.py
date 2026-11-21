@@ -14,6 +14,7 @@ import wave
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from additional_questions import ADDITIONAL
+from obstetric_questions import EVENTS
 from feedback_examples import example_for, final_parts, test_risk
 
 
@@ -22,6 +23,7 @@ def texts():
     bank = next(ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
                 and any(isinstance(t, ast.Name) and t.id == "BANCO" for t in n.targets))
     bank.update(ADDITIONAL)
+    bank = {name: questions + EVENTS[name] for name, questions in bank.items()}
     result = {f"Pregunta {number}." for number in range(1, 11)}
     result.add("Incorrecto.")
     for stage in bank.values():

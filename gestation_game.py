@@ -166,6 +166,21 @@ def menu_styles():
     .st-key-learning_menu .menu-trail span{background:#fff8fc;border:1px solid #dec3d3;color:#653e58;border-radius:18px;padding:7px 12px;font-size:.8rem}
     @media(max-width:650px){.st-key-learning_menu .menu-card{min-height:0;padding:22px}.st-key-learning_menu .menu-badge{float:none;display:table;margin-top:12px}}
     @media(prefers-reduced-motion:reduce){.st-key-learning_menu *{transition:none!important}}
+    .st-key-learning_menu .menu-card{position:relative;overflow:hidden;min-height:375px;border-width:2px;transition:transform .25s,box-shadow .25s;background:linear-gradient(145deg,#fff,#fff0f8);border-color:#eab4d1;box-shadow:0 12px 32px #86345d15}
+    .st-key-learning_menu .menu-card.theory{border-top:6px solid #ae3377}
+    .st-key-learning_menu .menu-card.garden{border-top:6px solid #237c73;border-color:#84c9bf;background:linear-gradient(140deg,#fafffd,#dff5ee)}
+    .st-key-learning_menu .menu-card:hover{transform:translateY(-6px);box-shadow:0 18px 35px #633d5a25}
+    .st-key-learning_menu .module-step{font-size:.78rem;font-weight:850;letter-spacing:1.7px;color:#9b2d66;margin-bottom:22px}
+    .st-key-learning_menu .garden .module-step{color:#206e65}
+    .st-key-learning_menu .module-detail{border-top:1px solid #cfa7c2;padding-top:14px;margin-top:18px;font-size:.82rem;font-weight:650;color:#6d3d59;line-height:1.5}
+    .st-key-learning_menu .garden .module-detail{border-color:#9ac8bb;color:#245e56}
+    .st-key-learning_menu .garden .menu-icon{background:#bce5d9}
+    .st-key-learning_menu .menu-icon{animation:module-float 5s ease-in-out infinite}
+    .st-key-learning_menu .garden .menu-icon{animation-delay:-2s}
+    .st-key-learning_menu .menu-trail span{background:#fff;box-shadow:0 3px 9px #6d315510;border-color:#dfbdd1}
+    @keyframes module-float{50%{transform:translateY(-5px) rotate(3deg)}}
+    @media(max-width:650px){.st-key-learning_menu .menu-card{min-height:0}.st-key-learning_menu .module-step{margin-bottom:14px}}
+    @media(prefers-reduced-motion:reduce){.st-key-learning_menu .menu-icon{animation:none}}
     </style>""", unsafe_allow_html=True)
 
 

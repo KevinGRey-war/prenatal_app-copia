@@ -62,6 +62,8 @@ EXAMPLES = [
 
 
 def example_for(question):
+    if question.get('example'):
+        return question['example']
     text = question["q"].casefold()
     for key, example in EXAMPLES:
         if key in text:

@@ -682,6 +682,7 @@ if bg_base64:
 from voice_feedback import hablar
 from feedback_examples import example_for
 from additional_questions import ADDITIONAL
+from obstetric_questions import exam_pool, EVENTS
 from survey_feedback import reset_attempt, show_survey_review
 from learning_score import show_learning_ranking
 from responsive_ui import apply_responsive_layout
@@ -1008,19 +1009,19 @@ elif st.session_state.fase == "menu":
 
     from gestation_game import menu_styles, show_menu_music, menu_logo
     menu_styles()
-    st.markdown("<h1 class='screen-title'>Tu recorrido de aprendizaje</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='screen-title'>Aprende, practica y cuida</h1>", unsafe_allow_html=True)
     st.markdown(f"<p class='screen-caption'>Hola, {html.escape(st.session_state.user)}. Primero completa el test y su repaso; después, continúa con el juego.</p>", unsafe_allow_html=True)
     show_menu_music()
     with st.container(key="learning_menu"):
         st.markdown("<div class='menu-trail'><span>🌱 Primer trimestre</span><span>🌿 Segundo trimestre</span><span>🌸 Tercer trimestre</span><span>✨ Preparación para el parto</span><span>👶 Posparto</span></div>", unsafe_allow_html=True)
         test_col, juego_col = st.columns(2)
         with test_col:
-            st.markdown(f"<div class='menu-card'><span class='menu-icon'>{menu_logo('test')}</span><span class='menu-badge'>5 etapas · 10 preguntas</span><h2>Test de conocimientos<br>sobre gestación</h2><p>Descubre lo que sabes sobre el embarazo, el parto y el posparto. Aprende con cada respuesta y tu repaso final.</p></div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='menu-card theory'><div class='module-step'>01 · APRENDE Y EVALÚA</div><span class='menu-icon'>{menu_logo('test')}</span><span class='menu-badge'>10 preguntas · Con voz</span><h2>Test de conocimientos<br>y eventos obstétricos</h2><p>Comprende las señales de alarma y evalúa lo aprendido sobre embarazo, parto y posparto.</p><div class='module-detail'>7 preguntas de la etapa + 3 de eventos obstétricos</div></div>", unsafe_allow_html=True)
             if st.button("ENTRAR AL TEST", use_container_width=True):
                 st.session_state.fase = "etapa"
                 st.rerun()
         with juego_col:
-            st.markdown(f"<div class='menu-card garden'><span class='menu-icon'>{menu_logo()}</span><span class='menu-badge'>Juego · Eventos obstétricos</span><h2>Cuidar una vida,<br>paso a paso</h2><p>Toca o arrastra acciones de cuidado, reconoce señales de alarma y acompaña a mamá durante cada etapa.</p></div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='menu-card garden'><div class='module-step'>02 · PRACTICA JUGANDO</div><span class='menu-icon'>{menu_logo()}</span><span class='menu-badge'>5 escenarios · Interactivo</span><h2>Cuidar una vida,<br>paso a paso</h2><p>Toca o arrastra acciones de cuidado, reconoce señales de alarma y acompaña a mamá durante cada etapa.</p><div class='module-detail'>Acciones y animaciones · Sin cuestionario adicional</div></div>", unsafe_allow_html=True)
             if st.button("ENTRAR AL JUEGO", use_container_width=True,
                          disabled=not st.session_state.test_completed):
                 st.session_state.fase = "juego"
@@ -1035,10 +1036,15 @@ elif st.session_state.fase == "menu":
 
 elif st.session_state.fase == "etapa":
 
-    st.markdown("<h1 class='screen-title'>Test de conocimientos sobre gestación</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='screen-title'>Test de gestación y eventos obstétricos</h1>", unsafe_allow_html=True)
     st.markdown(f"<p class='screen-caption'>{html.escape(st.session_state.user)}, elige la etapa que deseas repasar.</p>", unsafe_allow_html=True)
     trimestre = st.selectbox("Elige la etapa de cuidado", list(BANCO.keys()))
-    st.markdown(f"<div class='login-note'>{trimestre}<span>La app preparará 10 preguntas aleatorias para esta etapa.</span></div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='login-note'>{trimestre}<span>10 preguntas: 7 de esta etapa y 3 sobre eventos obstétricos.</span></div>", unsafe_allow_html=True)
+    with st.expander("Antes del test · Conoce las señales y cómo pedir ayuda", expanded=True):
+        st.write(EVENTS[trimestre][0]["q"].replace(" ¿Qué corresponde hacer?", ""))
+        st.write(EVENTS[trimestre][0]["bien"])
+        st.caption("Estas señales no son exclusivas de la etapa mostrada. El test evalúa aprendizaje; el juego posterior te permite practicar acciones de cuidado.")
+        st.markdown("[Fuente: señales de alarma materna · CDC](https://www.cdc.gov/hearher/maternal-warning-signs/index.html)")
     if st.button("COMENZAR TEST"):
         reset_attempt()
         st.session_state.test_completed = False
@@ -1047,7 +1053,7 @@ elif st.session_state.fase == "etapa":
         st.session_state.pop("journey_test_score", None)
         st.session_state.pop("journey_game_score", None)
         st.session_state.trimestre = trimestre
-        st.session_state.examen = preparar_examen(BANCO[trimestre], 10)
+        st.session_state.examen = preparar_examen(exam_pool(BANCO[trimestre], trimestre), 10)
         st.session_state.fase = "test"
         st.rerun()
     if st.button("VOLVER AL MENÚ"):
