@@ -68,12 +68,10 @@ El menú distingue «Aprende y evalúa» y «Practica jugando», con contraste d
 Verificación de esta revisión: 17 pruebas únicas aprobadas (suite de 16 más prueba de correspondencia añadida); audios completos, cuota 7+3, recorrido y puntajes. Menú revisado a 1280 y 390 píxeles, sin desbordamiento horizontal en móvil.
 
 
-## Recorrido guiado y avatar Nia
+## Recorrido y presentación
 
-El flujo es nombre → selección de etapa y test → repaso hablado → juego → repaso hablado → ranking conjunto. Ya no existe un menú de selección de módulos. La paleta lila y morada conserva la estructura del test original.
+Se restauraron los colores, botones, fondo y presentación del repaso del test anteriores al 22 de noviembre. Se conserva la corrección de contraste del encabezado desplegable. No se muestran las tarjetas ni el avatar añadidos ese día.
 
-Nia es un avatar educativo identificado como asistente de IA, con explicaciones preparadas (no es un chat generativo ni hace diagnósticos). En el repaso final del test se presentan las preguntas erradas una a una, con la respuesta elegida, la correcta, explicación y ejemplo. Cada tarjeta avanza al terminar su narración. El juego también repasa sus decisiones erradas antes de mostrar el ranking.
+El flujo sigue siendo nombre → test → repaso → juego → repaso → ranking conjunto. La voz es automática y el avance permanece bloqueado hasta que termine. Los cambios visuales no alteran las preguntas, reglas educativas ni puntajes.
 
-Continuar permanece deshabilitado hasta el evento de fin de la última narración. Durante la explicación de una elección del juego también se bloquean nuevas elecciones y el avance. La voz comienza automáticamente, sin reproductor visible. Si el navegador bloquea el sonido, se muestra una indicación para tocar el avatar (o el mensaje del juego) y reintentar; un fallo de voz no se considera una explicación completada. Se necesita un navegador con audio y síntesis de voz en español habilitados para completar el recorrido.
-
-Validación: `python -m unittest discover -s tests -p "test_*.py"` y `node tests/test_tutor.cjs`. Las pruebas cubren reglas educativas, puntajes, conservación de errores, recorrido obligatorio y secuencia de narración con reintentos.
+Validación: `python -m unittest discover -s tests -p "test_*.py"` y `node tests/test_tutor.cjs`.

@@ -16,4 +16,7 @@ def show_game_review():
     for row in mistakes:
         cards.append({'title': row['stage'] + ' · ' + row['name'], 'text': row['explanation']})
     cards.append({'title': '¡Felicitaciones por tu aprendizaje!', 'text': ('Todas tus elecciones fueron adecuadas. ' if not mistakes else 'Cada error es una oportunidad para aprender. ') + 'Practicaste cómo reconocer señales de alarma y buscar ayuda. Las complicaciones no son culpa de la madre ni dependen de los puntos. Ahora puedes consultar tu puntaje conjunto.'})
-    return show_tutor(cards, 'game-final')
+    for card in cards:
+        with st.expander(card['title'], expanded=True):
+            st.write(card['text'])
+    return show_tutor(cards, 'game-final', compact=True)
