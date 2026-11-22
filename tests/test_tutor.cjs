@@ -1,6 +1,6 @@
 const {strict:assert}=require('assert'),vm=require('vm'),fs=require('fs');
 const nodes={},messages=[],listeners={},utterances=[];
-const node=id=>nodes[id]??={textContent:'',classList:{add(){},remove(){}}};
+const node=id=>nodes[id]??={textContent:'',classList:{add(){},remove(){},toggle(){}},getBoundingClientRect:()=>({height:500})};
 const parent={postMessage:m=>messages.push(m)};
 const context={parent,document:{getElementById:node,querySelector:()=>node('panel'),documentElement:{scrollHeight:500}},
   window:{parent,addEventListener:(type,fn)=>listeners[type]=fn},Audio:class{},SpeechSynthesisUtterance:class{constructor(text){this.text=text;}},

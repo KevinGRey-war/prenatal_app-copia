@@ -1241,7 +1241,7 @@ elif st.session_state.fase == "test":
 
             from prenatal_tutor import show_tutor
             ready = show_tutor([{'title': 'Correcto' if st.session_state.correcto else 'Vamos a reforzar',
-                                'text': st.session_state.fb}], f'question-{st.session_state.idx}')
+                                'text': st.session_state.fb}], f'question-{st.session_state.idx}', compact=True)
 
             if st.button("CONTINUAR", disabled=not ready):
 

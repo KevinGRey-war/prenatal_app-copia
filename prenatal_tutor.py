@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 from voice_feedback import clip_path
 
 
-def show_tutor(cards, context):
+def show_tutor(cards, context, compact=False):
     if not cards:
         return False
     attempt = st.session_state.setdefault('tutor_attempt', uuid.uuid4().hex)
@@ -22,7 +22,7 @@ def show_tutor(cards, context):
             item['audio'] = base64.b64encode(path.read_bytes()).decode('ascii')
         payload.append(item)
     component = components.declare_component('prenatal_tutor', path=str(Path(__file__).parent / 'prenatal_tutor'))
-    result = component(cards=payload, token=token, key='tutor_' + token, default=None)
+    result = component(cards=payload, token=token, compact=compact, key='tutor_' + token, default=None)
     return isinstance(result, dict) and result.get('token') == token and result.get('completed') == len(cards)
 
 
