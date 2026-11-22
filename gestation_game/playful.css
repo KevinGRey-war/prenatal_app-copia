@@ -27,3 +27,9 @@ header{padding:0 0 22px;border-bottom:1px solid #dfccda;margin-bottom:20px;align
 .stage-0,.stage-1,.stage-2{clip-path:none}
 .event-banner{padding:18px 22px;margin:15px 0 20px;border:1px solid #d9bbcf;border-left:5px solid #9c3c70;border-radius:18px;background:#fff9fc;color:#432d43}.event-banner h3{color:#6f2854;margin:5px 0 8px}.event-banner p{margin:6px 0;line-height:1.5}
 @media(max-width:650px){.event-banner{padding:14px}.event-banner h3{font-size:19px}}
+/* Shared lilac palette; semantic success and error colors remain distinct. */
+body{background:#f5effb;color:#39264b}#game{border-color:#c7afe0;background:linear-gradient(145deg,#fff,#f0e7fa)}
+.primary{background:linear-gradient(135deg,#8750ae,#63338a);color:#fff;border-color:#64378a}
+.welcome,.event-banner{background:linear-gradient(125deg,#faf7ff,#eae0f6);border-color:#c5a9de;color:#39264b}
+.stage-heading h2,header h1{color:#54316e}.soft{background:#f6effb;color:#54316e;border-color:#cab2df}
+.food:disabled{cursor:default}.food:not(.chosen):disabled{opacity:.65}

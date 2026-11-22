@@ -126,10 +126,14 @@ def show_game(database_path=None, participant=None):
         import sqlite3
         score = validated_game_score(result, STAGES)
         if score is not None:
+            st.session_state.game_review = [
+                dict(stage=STAGES[row['stage']]['name'], **STAGES[row['stage']]['foods'][row['index']])
+                for row in result['history']
+            ]
             try:
                 save_score(database_path, participant, "game", score)
             except sqlite3.Error:
-                st.warning("Tu recorrido está completo, pero no se pudo guardar el puntaje conjunto. Intenta volver al menú.")
+                st.warning("Tu recorrido está completo, pero no se pudo guardar el puntaje conjunto.")
             return score
     return None
 

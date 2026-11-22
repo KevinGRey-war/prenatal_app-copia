@@ -30,8 +30,6 @@ Mientras el secreto del despliegue no exista, el panel utiliza un verificador PB
 
 El inicio solicita únicamente el nombre de la persona. Después se abre un menú con dos tarjetas: Test de conocimientos sobre gestación y Cuidar una vida, paso a paso. La selección de etapa aparece al entrar al test; al volver al menú se conserva el nombre y cada nuevo test reinicia su puntaje y respuestas. Al seleccionar una respuesta y pulsar **VERIFICAR**, se marca la respuesta y se reproduce la corrección automáticamente, sin recuadro de explicación escrito; **CONTINUAR** avanza sin leer la siguiente pregunta; al terminar reproduce el repaso final. Al finalizar, todos los errores quedan desplegados con explicación y ejemplo, junto al repaso hablado completo.
 
-El menú incorpora tarjetas animadas y la melodía original sintetizada localmente «Jardín de vida», con control para silenciarla. Si el navegador necesita interacción para permitir sonido, el control permite activarla. El test conserva sus preguntas, puntuación, ranking y retroalimentación. Los ajustes de `responsive_ui.py` adaptan los indicadores, controles y tipografía a celulares sin cambiar esa lógica.
-
 El juego de `gestation_game/` recorre cinco etapas con eventos obstétricos: sangrado durante el embarazo, cefalea con visión borrosa, disminución de movimientos fetales, dificultad respiratoria con dolor torácico y sangrado posparto. No contiene un segundo cuestionario: se toca o arrastra una de nueve tarjetas hacia mamá. En cada etapa hay cinco acciones adecuadas y cuatro inadecuadas, con explicación automática por voz y repaso final. Los alimentos/bebidas se contextualizan como distracciones que no sustituyen la atención médica. Las señales no son exclusivas de la etapa donde aparecen. La ilustración muestra a mamá durante la gestación y con el bebé en brazos al finalizar, sin asociar complicaciones a culpa ni a puntajes. Las fuentes clínicas están enlazadas en el juego. Se mantienen pausa, música, teclado, persistencia, reinicio y los intervalos educativos: 0–4 errores sin riesgo educativo, 5–10 leve y 11 o más alto. El test independiente conserva su interfaz y preguntas.
 
 
@@ -68,3 +66,14 @@ Ilustraciones maternas: `gestation_game/assets/maternal-stages-v3.png`; prompt y
 El menú distingue «Aprende y evalúa» y «Practica jugando», con contraste de colores, animación suave y adaptación móvil. Cada test mantiene diez preguntas: siete del banco original de la etapa seleccionada y tres obligatorias de eventos obstétricos (el evento de esa etapa, comunicación de síntomas y acompañamiento). `obstetric_questions.py` comparte los casos de `obstetric_learning.py`; una prueba comprueba que situación, respuesta y explicación coinciden con el juego. El banco original no se modifica. Antes de comenzar se ofrece una introducción breve con fuente clínica; se conserva la voz automática de corrección y repaso, con grabaciones incluidas para todas las nuevas respuestas. El juego continúa separado, sin cuestionario interno, después del test.
 
 Verificación de esta revisión: 17 pruebas únicas aprobadas (suite de 16 más prueba de correspondencia añadida); audios completos, cuota 7+3, recorrido y puntajes. Menú revisado a 1280 y 390 píxeles, sin desbordamiento horizontal en móvil.
+
+
+## Recorrido guiado y avatar Nia
+
+El flujo es nombre → selección de etapa y test → repaso hablado → juego → repaso hablado → ranking conjunto. Ya no existe un menú de selección de módulos. La paleta lila y morada conserva la estructura del test original.
+
+Nia es un avatar educativo identificado como asistente de IA, con explicaciones preparadas (no es un chat generativo ni hace diagnósticos). En el repaso final del test se presentan las preguntas erradas una a una, con la respuesta elegida, la correcta, explicación y ejemplo. Cada tarjeta avanza al terminar su narración. El juego también repasa sus decisiones erradas antes de mostrar el ranking.
+
+Continuar permanece deshabilitado hasta el evento de fin de la última narración. Durante la explicación de una elección del juego también se bloquean nuevas elecciones y el avance. La voz comienza automáticamente, sin reproductor visible. Si el navegador bloquea el sonido, se muestra una indicación para tocar el avatar (o el mensaje del juego) y reintentar; un fallo de voz no se considera una explicación completada. Se necesita un navegador con audio y síntesis de voz en español habilitados para completar el recorrido.
+
+Validación: `python -m unittest discover -s tests -p "test_*.py"` y `node tests/test_tutor.cjs`. Las pruebas cubren reglas educativas, puntajes, conservación de errores, recorrido obligatorio y secuencia de narración con reintentos.

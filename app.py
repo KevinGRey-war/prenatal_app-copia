@@ -688,6 +688,8 @@ from learning_score import show_learning_ranking
 from responsive_ui import apply_responsive_layout
 
 apply_responsive_layout()
+from prenatal_theme import apply_theme
+apply_theme()
 
 # =========================================================
 # 📚 PREGUNTAS
@@ -929,8 +931,12 @@ if st.session_state.get("ranking_storage_version") != RANKING_STORAGE_VERSION:
 # The learning journey must be completed in order, even after a rerun.
 st.session_state.setdefault("test_completed", False)
 st.session_state.setdefault("game_completed", False)
-if st.session_state.fase == "juego" and not st.session_state.test_completed:
-    st.session_state.fase = "menu"
+if st.session_state.fase == "menu":
+    st.session_state.fase = "etapa"
+if st.session_state.fase in ("juego", "repaso_juego", "ranking") and not st.session_state.test_completed:
+    st.session_state.fase = "etapa"
+if st.session_state.fase == "ranking" and not st.session_state.game_completed:
+    st.session_state.fase = "juego"
 
 # =========================================================
 # LOGIN
@@ -973,7 +979,7 @@ if st.session_state.fase == "login":
                     st.session_state.pop("journey_test_score", None)
                     st.session_state.pop("journey_game_score", None)
                 st.session_state.user = nombre.strip()
-                st.session_state.fase = "menu"
+                st.session_state.fase = "etapa"
                 st.rerun()
 
             else:
@@ -1005,39 +1011,10 @@ if st.session_state.fase == "login":
 # TEST
 # =========================================================
 
-elif st.session_state.fase == "menu":
-
-    from gestation_game import menu_styles, show_menu_music, menu_logo
-    menu_styles()
-    st.markdown("<h1 class='screen-title'>Aprende, practica y cuida</h1>", unsafe_allow_html=True)
-    st.markdown(f"<p class='screen-caption'>Hola, {html.escape(st.session_state.user)}. Primero completa el test y su repaso; después, continúa con el juego.</p>", unsafe_allow_html=True)
-    show_menu_music()
-    with st.container(key="learning_menu"):
-        st.markdown("<div class='menu-trail'><span>🌱 Primer trimestre</span><span>🌿 Segundo trimestre</span><span>🌸 Tercer trimestre</span><span>✨ Preparación para el parto</span><span>👶 Posparto</span></div>", unsafe_allow_html=True)
-        test_col, juego_col = st.columns(2)
-        with test_col:
-            st.markdown(f"<div class='menu-card theory'><div class='module-step'>01 · APRENDE Y EVALÚA</div><span class='menu-icon'>{menu_logo('test')}</span><span class='menu-badge'>10 preguntas · Con voz</span><h2>Test de conocimientos<br>y eventos obstétricos</h2><p>Comprende las señales de alarma y evalúa lo aprendido sobre embarazo, parto y posparto.</p><div class='module-detail'>7 preguntas de la etapa + 3 de eventos obstétricos</div></div>", unsafe_allow_html=True)
-            if st.button("ENTRAR AL TEST", use_container_width=True):
-                st.session_state.fase = "etapa"
-                st.rerun()
-        with juego_col:
-            st.markdown(f"<div class='menu-card garden'><div class='module-step'>02 · PRACTICA JUGANDO</div><span class='menu-icon'>{menu_logo()}</span><span class='menu-badge'>5 escenarios · Interactivo</span><h2>Cuidar una vida,<br>paso a paso</h2><p>Toca o arrastra acciones de cuidado, reconoce señales de alarma y acompaña a mamá durante cada etapa.</p><div class='module-detail'>Acciones y animaciones · Sin cuestionario adicional</div></div>", unsafe_allow_html=True)
-            if st.button("ENTRAR AL JUEGO", use_container_width=True,
-                         disabled=not st.session_state.test_completed):
-                st.session_state.fase = "juego"
-                st.rerun()
-            if not st.session_state.test_completed:
-                st.caption("Paso 2 · Se habilita después de terminar el test y ver su retroalimentación.")
-    if st.session_state.game_completed:
-        st.success("Recorrido completado. El puntaje conjunto y el repaso están al final del juego.")
-    if st.button("CAMBIAR NOMBRE"):
-        st.session_state.fase = "login"
-        st.rerun()
-
 elif st.session_state.fase == "etapa":
 
     st.markdown("<h1 class='screen-title'>Test de gestación y eventos obstétricos</h1>", unsafe_allow_html=True)
-    st.markdown(f"<p class='screen-caption'>{html.escape(st.session_state.user)}, elige la etapa que deseas repasar.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p class='screen-caption'>{html.escape(st.session_state.user)}, comienza con el test. Elige la etapa que deseas repasar.</p>", unsafe_allow_html=True)
     trimestre = st.selectbox("Elige la etapa de cuidado", list(BANCO.keys()))
     st.markdown(f"<div class='login-note'>{trimestre}<span>10 preguntas: 7 de esta etapa y 3 sobre eventos obstétricos.</span></div>", unsafe_allow_html=True)
     with st.expander("Antes del test · Conoce las señales y cómo pedir ayuda", expanded=True):
@@ -1052,26 +1029,47 @@ elif st.session_state.fase == "etapa":
         st.session_state.pop("nutrition_session", None)
         st.session_state.pop("journey_test_score", None)
         st.session_state.pop("journey_game_score", None)
+        st.session_state.pop("game_review", None)
+        st.session_state.pop("tutor_attempt", None)
         st.session_state.trimestre = trimestre
         st.session_state.examen = preparar_examen(exam_pool(BANCO[trimestre], trimestre), 10)
         st.session_state.fase = "test"
         st.rerun()
-    if st.button("VOLVER AL MENÚ"):
-        st.session_state.fase = "menu"
+    if st.button("CAMBIAR NOMBRE"):
+        st.session_state.fase = "login"
         st.rerun()
 
 elif st.session_state.fase == "juego":
 
     from gestation_game import show_game
+    st.caption("Paso 2 de 3 · Aplica lo aprendido en el test")
     game_score = show_game(RANKING_DB_PATH, st.session_state.user)
-    st.session_state.game_completed = game_score is not None
     if game_score is not None:
+        st.session_state.game_completed = True
         st.session_state.journey_game_score = game_score
-        show_learning_ranking(RANKING_DB_PATH, st.session_state.user,
-                              current_test=st.session_state.journey_test_score,
-                              current_game=game_score)
-    if st.button("VOLVER AL MENÚ"):
-        st.session_state.fase = "menu"
+        st.session_state.fase = "repaso_juego"
+        st.rerun()
+
+elif st.session_state.fase == "repaso_juego":
+    from journey_completion import show_game_review
+    ready = show_game_review()
+    if st.button("VER RANKING", disabled=not ready, use_container_width=True):
+        st.session_state.fase = "ranking"
+        st.rerun()
+
+elif st.session_state.fase == "ranking":
+
+    from journey_completion import show_game_review
+    st.markdown("<h1 class='screen-title'>¡Recorrido completado!</h1>", unsafe_allow_html=True)
+    st.caption("Paso 3 de 3 · Tu resultado del test y del juego")
+    show_learning_ranking(RANKING_DB_PATH, st.session_state.user,
+                          current_test=st.session_state.journey_test_score,
+                          current_game=st.session_state.journey_game_score)
+    if st.button("FINALIZAR Y VOLVER AL INICIO", use_container_width=True):
+        reset_attempt()
+        for key in ("nutrition_session", "journey_test_score", "journey_game_score", "game_review"):
+            st.session_state.pop(key, None)
+        st.session_state.update(fase="login", user="", test_completed=False, game_completed=False)
         st.rerun()
 
 elif st.session_state.fase == "test":
@@ -1241,9 +1239,11 @@ elif st.session_state.fase == "test":
 
         else:
 
-            hablar(st.session_state.fb, parts=(None if st.session_state.correcto else ["Incorrecto.", st.session_state.fb]))
+            from prenatal_tutor import show_tutor
+            ready = show_tutor([{'title': 'Correcto' if st.session_state.correcto else 'Vamos a reforzar',
+                                'text': st.session_state.fb}], f'question-{st.session_state.idx}')
 
-            if st.button("CONTINUAR"):
+            if st.button("CONTINUAR", disabled=not ready):
 
                 st.session_state.idx += 1
 
@@ -1276,7 +1276,7 @@ elif st.session_state.fase == "test":
 elif st.session_state.fase == "final":
 
     if len(st.session_state.get("answers", [])) != 10:
-        st.session_state.fase = "menu"
+        st.session_state.fase = "etapa"
         st.rerun()
     st.session_state.test_completed = True
     st.session_state.journey_test_score = st.session_state.pts
@@ -1314,15 +1314,9 @@ elif st.session_state.fase == "final":
 
     """, unsafe_allow_html=True)
 
-    show_survey_review(st.session_state.trimestre)
+    review_ready = show_survey_review(st.session_state.trimestre)
 
     st.caption("Paso 1 completado · Revisa tus respuestas y continúa con el juego para obtener tu puntaje conjunto.")
-    if st.button("CONTINUAR AL JUEGO", use_container_width=True):
+    if st.button("CONTINUAR AL JUEGO", disabled=not review_ready, use_container_width=True):
         st.session_state.fase = "juego"
-        st.rerun()
-
-    if st.button("VOLVER AL MENÚ"):
-
-        st.session_state.fase = "menu"
-
         st.rerun()

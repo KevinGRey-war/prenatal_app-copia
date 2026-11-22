@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from additional_questions import ADDITIONAL
 from feedback_examples import example_for, final_narration, test_risk
@@ -78,7 +79,8 @@ class SurveyTests(unittest.TestCase):
         self.assertEqual(base64.b64decode(payload), data)
         self.assertNotIn("/media/", markup)
 
-    def test_complete_original_quiz_flow_and_final_audio(self):
+    @patch("prenatal_tutor.show_tutor", return_value=True)
+    def test_complete_original_quiz_flow_and_final_audio(self, tutor):
         from streamlit.testing.v1 import AppTest
         with tempfile.TemporaryDirectory() as directory:
             os.environ["RANKING_DB_PATH"] = str(Path(directory) / "ranking.sqlite3")
@@ -88,8 +90,7 @@ class SurveyTests(unittest.TestCase):
             app.text_input[0].set_value("Prueba local")
             self.assertEqual(len(app.selectbox), 0)
             app.button[0].click().run()
-            self.assertEqual(app.session_state["fase"], "menu")
-            next(b for b in app.button if b.label == "ENTRAR AL TEST").click().run()
+            self.assertEqual(app.session_state["fase"], "etapa")
             app.selectbox[0].select("Posparto")
             next(b for b in app.button if b.label == "COMENZAR TEST").click().run()
             self.assertEqual(app.session_state["fase"], "test")
@@ -116,7 +117,7 @@ class SurveyTests(unittest.TestCase):
                 for block in app.markdown:
                     self.assertNotIn("<div class='error-box'>", block.value)
                     self.assertNotIn("<div class='success-box'>", block.value)
-                self.assertEqual(len(app.get("iframe")), 1)
+                self.assertTrue(tutor.called)
                 self.assertTrue(clip_path(app.session_state["fb"]).is_file())
                 if i >= 7:
                     self.assertIn("Por ejemplo:", app.session_state["fb"])
@@ -126,54 +127,64 @@ class SurveyTests(unittest.TestCase):
             self.assertEqual(app.session_state["pts"], 70)
             self.assertEqual(len(app.session_state["answers"]), 10)
             self.assertTrue(any("Retroalimentación final" in h.value for h in app.subheader))
-            self.assertTrue(any("data:audio/mpeg;base64," in element.proto.srcdoc for element in app.get("iframe")))
-            self.assertEqual(len(app.expander), 10)
+            self.assertEqual(len(tutor.call_args.args[0]), 5)
+            self.assertEqual(len(app.expander), 0)
             self.assertTrue(app.session_state["test_completed"])
             self.assertTrue(any(b.label == "CONTINUAR AL JUEGO" for b in app.button))
             self.assertFalse(any("un solo puntaje" in h.value for h in app.subheader))
-            next(b for b in app.button if b.label == "VOLVER AL MENÚ").click().run()
-            self.assertEqual(app.session_state["user"], "Prueba local")
-            next(b for b in app.button if b.label == "ENTRAR AL TEST").click().run()
-            next(b for b in app.button if b.label == "COMENZAR TEST").click().run()
-            self.assertEqual(app.session_state["pts"], 0)
-            self.assertEqual(app.session_state["idx"], 0)
-            self.assertEqual(app.session_state["answers"], [])
-            self.assertFalse(app.session_state["ranking_guardado"])
+            self.assertFalse(any(b.label == "VOLVER AL MENÚ" for b in app.button))
+            next(b for b in app.button if b.label == "CONTINUAR AL JUEGO").click().run()
+            self.assertEqual(app.session_state["fase"], "juego")
             self.assertFalse(app.exception)
 
-    def test_game_requires_test_and_resets_when_participant_changes(self):
+    def test_game_requires_test_and_ranking_requires_game(self):
         from streamlit.testing.v1 import AppTest
         app = AppTest.from_file(str(Path("app.py").resolve())).run()
-        self.assertEqual(len(app.selectbox), 0)
         app.button[0].click().run()
         self.assertEqual(app.session_state["fase"], "login")
-        self.assertTrue(app.warning)
-        app.text_input[0].set_value("Prueba juego")
+        app.text_input[0].set_value("Prueba directa")
         app.button[0].click().run()
-        self.assertEqual(app.session_state["fase"], "menu")
-        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR AL JUEGO").disabled)
+        self.assertEqual(app.session_state["fase"], "etapa")
+        self.assertFalse(any(b.label == "ENTRAR AL JUEGO" for b in app.button))
         app.session_state["fase"] = "juego"
         app.run()
-        self.assertEqual(app.session_state["fase"], "menu")
+        self.assertEqual(app.session_state["fase"], "etapa")
+        app.session_state["fase"] = "ranking"
+        app.run()
+        self.assertEqual(app.session_state["fase"], "etapa")
         app.session_state["test_completed"] = True
         app.session_state["journey_test_score"] = 70
+        app.session_state["fase"] = "ranking"
         app.run()
-        next(b for b in app.button if b.label == "ENTRAR AL JUEGO").click().run()
-        self.assertFalse(app.exception)
         self.assertEqual(app.session_state["fase"], "juego")
-        self.assertEqual(app.session_state["examen"], [])
         self.assertFalse(any("un solo puntaje" in h.value for h in app.subheader))
-        next(b for b in app.button if b.label == "VOLVER AL MENÚ").click().run()
-        self.assertEqual(app.session_state["fase"], "menu")
-        next(b for b in app.button if b.label == "CAMBIAR NOMBRE").click().run()
-        self.assertFalse(app.exception)
-        self.assertEqual(app.session_state["fase"], "login")
-        self.assertEqual(app.text_input[0].value, "Prueba juego")
-        app.text_input[0].set_value("Otra persona")
-        next(b for b in app.button if b.label == "COMENZAR EXPERIENCIA").click().run()
-        self.assertFalse(app.session_state["test_completed"])
-        self.assertFalse(app.session_state["game_completed"])
-        self.assertTrue(next(b for b in app.button if b.label == "ENTRAR AL JUEGO").disabled)
+
+    def test_game_completion_goes_directly_to_ranking_and_finish_resets(self):
+        from streamlit.testing.v1 import AppTest
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as directory:
+            os.environ['RANKING_DB_PATH'] = str(Path(directory) / 'scores.sqlite3')
+            app = AppTest.from_file(str(Path('app.py').resolve())).run()
+            for key, value in dict(fase='juego', user='Recorrido', test_completed=True,
+                                   journey_test_score=70, game_review=[dict(good=False, stage='Posparto', name='Esperar', explanation='Buscar atención inmediata.')]).items():
+                app.session_state[key] = value
+            with patch('gestation_game.show_game', return_value=80):
+                app.run()
+            self.assertFalse(app.exception)
+            self.assertEqual(app.session_state['fase'], 'repaso_juego')
+            self.assertTrue(next(b for b in app.button if b.label == 'VER RANKING').disabled)
+            with patch('prenatal_tutor.show_tutor', return_value=True):
+                app.run()
+                next(b for b in app.button if b.label == 'VER RANKING').click().run()
+            self.assertEqual(app.session_state['fase'], 'ranking')
+            self.assertEqual(app.session_state['journey_game_score'], 80)
+            self.assertTrue(any('75.0/100' in metric.value for metric in app.metric))
+            self.assertFalse(any(h.value == 'Retroalimentación del juego' for h in app.subheader))
+            next(b for b in app.button if b.label == 'FINALIZAR Y VOLVER AL INICIO').click().run()
+            self.assertEqual(app.session_state['fase'], 'login')
+            self.assertEqual(app.session_state['user'], '')
+            self.assertFalse(app.session_state['test_completed'])
+            self.assertFalse(app.session_state['game_completed'])
 
 
 if __name__ == "__main__":
