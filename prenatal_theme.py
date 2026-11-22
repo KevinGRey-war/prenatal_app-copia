@@ -4,7 +4,7 @@ import streamlit as st
 
 def apply_theme():
     st.markdown('''<style>
-    .stApp{background:linear-gradient(135deg,#faf7ff,#eee5f7)!important;color:#342345}
+    .stApp{color:#342345}
     .screen-title,.screen-caption,.quiz-side p,.side-card p{color:#47265f!important}
     .side-card,.quiz-side{background:#f5edfc!important;border:1px solid #cbb2df!important}
     div.stButton>button{background:#704098!important;color:white!important;border:1px solid #653388!important;border-radius:16px}
