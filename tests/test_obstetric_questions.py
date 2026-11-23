@@ -11,7 +11,8 @@ class ObstetricQuestionTests(unittest.TestCase):
             self.assertIn(stage['emergency']['situation'], event_question['q'])
             safe_action = next(f for f in stage['foods'] if f['icon'] == 'care')
             self.assertEqual(event_question['corr'], safe_action['name'])
-            self.assertEqual(event_question['bien'], safe_action['explanation'])
+            self.assertIn(event_question['bien'], safe_action['explanation'])
+            self.assertIn('Ponlo en práctica:', safe_action['explanation'])
 
     def test_each_stage_has_three_required_event_questions(self):
         original = [dict(q=f'Original {i}', opts=['A', 'B'], corr='A') for i in range(10)]

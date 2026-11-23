@@ -109,6 +109,7 @@ def artwork_payload():
 
 
 def show_game(database_path=None, participant=None):
+    st.markdown('<style>@media(min-width:769px){.block-container{padding-top:12px!important;padding-bottom:0!important;max-width:1500px!important}}</style>', unsafe_allow_html=True)
     if st.session_state.get('game_content_version') != 'obstetric-actions-v4':
         st.session_state.nutrition_session = uuid.uuid4().hex
         st.session_state.game_content_version = 'obstetric-actions-v4'

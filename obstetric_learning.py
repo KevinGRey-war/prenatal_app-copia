@@ -53,4 +53,28 @@ def add_obstetric_cases(stages):
         stage['foods'] = [dict(name=name, detail=detail, icon=icon, explanation=feedback,
                                good=good, recipient='Mamá', kind='obstetric')
                           for name, detail, icon, feedback, good in actions]
+        spoken_situation = situation.replace('Tienes ', 'Tengo ').replace('Tu bebé se mueve', 'Mi bebé se mueve').replace('Te cuesta respirar y tienes', 'Me cuesta respirar y tengo').replace('empapas ', 'empapo ')
+        examples = {
+            'care': (explanation,
+                     'Di: «' + spoken_situation + ' Necesito atención».'),
+            'support': ('El acompañamiento puede ayudarte a comunicarte y buscar atención.',
+                        'Di: «Necesito atención ahora. ¿Puedes acompañarme?». Si nadie puede, no esperes.'),
+            'message': ('Explicar qué cambió ayuda al equipo a comprender la situación.',
+                        'Di: «' + spoken_situation + '». Añade cuándo comenzó, sin inventar datos.'),
+            'calendar': ('El equipo necesita saber si estás embarazada o en posparto.',
+                         'Indica tus semanas de embarazo o hace cuánto diste a luz. Si no lo recuerdas, dilo.'),
+            'record': ('Tus antecedentes, alergias y medicamentos aportan información útil.',
+                       'Cuenta lo que recuerdes. No retrases la atención por buscar papeles.'),
+            'clock': ('Esperar al siguiente control retrasa la valoración de esta señal de alarma.',
+                      'Cambia la espera por una acción: ' + correct.lower() + '.'),
+            'ignore': ('Continuar como si nada no permite valorar lo que está ocurriendo.',
+                       'Reconoce el cambio, comunícalo y pide ayuda médica ahora.'),
+            'fruit': ('Una fruta no permite descartar ni resolver esta señal de alarma.',
+                      'Elige atención médica inmediata; no esperes a ver si mejora después de comer.'),
+            'tea': ('Una bebida no reemplaza la valoración médica de este evento.',
+                    'En lugar de probar una infusión y esperar, pide ayuda médica inmediata.'),
+        }
+        for action in stage['foods']:
+            action['why'], action['practice'] = examples[action['icon']]
+            action['explanation'] = action['why'] + ' Ponlo en práctica: ' + action['practice']
     return stages

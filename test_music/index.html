@@ -1,0 +1,18 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><style>
+body{margin:0;display:flex;align-items:center;gap:10px;font:12px 'Segoe UI',sans-serif;color:#624471}button{font:inherit;font-weight:600;background:#fff4fa;color:#82375f;border:1px solid #e1bfd3;border-radius:18px;padding:8px 12px;cursor:pointer}button:focus-visible{outline:3px solid #82375f}small{font-size:11px}
+</style><button id="toggle" aria-pressed="false">♫ Activar música</button><small id="status">Jardín de vida · Música suave para el test</small>
+<script>
+let music=null,narrating=false,requested=false;
+const button=document.getElementById('toggle'),status=document.getElementById('status');
+function label(){button.textContent=requested?'♫ Silenciar música':'♫ Activar música';button.setAttribute('aria-pressed',String(requested));status.textContent=narrating?'Música en pausa durante la explicación':music?.playing?'Jardín de vida · Volumen suave':'Activa la música si deseas acompañar el test';}
+async function sync(){if(!music)return;if(narrating||!requested)music.stop();else await music.start();label();}
+button.onclick=async()=>{requested=!requested;sessionStorage.setItem('vida-test-music',requested?'on':'off');await sync();};
+window.addEventListener('message',async event=>{
+ if(event.source!==parent||event.data?.type!=='streamlit:render')return;
+ const args=event.data.args;narrating=args.narrating;
+ if(!music){const script=document.createElement('script');script.textContent=args.music+'\nwindow.quizMusic = Music;';document.head.append(script);music=window.quizMusic;requested=sessionStorage.getItem('vida-test-music')!=='off';}
+ await sync();if(requested&&!narrating&&!music.playing){requested=false;label();}
+});
+parent.postMessage({isStreamlitMessage:true,type:'streamlit:componentReady',apiVersion:1},'*');
+parent.postMessage({isStreamlitMessage:true,type:'streamlit:setFrameHeight',height:42},'*');
+</script></html>

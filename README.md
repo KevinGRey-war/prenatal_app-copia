@@ -75,3 +75,13 @@ Se restauraron los colores, botones, fondo y presentación del repaso del test a
 El flujo sigue siendo nombre → test → repaso → juego → repaso → ranking conjunto. La voz es automática y el avance permanece bloqueado hasta que termine. Los cambios visuales no alteran las preguntas, reglas educativas ni puntajes.
 
 Validación: `python -m unittest discover -s tests -p "test_*.py"` y `node tests/test_tutor.cjs`.
+
+## Ajuste del juego para escritorio y música del test
+
+El tablero de escritorio usa dos columnas (animación y nueve tarjetas) y adapta su altura al espacio de la ventana; la distribución móvil anterior se conserva. Los encabezados de las tarjetas siguen disponibles mediante sus etiquetas accesibles. Las reglas educativas se consultan desde «Aprender sobre esta etapa» y las fuentes permanecen desplegables. En ventanas de muy poca altura o con ampliación del navegador puede ser necesario desplazarse para conservar la legibilidad.
+
+El juego explica «Por qué» y «Ponlo en práctica» para cada acción, manteniendo la búsqueda de atención como prioridad. Sus iconos y logo materno utilizan ilustraciones SVG propias, con colores cálidos y trazos redondeados. Las preguntas del test no se cambian.
+
+El test incorpora la melodía original «Jardín de vida», con preferencia independiente para silenciarla y pausa automática durante la retroalimentación. Si el navegador bloquea el sonido automático, aparece «Activar música».
+
+Verificación de esta revisión: 19 pruebas Python y pruebas JavaScript de narración y música aprobadas. La revisión visual de escritorio y celular está pendiente: la apertura del navegador de pruebas quedó bloqueada por el límite de uso del sistema de aprobación automática. No se ha confirmado visualmente la ausencia de desplazamiento en esta revisión.

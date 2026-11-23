@@ -36,6 +36,8 @@ class GameTests(unittest.TestCase):
             self.assertEqual(sum(f['good'] for f in stage['foods']), 5)
             self.assertTrue(all(f['kind'] == 'obstetric' for f in stage['foods']))
             self.assertTrue(all(f['explanation'] and f['detail'] for f in stage['foods']))
+            self.assertTrue(all(f['why'] and f['practice'] for f in stage['foods']))
+            self.assertEqual(len({f['explanation'] for f in stage['foods']}), 9)
             self.assertFalse(next(f for f in stage['foods'] if f['icon'] == 'fruit')['good'])
             self.assertFalse(next(f for f in stage['foods'] if f['icon'] == 'tea')['good'])
         html = __import__('pathlib').Path('gestation_game/index.html').read_text(encoding='utf-8')

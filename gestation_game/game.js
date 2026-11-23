@@ -22,6 +22,15 @@ function publishFinal(){
   lastPublished=signature;
   post('streamlit:setComponentValue',{value,dataType:'json'});
 }
+function fitDesktop(){
+  let height=window.innerHeight;
+  try{height=window.parent.innerHeight-(window.frameElement?.getBoundingClientRect().top||0)-16;}catch(_){}
+  $('game').style.setProperty('--board-height',Math.max(600,Math.floor(height))+'px');
+}
+window.addEventListener('resize',()=>{fitDesktop();resize();});
+try{window.parent.addEventListener('resize',fitDesktop);}catch(_){}
+window.addEventListener('pagehide',()=>{try{window.parent.removeEventListener('resize',fitDesktop);}catch(_){}});
+fitDesktop();
 function resize(){const h=Math.ceil($('game').getBoundingClientRect().height)+4;if(h!==lastHeight){lastHeight=h;post('streamlit:setFrameHeight',{height:h});}}
 new ResizeObserver(resize).observe($('game'));
 function save(){try{sessionStorage.setItem('vida-game-'+session,JSON.stringify(state));}catch(_){}}
@@ -78,7 +87,12 @@ function choose(index){
   const f=stages[state.stage].foods[index];save();render();
   $('feedback').className='feedback '+(f.good?'good':'bad');$('feedback').replaceChildren();
   const title=document.createElement('strong');title.textContent=(f.good?'✓ Buena elección: ':'✕ Revisemos esta elección: ')+f.name;
-  $('feedback').append(title,document.createTextNode(f.explanation));
+  $('feedback').append(title);
+  const teaching=document.createElement('div');teaching.className='teaching';
+  for(const [label,text] of [['Por qué: ',f.why||f.explanation],['Ponlo en práctica: ',f.practice||'Busca ayuda sin retrasar la atención.']]){
+    const p=document.createElement('p'),b=document.createElement('b');b.textContent=label;p.append(b,document.createTextNode(text));teaching.append(p);
+  }
+  $('feedback').append(teaching);
   $('reaction').textContent=f.good?'¡Muy bien! ★':'¡Vamos a aprender!';
   clearTimeout(emotionTimer);$('dropzone').classList.remove('error','success');$('dropzone').classList.add(f.good?'success':'error');
   emotionTimer=setTimeout(()=>$('dropzone').classList.remove('error','success'),1800);
@@ -99,7 +113,7 @@ $('start').onclick=async()=>{state.started=true;save();render();await Music.star
 $('music').onclick=async()=>{await Music.toggle();musicLabel();};
 $('pause').onclick=()=>{paused=true;$('board').inert=true;$('pausePanel').hidden=false;Music.stop();stopVoice();$('resume').focus();};
 $('resume').onclick=async()=>{paused=false;$('board').inert=false;$('pausePanel').hidden=true;await Music.start();musicLabel();$('pause').focus();if(voiceBusy&&lastFeedback)speak(lastFeedback);};
-$('learn').onclick=()=>{const s=stages[state.stage];$('lessonTitle').textContent=s.name;$('lessonText').textContent=s.lesson;$('lesson').showModal();stopVoice();};
+$('learn').onclick=()=>{const s=stages[state.stage];$('lessonTitle').textContent=s.name;$('lessonText').textContent=s.lesson+' En el juego, 0 a 4 errores: sin riesgo educativo; 5 a 10: leve; 11 o más: alto. Estas categorías miden aprendizaje, no la salud de mamá o del bebé.';$('lesson').showModal();stopVoice();};
 $('closeLesson').onclick=()=>{$('lesson').close();if(voiceBusy&&lastFeedback)speak(lastFeedback);};
 $('next').onclick=()=>{if(paused||voiceBusy)return;const previous=state;state=E.next(state,stages);if(previous===state)return;stopVoice();save();
   $('feedback').className='feedback';$('feedback').textContent='Elige una acción para acompañar a mamá y aprender a actuar ante este evento.';render();

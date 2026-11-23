@@ -1074,6 +1074,9 @@ elif st.session_state.fase == "ranking":
 
 elif st.session_state.fase == "test":
 
+    from test_music import show_test_music
+    show_test_music(narrating=st.session_state.resp)
+
     actual = st.session_state.examen[
         st.session_state.idx
     ]
