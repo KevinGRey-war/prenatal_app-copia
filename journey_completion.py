@@ -1,22 +1,14 @@
 """Guided game review before the combined ranking."""
 import streamlit as st
 from prenatal_tutor import show_tutor
+from final_review import review_cards
 
 
 def show_game_review():
     rows = st.session_state.get('game_review')
-    st.subheader('Retroalimentación del juego')
-    if not rows:
-        st.error('No se recuperó el detalle del juego. No podemos confirmar sus respuestas todavía.')
+    st.subheader('Repaso final · Test y juego')
+    cards = review_cards(st.session_state.get('answers', []), rows)
+    if not cards:
+        st.error('No se recuperaron todas las respuestas de las dos actividades. No podemos preparar el repaso todavía.')
         return False
-    mistakes = [row for row in rows if not row['good']]
-    count = len(mistakes)
-    risk = 'Riesgo educativo alto' if count >= 11 else 'Riesgo educativo leve' if count >= 5 else 'Sin riesgo educativo'
-    cards = [{'title': 'Nia · Repasemos el juego', 'text': f'Completaste las cinco etapas. Vamos a reforzar tus decisiones. Registraste {count} errores. {risk}. Esta categoría mide aprendizaje, no la salud de mamá ni del bebé.'}]
-    for row in mistakes:
-        cards.append({'title': row['stage'] + ' · ' + row['name'], 'text': row['explanation']})
-    cards.append({'title': '¡Felicitaciones por tu aprendizaje!', 'text': ('Todas tus elecciones fueron adecuadas. ' if not mistakes else 'Cada error es una oportunidad para aprender. ') + 'Practicaste cómo reconocer señales de alarma y buscar ayuda. Las complicaciones no son culpa de la madre ni dependen de los puntos. Ahora puedes consultar tu puntaje conjunto.'})
-    for card in cards:
-        with st.expander(card['title'], expanded=True):
-            st.write(card['text'])
-    return show_tutor(cards, 'game-final', compact=True)
+    return show_tutor(cards, 'combined-final', compact=False)

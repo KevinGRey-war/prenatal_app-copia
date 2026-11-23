@@ -85,3 +85,11 @@ El juego explica «Por qué» y «Ponlo en práctica» para cada acción, manten
 El test incorpora la melodía original «Jardín de vida», con preferencia independiente para silenciarla y pausa automática durante la retroalimentación. Si el navegador bloquea el sonido automático, aparece «Activar música».
 
 Verificación de esta revisión: 19 pruebas Python y pruebas JavaScript de narración y música aprobadas. La revisión visual de escritorio y celular está pendiente: la apertura del navegador de pruebas quedó bloqueada por el límite de uso del sistema de aprobación automática. No se ha confirmado visualmente la ausencia de desplazamiento en esta revisión.
+
+## Avatar del repaso conjunto final
+
+Nia aparece únicamente después de completar el test y el juego, antes del ranking. Es un avatar femenino ilustrado de cuerpo completo, identificado como asistente de inteligencia artificial. El repaso usa las respuestas registradas: pregunta, elección, respuesta correcta, explicación y ejemplo del test; después, decisiones inadecuadas del juego. Si no hay errores, reconoce los aciertos sin inventar fallos.
+
+La boca y los brazos acompañan los eventos de inicio, pausa y fin de la narración; los movimientos son ilustrativos y no constituyen sincronización fonética. Hay gestos suaves, parpadeo y respeto por la preferencia de movimiento reducido. La voz se inicia automáticamente y el ranking sigue bloqueado hasta terminar. La presentación del test y el tablero del juego permanecen iguales.
+
+Verificación: 22 pruebas Python y pruebas JavaScript de narración y música aprobadas. La evaluación visual de la fluidez en el navegador sigue pendiente por el bloqueo de uso informado anteriormente.

@@ -167,7 +167,7 @@ class SurveyTests(unittest.TestCase):
             os.environ['RANKING_DB_PATH'] = str(Path(directory) / 'scores.sqlite3')
             app = AppTest.from_file(str(Path('app.py').resolve())).run()
             for key, value in dict(fase='juego', user='Recorrido', test_completed=True,
-                                   journey_test_score=70, game_review=[dict(good=False, stage='Posparto', name='Esperar', explanation='Buscar atención inmediata.')]).items():
+                                   journey_test_score=70, answers=[dict(correct=True, question='Pregunta', selected='A', answer='A', feedback='Correcto', example='Ejemplo') for _ in range(10)], game_review=[dict(good=False, stage='Posparto', name='Esperar', explanation='Buscar atención inmediata.')]).items():
                 app.session_state[key] = value
             with patch('gestation_game.show_game', return_value=80):
                 app.run()
