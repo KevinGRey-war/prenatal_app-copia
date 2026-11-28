@@ -93,3 +93,11 @@ Nia aparece únicamente después de completar el test y el juego, antes del rank
 La boca y los brazos acompañan los eventos de inicio, pausa y fin de la narración; los movimientos son ilustrativos y no constituyen sincronización fonética. Hay gestos suaves, parpadeo y respeto por la preferencia de movimiento reducido. La voz se inicia automáticamente y el ranking sigue bloqueado hasta terminar. La presentación del test y el tablero del juego permanecen iguales.
 
 Verificación: 22 pruebas Python y pruebas JavaScript de narración y música aprobadas. La evaluación visual de la fluidez en el navegador sigue pendiente por el bloqueo de uso informado anteriormente.
+
+## Repaso animado superpuesto (27 de noviembre)
+
+Este comportamiento reemplaza las listas y desplegables de repaso descritos anteriormente. Al finalizar el test, Nia explica únicamente las respuestas incorrectas, una por una, con corrección, motivo y ejemplo. Después del juego, repasa los errores registrados en ambas actividades. Si no existen errores, ofrece una felicitación breve. El personaje ilustrado conserva los gestos de brazos y boca ligados al estado de la narración; no es sincronización fonética exacta.
+
+El panel aparece sobre la pantalla y se retira al finalizar la narración. El avance permanece bloqueado hasta recibir la finalización de todas las explicaciones. Los puntajes y preguntas no cambian. Si el navegador bloquea el audio, aparece la opción de activarlo; no se simula una narración completada.
+
+Verificado con 25 pruebas Python, la prueba JavaScript de narración secuencial y una vista aislada con datos ficticios en escritorio y 390 × 844. Las explicaciones de señales de alarma enlazan a CDC. Las capturas locales de la revisión están en `.test-data/repaso-animado.jpg` y `.test-data/repaso-movil.jpg` (no se publican datos de prueba).

@@ -10,6 +10,12 @@ function play(){
   if(busy||complete||!cards.length)return;
   stop();$('retry').hidden=true;busy=true;const own=generation,card=cards[index];
   $('title').textContent=card.title;$('text').textContent=card.text;
+  $('text').classList.remove('reveal');
+  void $('text').getBoundingClientRect();
+  $('text').classList.add('reveal');
+  $('source').hidden=!card.source_url;
+  $('source').textContent=card.source||'';
+  $('source').href=card.source_url||'';
   $('progress').max=cards.length;$('progress').value=index;
   $('status').textContent=`Escucha el repaso ${index+1} de ${cards.length}. Podrás continuar cuando termine.`;
   const started=()=>{if(own===generation)$('avatar').classList.add('talking');};

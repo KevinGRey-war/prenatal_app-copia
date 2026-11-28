@@ -11,4 +11,4 @@ def show_game_review():
     if not cards:
         st.error('No se recuperaron todas las respuestas de las dos actividades. No podemos preparar el repaso todavía.')
         return False
-    return show_tutor(cards, 'combined-final', compact=False)
+    return show_tutor(cards, 'combined-final', compact=False, overlay=True)
